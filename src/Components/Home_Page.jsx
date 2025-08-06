@@ -26,7 +26,7 @@ import img_7 from '../images/img_7.png';
 import img_8 from '../images/img_8.png';
 import img_9 from '../images/img_9.png';
 import img_10 from '../images/img_10.png';
-import img_11 from '../images/Img_11.png';
+// import img_11 from '../images/Img_11.png';
 // import img1 from '../Images/logo.png';
 
 
