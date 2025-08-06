@@ -32,7 +32,7 @@ export default function Registration() {
         <div className="container-fluid d-flex justify-content-center align-items-center vh-100">
             <Form
                 onSubmit={handleSubmit}
-                className="mx-auto border border-1 border-secondary rounded-4 p-4 bg-white"
+                className="mx-auto border border-1 border-secondary rounded-4 p-5 bg-white"
                 style={{ maxWidth: "600px" }}
             >
                 <h2 className="text-center text-dark fs-3 fw-medium mb-4">Register</h2>
