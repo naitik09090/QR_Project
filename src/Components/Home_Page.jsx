@@ -4,7 +4,7 @@ import step1Img from '../images/step1.png';
 import step2Img from '../images/step2.png';
 import step3Img from '../images/step3.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import img2 from '../Images/Google.png'
+// import img2 from '../Images/Google.png'
 import { TfiWorld } from "react-icons/tfi";
 import { FaRegImage, FaRegFilePdf, FaRegEdit, FaArrowRight, FaArrowLeft } from 'react-icons/fa';
 import { RiUserAddLine } from "react-icons/ri";
@@ -27,7 +27,7 @@ import img_8 from '../images/img_8.png';
 import img_9 from '../images/img_9.png';
 import img_10 from '../images/img_10.png';
 import img_11 from '../images/Img_11.png';
-import img1 from '../Images/logo.png';
+// import img1 from '../Images/logo.png';
 
 
 const qrTypes = [
