@@ -45,7 +45,7 @@ export default function LoginForm() {
                 </a>
 
                 <p className="text-center text-muted small mt-3 mb-2">
-                    Don’t have an account? <a href="#" className="text-primary text-decoration-none">Sign up</a>
+                    Don’t have an account? <a href="/signUp" className="text-primary text-decoration-none">Sign up</a>
                 </p>
             </Form>
         </div>
