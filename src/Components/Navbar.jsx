@@ -1,4 +1,4 @@
-import img1 from '../Images/logo.jpg';
+import img1 from '../assets/logo.jpg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 

@@ -1,10 +1,10 @@
 import React, { useRef, useState } from 'react';
 import { Container, Row, Col, Button, Form, Dropdown, Tabs, Tab, Nav, Card } from 'react-bootstrap';
-import step1Img from '../images/step1.png';
-import step2Img from '../images/step2.png';
-import step3Img from '../images/step3.png';
+import step1Img from '../assets/step1.png';
+import step2Img from '../assets/step2.png';
+import step3Img from '../assets/step3.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import img2 from '../Images/Google.png'
+import img2 from '../assets/Google.png'
 import { TfiWorld } from "react-icons/tfi";
 import { FaRegImage, FaRegFilePdf, FaRegEdit, FaArrowRight, FaArrowLeft } from 'react-icons/fa';
 import { RiUserAddLine } from "react-icons/ri";
@@ -13,21 +13,21 @@ import { MdBlockFlipped } from "react-icons/md";
 import { FaChevronDown } from "react-icons/fa";
 import { MdOutlinePianoOff } from "react-icons/md";
 import { FaFilePdf, FaTags, FaUserPlus, FaImage, FaFont, FaVideo, FaListUl, FaBuilding } from 'react-icons/fa';
-import img_3 from "../images/Phone_img.png"
+import img_3 from "../assets/Phone_img.png"
 import { FaCircleCheck } from "react-icons/fa6";
 import { FaChartLine, FaEdit, FaQrcode, FaUsers, FaFileDownload, FaMagic, FaBarcode, FaDownload, FaGlobe, FaLock, FaBolt, FaFacebookF, FaGoogle } from "react-icons/fa";
-import qr_image_1 from '../images/qr_image_1.png';
-import qr_image_2 from '../images/qr_image_2.png';
-import qr_image_3 from '../images/qr_image_3.png';
-import qr_image_4 from '../images/qr_image_4.png';
-import qr_image_5 from '../images/qr_image_5.png';
-import qr_image_6 from '../images/qr_image_6.png';
-import img_7 from '../images/img_7.png';
-import img_8 from '../images/img_8.png';
-import img_9 from '../images/img_9.png';
-import img_10 from '../images/img_10.png';
-import img_11 from '../images/Img_11.png';
-import img1 from '../Images/logo.png';
+import qr_image_1 from '../assets/qr_image_1.png';
+import qr_image_2 from '../assets/qr_image_2.png';
+import qr_image_3 from '../assets/qr_image_3.png';
+import qr_image_4 from '../assets/qr_image_4.png';
+import qr_image_5 from '../assets/qr_image_5.png';
+import qr_image_6 from '../assets/qr_image_6.png';
+import img_7 from '../assets/img_7.png';
+import img_8 from '../assets/img_8.png';
+import img_9 from '../assets/img_9.png';
+import img_10 from '../assets/img_10.png';
+import img_11 from '../assets/Img_11.png';
+import img1 from '../assets/logo.png';
 
 
 const qrTypes = [
