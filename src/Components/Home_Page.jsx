@@ -4,7 +4,7 @@ import step1Img from '../assets/step1.png';
 import step2Img from '../assets/step2.png';
 import step3Img from '../assets/step3.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import img2 from '../assets/google.png'
+import img2 from '../assets/Google.png'
 import { TfiWorld } from "react-icons/tfi";
 import { FaRegImage, FaRegFilePdf, FaRegEdit, FaArrowRight, FaArrowLeft } from 'react-icons/fa';
 import { RiUserAddLine } from "react-icons/ri";
