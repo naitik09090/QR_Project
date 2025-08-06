@@ -23,10 +23,10 @@ const Navbar = () => {
 
                         {/* Auth Buttons */}
                         <div className="d-flex gap-2 justify-content-end ms-auto">
-                            <a href="login">
+                            <a href="/login">
                                 <button className="btn btn-outline-secondary rounded-pill">Log In</button>
                             </a>
-                            <a href="signUp">
+                            <a href="/signUp">
                                 <button className="btn btn-primary rounded-pill">Register</button>
                             </a>
                         </div>
