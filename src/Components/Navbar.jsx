@@ -1,5 +1,5 @@
 import React from 'react';
-import img1 from '../Images/logo.jpg';
+// import img1 from '../Images/logo.jpg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
@@ -11,7 +11,7 @@ const Navbar = () => {
                 <div className="container-fluid">
                     {/* Logo */}
                     <a className="navbar-brand d-flex align-items-center" href="#">
-                        <img src={img1} alt="QRFY Logo" width="100" height="40" className="me-2" />
+                        <img src={'#'} alt="QRFY Logo" width="100" height="40" className="me-2" />
                     </a>
 
                     {/* Toggle Button (Mobile) */}
