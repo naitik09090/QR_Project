@@ -25,9 +25,9 @@ import qr_image_6 from '../assets/qr_image_6.png';
 import img_7 from '../assets/img_7.png';
 import img_8 from '../assets/img_8.png';
 import img_9 from '../assets/img_9.png';
-import img_10 from '../assets/img_10.png';
+import img_10 from '../assets/img_10.jpg';
 import img_11 from '../assets/Img_11.png';
-import img1 from '../assets/logo.png';
+import img1 from "../assets/logo.jpg";
 
 
 const qrTypes = [
