@@ -435,7 +435,7 @@ const QRGenerator = () => {
                                     <Card.Text className="text-muted">
                                         Turn your card into an interactive tool by adding a QR code that connects clients and employers with your work, social networks and contact information.
                                     </Card.Text>
-                                    <a href="#" className="text-primary fw-semibold text-decoration-none more-info-btn">
+                                    <a href="#" className="text-primary fixed-auto fw-semibold text-decoration-none more-info-btn">
                                         More Info →
                                     </a>
                                 </Card.Body>
@@ -446,9 +446,9 @@ const QRGenerator = () => {
                                 <Card.Body>
                                     <Card.Title>Pamphlets</Card.Title>
                                     <Card.Text className="text-muted">
-                                        Expand the printed information on your pamphlets with a QR code, offering interactive content and measuring its reach in real time.
+                                        Expand the printed information on your pamphlets with a QR code, offering interactive content and measuring its reach in real time,social networks and contact information.
                                     </Card.Text>
-                                    <a href="#" className="text-primary fw-semibold text-decoration-none more-info-btn">
+                                    <a href="#" className="text-primary fixed-auto fw-semibold text-decoration-none more-info-btn">
                                         More Info →
                                     </a>
                                 </Card.Body>
@@ -483,7 +483,7 @@ const QRGenerator = () => {
                                 <Card.Body>
                                     <Card.Title>Product packaging</Card.Title>
                                     <Card.Text className="text-muted">
-                                        Reduce the text on your packaging and provide access to key information, exclusive discounts and social media through a simple scan.
+                                        Reduce the text on your packaging and provide access to key information, exclusive discounts and social media through a simple scan,social contact information.
                                     </Card.Text>
                                     <a href="#" className="text-primary fw-semibold text-decoration-none more-info-btn">
                                         More Info →
@@ -495,7 +495,7 @@ const QRGenerator = () => {
                                 <Card.Body>
                                     <Card.Title>Menu</Card.Title>
                                     <Card.Text className="text-muted">
-                                        Keep your menu up to date with a QR code on your menu. Forget about reprints and make it easy for your diners to access interactive options.
+                                        Keep your menu up to date with a QR code on your menu. Forget about reprints and make it easy for your diners to access interactive options, contact information.
                                     </Card.Text>
                                     <a href="#" className="text-primary fw-semibold text-decoration-none more-info-btn">
                                         More Info →
@@ -545,10 +545,10 @@ const QRGenerator = () => {
             <div className="container text-center">
                 <div className="row justify-content-center gy-4">
                     {tabData.map((item) => (
-                        <div className="col-md-3 col-10" key={item.key}>
+                        <div className="d-flex col-md-3 col-10" key={item.key}>
                             <div
                                 className={`rounded p-4 shadow-sm ${activeKey === item.key ? 'bg-light text-primary border-bottom border-primary' : 'text-muted bg-white'}`}
-                                style={{ cursor: 'pointer' }}
+                                style={{ cursor: 'pointer',height: '100px' }}
                                 onClick={() => setActiveKey(item.activeKey || item.key)}
                             >
                                 <i className={`bi ${item.icon} fs-3`}></i>
