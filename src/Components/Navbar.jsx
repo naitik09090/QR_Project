@@ -1,5 +1,5 @@
 import React from 'react';
-import img1 from '../Images/logo.png';
+import img1 from '../Images/logo.jpg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
