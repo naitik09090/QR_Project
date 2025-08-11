@@ -536,23 +536,24 @@ const QRGenerator = () => {
                         <img
                             src={tabData.find(item => item.key === activeKey)?.image || img_7}
                             alt="Hero Visual"
-                            className="img-fluid w-100"
-                            style={{ objectFit: 'cover', height: '100%' }}
+                            className="img-fluid"
+                            style={{ objectFit: 'cover', width: '100%', height: '100%' }}
                         />
                     </div>
                 </div>
             </div>
             <div className="container text-center">
-                <div className="row justify-content-center gy-4">
+                <div className="row justify-content-center">
                     {tabData.map((item) => (
-                        <div className="d-flex col-md-3 col-10" key={item.key}>
+                        <div className="col-md-3 col-10" key={item.key}>
                             <div
-                                className={`rounded p-4 shadow-sm ${activeKey === item.key ? 'bg-light text-primary border-bottom border-primary' : 'text-muted bg-white'}`}
-                                style={{ cursor: 'pointer',height: '100px' }}
+                                style={{ cursor: 'pointer', height: '5vh' }}
                                 onClick={() => setActiveKey(item.activeKey || item.key)}
                             >
                                 <i className={`bi ${item.icon} fs-3`}></i>
-                                <strong>{item.label}</strong>
+                                <button className='text-center btn btn-outline-primary mt-2 p-3'>
+                                    {item.label}
+                                </button>
                             </div>
                         </div>
                     ))}
