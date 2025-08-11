@@ -1,28 +1,25 @@
 import React, { useState } from "react";
 import { Form, Button, Row, Col } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
+import qr_image from "../assets/qr_image.png";
 
 export default function Registration() {
   const [formData, setFormData] = useState({
-    fullName: "",
+    username: "",
     email: "",
-    phone: "",
     password: "",
     confirmPassword: "",
-    gender: "",
-    dob: "",
-    address: "",
-    agree: false,
+    first_name: "",
+    last_name: "",
   });
 
-  const [submittedUser, setSubmittedUser] = useState(null);
-  const navigate = useNavigate(); // ✅ for redirect
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
+    const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
-      [name]: type === "checkbox" ? checked : value,
+      [name]: value,
     }));
   };
 
@@ -40,10 +37,12 @@ export default function Registration() {
     }
 
     const apiData = {
-      username: formData.fullName,
+      username: formData.username,
       email: formData.email,
-      password: formData.password,
-      password_confirm: formData.confirmPassword,
+      password1: formData.password,
+      password2: formData.confirmPassword,
+      first_name: formData.first_name,
+      last_name: formData.last_name,
     };
 
     try {
@@ -60,15 +59,14 @@ export default function Registration() {
 
       if (res.ok) {
         alert("Registration successful! Redirecting to login...");
-        console.log("User data from API:", data);
-
-        setSubmittedUser(formData);
-
-        // ✅ Redirect to login page
         navigate("/login");
       } else {
-        alert("Registration failed!");
-        console.log("Error response:", data);
+        const errorMsg =
+          data.username?.[0] ||
+          data.email?.[0] ||
+          data.password1?.[0] ||
+          "Registration failed!";
+        alert(errorMsg);
       }
     } catch (error) {
       console.error("Error submitting form:", error);
@@ -76,150 +74,133 @@ export default function Registration() {
   };
 
   return (
-    <div className="container-fluid d-flex justify-content-center align-items-center vh-100">
-      <Form
-        onSubmit={handleSubmit}
-        className="mx-auto border border-1 border-secondary rounded-4 p-5 bg-white"
-        style={{ maxWidth: "600px" }}
-      >
-        <h2 className="text-center text-dark fs-3 fw-medium mb-4">Register</h2>
-
-        <Form.Group className="mb-3">
-          <Form.Label>Full Name</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Enter your full name"
-            name="fullName"
-            value={formData.fullName}
-            onChange={handleChange}
-            required
+    <div className="container-fluid min-vh-100 d-flex align-items-center justify-content-center bg-light p-3">
+      <Row className="w-100 align-items-center">
+        {/* QR Code Column */}
+        <Col
+          xs={12}
+          md={6}
+          className="d-flex justify-content-center mb-4 mb-md-0"
+        >
+          <img
+            src={qr_image}
+            alt="QR Code"
+            className="img-fluid"
+            style={{ maxWidth: "100%" }}
           />
-        </Form.Group>
+        </Col>
 
-        <Row>
-          <Col md={6}>
-            <Form.Group className="mb-3">
-              <Form.Label>Email address</Form.Label>
-              <Form.Control
-                type="email"
-                placeholder="Enter email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-              />
-            </Form.Group>
-          </Col>
-          <Col md={6}>
-            <Form.Group className="mb-3">
-              <Form.Label>Phone</Form.Label>
-              <Form.Control
-                type="tel"
-                placeholder="Enter phone number"
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-                required
-              />
-            </Form.Group>
-          </Col>
-        </Row>
+        {/* Form Column */}
+        <Col xs={12} md={6} className="d-flex justify-content-center">
+          <Form
+            onSubmit={handleSubmit}
+            className="w-100 border border-1 border-secondary rounded-4 p-4 bg-white"
+            style={{ maxHeight: "100%" , maxWidth: "500px" }}
+          >
+            <h2 className="text-center text-dark fs-3 fw-medium mb-4">
+              Register
+            </h2>
 
-        <Row>
-          <Col md={6}>
-            <Form.Group className="mb-3">
-              <Form.Label>Password</Form.Label>
-              <Form.Control
-                type="password"
-                placeholder="Password"
-                name="password"
-                value={formData.password}
-                onChange={handleChange}
-                required
-              />
-            </Form.Group>
-          </Col>
-          <Col md={6}>
-            <Form.Group className="mb-3">
-              <Form.Label>Confirm Password</Form.Label>
-              <Form.Control
-                type="password"
-                placeholder="Confirm Password"
-                name="confirmPassword"
-                value={formData.confirmPassword}
-                onChange={handleChange}
-                required
-              />
-            </Form.Group>
-          </Col>
-        </Row>
+            <Row>
+              <Col md={6}>
+                <Form.Group className="mb-3">
+                  <Form.Label>Username</Form.Label>
+                  <Form.Control
+                    type="text"
+                    name="username"
+                    placeholder="Enter Your Username"
+                    value={formData.username}
+                    onChange={handleChange}
+                    required
+                  />
+                </Form.Group>
+              </Col>
+              <Col md={6}>
+                <Form.Group className="mb-3">
+                  <Form.Label>Email</Form.Label>
+                  <Form.Control
+                    type="email"
+                    name="email"
+                    placeholder="Enter Your Email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                  />
+                </Form.Group>
+              </Col>
+            </Row>
 
-        <Row>
-          <Col md={6}>
-            <Form.Group className="mb-3">
-              <Form.Label>Gender</Form.Label>
-              <Form.Select
-                name="gender"
-                value={formData.gender}
-                onChange={handleChange}
-                required
-              >
-                <option value="">Select gender</option>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-                <option value="Other">Other</option>
-              </Form.Select>
-            </Form.Group>
-          </Col>
-          <Col md={6}>
-            <Form.Group className="mb-3">
-              <Form.Label>Date of Birth</Form.Label>
-              <Form.Control
-                type="date"
-                name="dob"
-                value={formData.dob}
-                onChange={handleChange}
-                required
-              />
-            </Form.Group>
-          </Col>
-        </Row>
+            <Row>
+              <Col md={6}>
+                <Form.Group className="mb-3">
+                  <Form.Label>Password</Form.Label>
+                  <Form.Control
+                    type="password"
+                    name="password"
+                    placeholder="Enter Your Password"
+                    value={formData.password}
+                    onChange={handleChange}
+                    required
+                  />
+                </Form.Group>
+              </Col>
+              <Col md={6}>
+                <Form.Group className="mb-3">
+                  <Form.Label>Confirm Password</Form.Label>
+                  <Form.Control
+                    type="password"
+                    name="confirmPassword"
+                    placeholder="Confirm Your Password"
+                    value={formData.confirmPassword}
+                    onChange={handleChange}
+                    required
+                  />
+                </Form.Group>
+              </Col>
+            </Row>
 
-        <Form.Group className="mb-3">
-          <Form.Label>Address</Form.Label>
-          <Form.Control
-            as="textarea"
-            rows={2}
-            placeholder="Enter your address"
-            name="address"
-            value={formData.address}
-            onChange={handleChange}
-            required
-          />
-        </Form.Group>
+            <Row>
+              <Col md={6}>
+                <Form.Group className="mb-3">
+                  <Form.Label>First Name</Form.Label>
+                  <Form.Control
+                    type="text"
+                    name="first_name"
+                    placeholder="Enter Your First Name"
+                    value={formData.first_name}
+                    onChange={handleChange}
+                    required
+                  />
+                </Form.Group>
+              </Col>
+              <Col md={6}>
+                <Form.Group className="mb-3">
+                  <Form.Label>Last Name</Form.Label>
+                  <Form.Control
+                    type="text"
+                    name="last_name"
+                    placeholder="Enter Your Last Name"
+                    value={formData.last_name}
+                    onChange={handleChange}
+                    required
+                  />
+                </Form.Group>
+              </Col>
+            </Row>
 
-        <Form.Group className="mb-3">
-          <Form.Check
-            type="checkbox"
-            label="I agree to the terms and conditions"
-            name="agree"
-            checked={formData.agree}
-            onChange={handleChange}
-            required
-          />
-        </Form.Group>
+            <Button variant="primary" type="submit" className="w-100">
+              Register
+            </Button>
 
-        <Button variant="primary" type="submit" className="w-100">
-          Register
-        </Button>
-
-        <p className="text-center text-muted small mt-3">
-          Already have an account?{" "}
-          <Link to="/login" className="text-primary">
-            Login
-          </Link>
-        </p>
-      </Form>
+            <p className="text-center text-muted small mt-3">
+              Already have an account?{" "}
+              <Link to="/login" className="text-primary">
+                Login
+              </Link>
+            </p>
+          </Form>
+        </Col>
+      </Row>
     </div>
   );
 }

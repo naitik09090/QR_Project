@@ -5,7 +5,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 const Navbar = () => {
     return (
-        <div className='container-fluid'>
+        <div className='container-fluid mb-5'>
             <nav className="navbar navbar-expand-lg bg-white border-bottom px-4 py-2">
                 <div className="container-fluid">
                     {/* Logo */}

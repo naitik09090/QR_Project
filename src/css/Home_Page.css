@@ -162,3 +162,69 @@
   height: 500px;
   width: auto;
 }
+/* Step Number Badge */
+.step-number {
+  background-color: #4b3eff;
+  color: white;
+  border-radius: 6px;
+  padding: 2px 8px;
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+/* Tabs Styling */
+.custom-tabs .nav-link {
+  border-radius: 8px;
+  padding: 8px 16px;
+}
+.custom-tabs .nav-link.active {
+  background-color: #f0f0ff;
+  font-weight: 500;
+}
+
+/* Frame Box */
+.frame-box {
+  width: 70px;
+  height: 70px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 6px;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.frame-box:hover {
+  border-color: #4b3eff;
+  box-shadow: 0 0 5px rgba(75,62,255,0.3);
+}
+.frame-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* QR Preview Box */
+.qr-preview-box {
+  background: #f9f9ff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.qr-code-display {
+  background: white;
+  padding: 12px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+}
+.qr-code-display img {
+  width: 150px;
+  height: 150px;
+}
+.P_Tages_qr{
+  font-size: 20px;
+  font-weight: 350;
+}

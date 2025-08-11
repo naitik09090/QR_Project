@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Form } from "react-bootstrap";
+import { Col, Form, Row } from "react-bootstrap";
+import qr_image from "../assets/qr_image.png";
 
 export default function LoginForm() {
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
-    email: "",
+    username: "",
     password: "",
   });
 
@@ -64,22 +65,29 @@ export default function LoginForm() {
 
   return (
     <div className="container-fluid d-flex justify-content-center align-items-center vh-100">
+      <img
+        src={qr_image}
+        alt="QR Code"
+        className="img-fluid"
+        style={{ maxWidth: "100%" }}
+      />
+
       <Form
         onSubmit={handleLogin}
         className="mx-auto border border-1 border-secondary rounded-4 p-5 bg-white"
-        style={{ maxWidth: "1000px", maxHeight: "500px" }}
+        style={{ maxWidth: "100%", maxHeight: "500px" }}
       >
         <h1 className="text-center text-dark fs-3 mt-3 fw-medium">Login</h1>
         <p className="text-center text-muted small mt-2">
           Please sign in to continue
         </p>
 
-        <div className="d-flex align-items-center bg-white border border-secondary rounded-pill px-3 py-2 mt-4">
+        <div className="d-flex align-items-center bg-white border border-secondary rounded-pill px-3 py-2 mt-3">
           <Form.Control
             type="text"
-            placeholder="username"
-            name="email"
-            value={formData.email}
+            placeholder="Username"
+            name="username"
+            value={formData.username}
             onChange={handleChange}
             required
             className="border-0 shadow-none ms-2 text-muted"
