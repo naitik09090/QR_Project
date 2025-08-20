@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from "react"
+import { useState } from "react";
+import { useEffect } from "react";
 import { Button } from "react-bootstrap";
-import { FaArrowUp } from "react-icons/fa";
-import 'bootstrap/dist/css/bootstrap.min.css';
-
+import { FaQrcode } from 'react-icons/fa';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const BackToTopButton = () => {
   const [visible, setVisible] = useState(false);
@@ -15,7 +16,7 @@ const BackToTopButton = () => {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth"
+      behavior: "smooth",
     });
   };
 
@@ -36,10 +37,10 @@ const BackToTopButton = () => {
         display: visible ? "inline" : "none",
         borderRadius: "50%",
         padding: "10px 15px",
-        zIndex: 1000
+        zIndex: 1000,
       }}
     >
-      <FaArrowUp />
+      <FaQrcode size={24} />
     </Button>
   );
 };

@@ -1,0 +1,18 @@
+/* Make the container full screen */
+.qr-dashboard {
+  min-height: 95vh;
+  width: 1500px;
+  padding: 2rem;
+  background-color: #fff; /* white background like your screenshot */
+}
+/* Tabs scroll on mobile */
+@media (max-width: 768px) {
+  .nav-tabs {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  .nav-tabs .nav-item {
+    flex: 0 0 auto;
+  }
+}

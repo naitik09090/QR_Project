@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React from "react"
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Col, Form, Row } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 import qr_image from "../assets/qr_image.png";
 
 export default function LoginForm() {
@@ -69,7 +70,7 @@ export default function LoginForm() {
         src={qr_image}
         alt="QR Code"
         className="img-fluid"
-        style={{ maxWidth: "100%" }}
+        style={{ Width: "auto",height: "auto" }}
       />
 
       <Form
@@ -130,3 +131,5 @@ export default function LoginForm() {
     </div>
   );
 }
+
+

@@ -1,30 +1,37 @@
-import { useEffect, useRef, useState } from "react";
-import {
-  Container,
-  Row,
-  Col,
-  Button,
-  Form,
-  Dropdown,
-  Tabs,
-  Tab,
-  Card,
-} from "react-bootstrap";
+import { useRef } from "react";
+import { useState } from "react";
+import React from "react";
+import { Container } from "react-bootstrap";
+import { ListGroup } from "react-bootstrap";
+import { Row } from "react-bootstrap";
+import { Col } from "react-bootstrap";
+import { Button } from "react-bootstrap";
+import { Form } from "react-bootstrap";
+import { Dropdown } from "react-bootstrap";
+import { Tabs } from "react-bootstrap";
+import { Tab } from "react-bootstrap";
+import { Card } from "react-bootstrap";
+import { Modal } from "react-bootstrap";
+
 // import step1Img from "../assets/step1.png";
 // import step2Img from "../assets/step2.png";
+// import step3Img from "../assets/step3.png";
 import "bootstrap/dist/css/bootstrap.min.css";
 // import img2 from "../assets/Google.png";
 import { TfiWorld } from "react-icons/tfi";
-import {
-  FaRegImage,
-  FaRegFilePdf,
-  FaRegEdit,
-  FaArrowRight,
-  FaArrowLeft,
-} from "react-icons/fa";
+import { FaRegEdit } from "react-icons/fa";
+// FaRegImage
+// import { FaRegFilePdf } from "react-icons/fa";
+import { FaArrowRight } from "react-icons/fa";
+import { FaArrowLeft } from "react-icons/fa";
+// import { FaWhatsapp } from "react-icons/fa";
+// import { FaThumbsUp } from "react-icons/fa";
+import { FaWifi } from "react-icons/fa";
+// import { FaMusic } from "react-icons/fa";
 import { RiUserAddLine } from "react-icons/ri";
-import { MdVideoLibrary } from "react-icons/md";
-import { MdBlockFlipped } from "react-icons/md";
+import { MdEmail } from "react-icons/md";
+// import { MdBlockFlipped } from "react-icons/md";
+// MdVideoLibrary
 // import { FaChevronDown } from "react-icons/fa";
 // import { MdOutlinePianoOff } from "react-icons/md";
 // import {
@@ -38,34 +45,47 @@ import { MdBlockFlipped } from "react-icons/md";
 //   FaBuilding,
 // } from "react-icons/fa";
 // import { FaCircleCheck } from "react-icons/fa6";
-import {
-  FaChartLine,
-  FaEdit,
-  FaQrcode,
-  FaUsers,
-  FaFileDownload,
-  FaMagic,
-  FaBarcode,
-  FaDownload,
-  FaGlobe,
-  FaLock,
-  FaBolt,
-  FaFacebookF,
-  FaGoogle,
-} from "react-icons/fa";
+import { FaChartLine } from "react-icons/fa";
+import { FaEdit } from "react-icons/fa";
+import { FaQrcode } from "react-icons/fa";
+import { FaUsers } from "react-icons/fa";
+import { FaFileDownload } from "react-icons/fa";
+import { FaMagic } from "react-icons/fa";
+import { FaBarcode } from "react-icons/fa";
+import { FaDownload } from "react-icons/fa";
+import { FaGlobe } from "react-icons/fa";
+import { FaLock } from "react-icons/fa";
+import { FaBolt } from "react-icons/fa";
+import { FaFacebookF } from "react-icons/fa";
+import { FaGoogle } from "react-icons/fa";
+
 import qr_image_1 from "../assets/qr_image_1.png";
 import qr_image_2 from "../assets/qr_image_2.png";
 import qr_image_3 from "../assets/qr_image_3.png";
 import qr_image_4 from "../assets/qr_image_4.png";
 import qr_image_5 from "../assets/qr_image_5.png";
 import qr_image_6 from "../assets/qr_image_6.png";
-import img_7 from "../assets/img_7.png";
-import img_8 from "../assets/img_8.png";
-import img_9 from "../assets/img_9.png";
+// import img_7 from "../assets/img_7.png";
+// import img_8 from "../assets/img_8.png";
+// import img_9 from "../assets/img_9.png";
 import img_10 from "../assets/img_10.jpg";
 import img_11 from "../assets/img_11.png";
-import img1 from "../assets/logo.jpg";
+// import img1 from "../assets/logo.jpg";
+import { Whatsapp } from "react-bootstrap-icons";
 // import { useSearchParams } from "react-router-dom";
+import { Collapse } from "react-bootstrap";
+import { BsChatDotsFill } from "react-icons/bs";
+import { RxValueNone } from "react-icons/rx";
+import { SiWhatsapp } from "react-icons/si";
+import { RiLink } from "react-icons/ri";
+import { CiLocationOn } from "react-icons/ci";
+import { SlCalender } from "react-icons/sl";
+import { TfiEmail } from "react-icons/tfi";
+import { RiQrScan2Line } from "react-icons/ri";
+import { GrGallery } from "react-icons/gr";
+import { MdDinnerDining } from "react-icons/md";
+import { FaPaypal } from "react-icons/fa";
+import { FaBitcoin } from "react-icons/fa";
 
 const features = [
   {
@@ -141,29 +161,29 @@ const PixelIntegrationCard = () => (
   </Card>
 );
 
-const tabData = [
-  {
-    key: "QR code for weddings",
-    title: "Create a unique invitation for an unforgettable event.",
-    icon: "bi-heart-fill",
-    label: "QR code for weddings",
-    image: img_7,
-  },
-  {
-    key: "QR code for NGOs",
-    title: "Connect the world to your cause and facilitate donations.",
-    icon: "bi-piggy-bank",
-    label: "QR code for NGOs",
-    image: img_8,
-  },
-  {
-    key: "QR code for Photographers",
-    title: "Showcase your portfolio and grow your client base.",
-    icon: "bi-camera-reels",
-    label: "QR code for Photographers",
-    image: img_9,
-  },
-];
+// const tabData = [
+//   {
+//     key: "QR code for weddings",
+//     title: "Create a unique invitation for an unforgettable event.",
+//     icon: "bi-heart-fill",
+//     label: "QR code for weddings",
+//     image: img_7,
+//   },
+//   {
+//     key: "QR code for NGOs",
+//     title: "Connect the world to your cause and facilitate donations.",
+//     icon: "bi-piggy-bank",
+//     label: "QR code for NGOs",
+//     image: img_8,
+//   },
+//   {
+//     key: "QR code for Photographers",
+//     title: "Showcase your portfolio and grow your client base.",
+//     icon: "bi-camera-reels",
+//     label: "QR code for Photographers",
+//     image: img_9,
+//   },
+// ];
 
 const StarIcons = () => {
   return (
@@ -225,15 +245,47 @@ const StarIcons = () => {
 
 const QRGenerator = () => {
   const [url, setUrl] = useState("");
-  const [activeKey, setActiveKey] = useState("website");
+  const [activeKey, setActiveKey] = useState("wedding");
   const [activeTab, setActiveTab] = useState("website");
-  const frameOptions = [{ name: "Frame 1", image: null }];
+  const [showTypeModal, setShowTypeModal] = useState(false);
+  const [selectedLevel, setSelectedLevel] = useState("Level Q");
+  const [qrType, setQrType] = useState("website"); // default QR type
+
+  // vcard
+  const [showContact, setShowContact] = useState(false);
+  const [showLocation, setShowLocation] = useState(false);
+  const [showCompany, setShowCompany] = useState(false);
+
+  // const [activeTab, setActiveTab] = useState("wedding");
+
+  const content = {
+    wedding: {
+      title: "Create a unique invitation for an unforgettable event.",
+      button: "See more",
+      img: "/src/assets/img_7.png",
+    },
+    ngo: {
+      title: "Connect the world to your cause and facilitate donations.",
+      button: "See more",
+      img: "/src/assets/img_8.png",
+    },
+    photographer: {
+      title: "Share your portfolio instantly with a single scan.",
+      button: "See more",
+      img: "/src/assets/img_9.png",
+    },
+  };
 
   const tabContent = {
     website: (
       <>
-        <h4 className="fw-bold mb-3">QR Website</h4>
-        <p>Enter your website URL to generate a QR code for easy sharing.</p>
+        <h4 className="fw-bold mb-4">
+          <span className="step-number">1</span> QR Website
+        </h4>
+        <span className="text-muted no-delay mb-3">
+          Enter your website URL to generate a QR code for easy sharing.
+        </span>
+
         <Form.Group>
           <Form.Label>Enter your Website</Form.Label>
           <Form.Control
@@ -247,77 +299,362 @@ const QRGenerator = () => {
     ),
     text: (
       <>
-        <h4 className="fw-bold mb-3">QR Text</h4>
-        <p>Type any text you want to encode into a QR code.</p>
+        <h4 className="fw-bold mb-3">
+          <span className="step-number">1</span>QR Text
+        </h4>
+        <p className="text-muted no-delay">
+          Type any text you want to encode into a QR code.
+        </p>
         <Form.Control
           as="textarea"
           rows={3}
           placeholder="Enter your text here"
+          onChange={(e) => setUrl(e.target.value)}
         />
       </>
     ),
-    pdf: (
+    // pdf: (
+    //   <>
+    //     <h4 className="fw-bold mb-3">QR PDF</h4>
+    //     <p className="P_Tages_qr text-muted no-delay">
+    //       From menus to user guides to creative portfolios, give your clients
+    //       access to PDF documents quickly and efficiently.
+    //     </p>
+    //     <a href="signUP">
+    //       <Button variant="primary" className="rounded-pill">
+    //         Register now
+    //       </Button>
+    //     </a>
+    //   </>
+    // ),
+    // images: (
+    //   <>
+    //     <h4 className="fw-bold mb-3">QR Images</h4>
+    //     <p className="P_Tages_qr text-muted no-delay">
+    //       Share memories and special moments like never before through a QR
+    //       code, where each image tells a story and is accessible to everyone.
+    //     </p>
+    //     <a href="signUP">
+    //       <Button variant="primary" className="rounded-pill">
+    //         Register now
+    //       </Button>
+    //     </a>
+    //     {/* <p>Upload an image to create a QR code linking to it.</p>
+    //     <Form.Control type="file" /> */}
+    //   </>
+    // ),
+    vcard: (
       <>
-        <h4 className="fw-bold mb-3">QR PDF</h4>
-        <p className="P_Tages_qr">
-          From menus to user guides to creative portfolios, give your clients
-          access to PDF documents quickly and efficiently.
-        </p>
-        <a href="signUP">
-          <Button variant="primary" className="rounded-pill">
-            Register now
+        <h4 className="fw-bold mb-3">
+          <span className="step-number">1</span> Complete the content
+        </h4>
+
+        <Form>
+          {/* Name and Surname */}
+          <Row className="mb-3">
+            <Col>
+              <Form.Group>
+                <Form.Label>Name *</Form.Label>
+                <Form.Control type="text" placeholder="E.g. Paul" />
+              </Form.Group>
+            </Col>
+            <Col>
+              <Form.Group>
+                <Form.Label>Surname</Form.Label>
+                <Form.Control type="text" placeholder="E.g. Jones" />
+              </Form.Group>
+            </Col>
+          </Row>
+
+          {/* Contact Info */}
+          <Button
+            variant="light"
+            className="w-100 text-start border mb-2"
+            onClick={() => setShowContact(!showContact)}
+            aria-controls="contact-info"
+            aria-expanded={showContact}
+          >
+            Contact info {showContact ? "▲" : "▼"}
           </Button>
-        </a>
+          <Collapse in={showContact}>
+            <div id="contact-info" className="border p-3 mb-3 rounded">
+              <Button variant="outline-primary" className="mb-3">
+                + Add Phone
+              </Button>
+              <Form.Group className="mb-3">
+                <Form.Label>Email</Form.Label>
+                <Form.Control type="email" placeholder="E.g. name@email.com" />
+              </Form.Group>
+              <Form.Group className="mb-3">
+                <Form.Label>Personal website</Form.Label>
+                <Form.Control type="url" placeholder="https://..." />
+              </Form.Group>
+            </div>
+          </Collapse>
+
+          {/* Location */}
+          <Button
+            variant="light"
+            className="w-100 text-start border mb-2"
+            onClick={() => setShowLocation(!showLocation)}
+            aria-controls="location-info"
+            aria-expanded={showLocation}
+          >
+            Location {showLocation ? "▲" : "▼"}
+          </Button>
+          <Collapse in={showLocation}>
+            <div id="location-info" className="border p-3 mb-3 rounded">
+              <div className="d-flex mb-3">
+                <Button variant="outline-primary" className="me-2">
+                  Complete
+                </Button>
+                <Button variant="outline-secondary" disabled>
+                  Url
+                </Button>
+                <Button variant="outline-secondary" disabled>
+                  Coordinates
+                </Button>
+              </div>
+              <Row className="mb-3">
+                <Col>
+                  <Form.Control placeholder="Search address" />
+                </Col>
+                <Col xs="auto">
+                  <Button variant="outline-primary">Manual entry</Button>
+                </Col>
+              </Row>
+            </div>
+          </Collapse>
+
+          {/* Company */}
+          <Button
+            variant="light"
+            className="w-100 text-start border mb-2"
+            onClick={() => setShowCompany(!showCompany)}
+            aria-controls="company-info"
+            aria-expanded={showCompany}
+          >
+            Company {showCompany ? "▲" : "▼"}
+          </Button>
+          <Collapse in={showCompany}>
+            <div id="company-info" className="border p-3 rounded">
+              <Row>
+                <Col>
+                  <Form.Group className="mb-3">
+                    <Form.Label>Company</Form.Label>
+                    <Form.Control placeholder="E.g. Company LLC" />
+                  </Form.Group>
+                </Col>
+                <Col>
+                  <Form.Group className="mb-3">
+                    <Form.Label>Title</Form.Label>
+                    <Form.Control placeholder="E.g. Your profession/position" />
+                  </Form.Group>
+                </Col>
+              </Row>
+            </div>
+          </Collapse>
+        </Form>
       </>
     ),
-    images: (
+
+    whatsapp: (
       <>
-        <h4 className="fw-bold mb-3">QR Images</h4>
-        <p className="P_Tages_qr">
-          Share memories and special moments like never before through a QR
-          code, where each image tells a story and is accessible to everyone.
-        </p>
-        <a href="signUP">
-          <Button variant="primary" className="rounded-pill">
-            Register now
-          </Button>
-        </a>
-        {/* <p>Upload an image to create a QR code linking to it.</p>
-        <Form.Control type="file" /> */}
+        <h4 className="fw-bold mb-3">
+          <span className="step-number">1</span>
+          Complete the content
+        </h4>
+        <p className="text-muted no-delay">Number</p>
+        <Form.Control
+          as="textarea"
+          rows={1}
+          placeholder="Enter your text here"
+          onChange={(e) => setUrl(e.target.value)}
+        />
+        <p className="text-muted no-delay">Message</p>
+        <Form.Control
+          as="textarea"
+          rows={3}
+          placeholder="Enter your text here"
+          onChange={(e) => setUrl(e.target.value)}
+        />
       </>
     ),
-    vCard: (
+    email: (
       <>
-        <h4 className="fw-bold mb-3">QR vCard</h4>
-        <p className="P_Tages_qr">
-          Transform your business card into an interactive digital experience,
-          where your contacts can access all your information and social
-          networks with just a scan.
-        </p>
-        <a href="signUP">
-          <Button variant="primary" className="rounded-pill">
-            Register now
-          </Button>
-        </a>
-        {/* <Form.Control type="text" placeholder="Full Name" className="mb-2" />
-        <Form.Control type="email" placeholder="Email" className="mb-2" /> */}
+        <h4 className="fw-bold mb-3">
+          <span className="step-number">1</span>
+          Complete the content
+        </h4>
+        <p className="text-muted no-delay">Email</p>
+        <Form.Control
+          as="textarea"
+          rows={1}
+          placeholder="Enter your text here"
+          onChange={(e) => setUrl(e.target.value)}
+          required
+        />
+        <p className="text-muted no-delay">Subject</p>
+        <Form.Control
+          as="textarea"
+          rows={1}
+          placeholder="Enter your text here"
+          onChange={(e) => setUrl(e.target.value)}
+          required
+        />
+        <p className="text-muted no-delay">Message</p>
+        <Form.Control
+          as="textarea"
+          rows={3}
+          placeholder="Enter your text here"
+          onChange={(e) => setUrl(e.target.value)}
+          required
+        />
       </>
     ),
-    video: (
+    SMS: (
       <>
-        <h4 className="fw-bold mb-3">QR Video</h4>
-        <p className="P_Tages_qr">
-          Make it easy to access tutorials, trailers, or educational content.
-          Increase the visibility of your content by sharing videos easily.
-        </p>
-        <a href="signUP">
-          <Button variant="primary" className="rounded-pill">
-            Register now
-          </Button>
-        </a>
+        <h4 className="fw-bold mb-3">
+          <span className="step-number">1</span>
+          Complete the content
+        </h4>
+        <p className="text-muted no-delay">Number</p>
+        <Form.Control
+          as="textarea"
+          rows={1}
+          placeholder="Enter your text here"
+          onChange={(e) => setUrl(e.target.value)}
+        />
+        <p className="text-muted no-delay">Message</p>
+        <Form.Control
+          as="textarea"
+          rows={3}
+          placeholder="Enter your text here"
+          onChange={(e) => setUrl(e.target.value)}
+        />
+      </>
+    ),
+    // video: (
+    //   <>
+    //     <h4 className="fw-bold mb-3">QR Video</h4>
+    //     <p className="P_Tages_qr text-muted no-delay">
+    //       Make it easy to access tutorials, trailers, or educational content.
+    //       Increase the visibility of your content by sharing videos easily.
+    //     </p>
+    //     <a href="signUP">
+    //       <Button variant="primary" className="rounded-pill">
+    //         Register now
+    //       </Button>
+    //     </a>
+    //     {/* <Form.Control type="url" placeholder="Video URL" /> */}
+    //   </>
+    // ),
+    // whatsapp: (
+    //   <>
+    //     <h4 className="fw-bold mb-3">QR Video</h4>
+    //     <p className="P_Tages_qr text-muted no-delay">
+    //       Make it easy to access tutorials, trailers, or educational content.
+    //       Increase the visibility of your content by sharing videos easily.
+    //     </p>
+    //     <a href="signUP">
+    //       <Button variant="primary" className="rounded-pill">
+    //         Register now
+    //       </Button>
+    //     </a>
+    /* <Form.Control type="url" placeholder="Video URL" /> */
+    //   </>
+    // ),
+    // social: (
+    //   <>
+    //     <h4 className="fw-bold mb-3">QR Video</h4>
+    //     <p className="P_Tages_qr text-muted no-delay">
+    //       Make it easy to access tutorials, trailers, or educational content.
+    //       Increase the visibility of your content by sharing videos easily.
+    //     </p>
+    //     <a href="signUP">
+    //       <Button variant="primary" className="rounded-pill">
+    //         Register now
+    //       </Button>
+    //     </a>
+    //     {/* <Form.Control type="url" placeholder="Video URL" /> */}
+    //   </>
+    // ),
+    wifi: (
+      <>
+        <h4 className="fw-bold mb-3">
+          <span className="step-number text-white">1</span> Complete the content
+        </h4>
+
+        <div className="row g-3 mb-4 align-items-center">
+          <div className="col-md-4">
+            <label className="form-label">Network name (SSID)*</label>
+            <input
+              type="text"
+              placeholder="E.g. HomeWifi"
+              className="form-control p-2"
+              required
+            />
+          </div>
+
+          <div className="col-md-4">
+            <label className="form-label">Network password</label>
+            <input
+              type="text"
+              placeholder="E.g. Mypassword"
+              className="form-control p-2"
+              required
+            />
+          </div>
+        </div>
+        <div className="row g-4 align-items-center mb-4">
+          <div className="col-md-4 col-sm-6">
+            <label className="form-label fw-bold">Security</label>
+            <select className="form-select p-2">
+              <option value="wep">WEP</option>
+              <option value="wpa">WPA</option>
+              <option value="wpa2-eap">WPA2-EAP</option>
+              <option value="nopass">No Password</option>
+            </select>
+          </div>
+
+          <div className="col-md-4 col-sm-6">
+            <div className="form-check d-flex align-items-center mt-4">
+              <input
+                type="checkbox"
+                id="hiddenNetwork"
+                style={{ width: "20px", height: "20px" }}
+                className="form-check-input me-2"
+              />
+              <label
+                htmlFor="hiddenNetwork"
+                className="form-check-label fw-bold"
+              >
+                Hidden Network
+              </label>
+            </div>
+          </div>
+        </div>
         {/* <Form.Control type="url" placeholder="Video URL" /> */}
       </>
     ),
+    // mp3: (
+    //   <>
+    //     <h4 className="fw-bold mb-3">QR Video</h4>
+    //     <p
+    //       className="P_Tages_qr text-muted no-delay
+    //     "
+    //     >
+    //       Make it easy to access tutorials, trailers, or educational content.
+    //       Increase the visibility of your content by sharing videos easily.
+    //     </p>
+    //     <a href="signUP">
+    //       <Button variant="primary" className="rounded-pill">
+    //         Register now
+    //       </Button>
+    //     </a>
+    //     {/* <Form.Control type="url" placeholder="Video URL" /> */}
+    //   </>
+    // ),
   };
   //   const [qrcode, setQrcode] = useState([]);
 
@@ -338,6 +675,82 @@ const QRGenerator = () => {
   //     fetchData();
   //   }, []);
 
+  const qrImages = {
+    website:
+      "https://qrcodegenstor.blob.core.windows.net/media/qr_codes/22/5544466b-77d3-452f-9dbf-058d3364cbec.png?se=2025-08-20T11%3A48%3A55Z&sp=r&sv=2025-07-05&sr=b&sig=azvG9X6exxYAAk2jXGZyhLzxGhVUJ2Jnme7MigVy2zo%3D",
+    text: "https://qrcodegenstor.blob.core.windows.net/media/qr_codes/22/4e7f1abb-2ccd-40ea-ab95-20d3083d0dcf.png?se=2025-08-20T11%3A50%3A06Z&sp=r&sv=2025-07-05&sr=b&sig=L1vuOFWF0y53XE95a%2BCaaqZMhZHA4SAn2MsXrwRiUgs%3D",
+    email:
+      "https://qrcodegenstor.blob.core.windows.net/media/qr_codes/22/50951a51-2b9e-410c-9c00-8dee0e73f34c.png?se=2025-08-20T11%3A49%3A43Z&sp=r&sv=2025-07-05&sr=b&sig=gM3y5AP4z%2BG22BALj0in28h6rVCnV4TaX9ebkxRCXhM%3D",
+    vcard:
+      "https://qrcodegenstor.blob.core.windows.net/media/qr_codes/22/1f5a4673-7d71-400b-8709-8e69b1ffaa19.png?se=2025-08-20T11%3A49%3A53Z&sp=r&sv=2025-07-05&sr=b&sig=A5cznjEIH7wARvXyhQ8ZLmpRVRrjXcT3%2BSNr96fVTw8%3D",
+    wifi: "https://qrcodegenstor.blob.core.windows.net/media/qr_codes/22/339542d4-44e8-40d9-8c84-754cd953b391.png?se=2025-08-20T11%3A50%3A13Z&sp=r&sv=2025-07-05&sr=b&sig=3u1hWC7tJ0KBzYwXhI3BL451iQjf6umr/LeZ7aXvdfw%3D",
+    whatsapp:
+      "https://qrcodegenstor.blob.core.windows.net/media/qr_codes/22/fae1d3a8-8eaa-4091-b22d-413afa476d8e.png?se=2025-08-20T11%3A50%3A01Z&sp=r&sv=2025-07-05&sr=b&sig=rzjzuvk7qfuvXH3LXgk17anPFcXT8uR7cXSmM5QHpnI%3D",
+    SMS: "https://qrcodegenstor.blob.core.windows.net/media/qr_codes/22/f347bbf0-d0e2-4812-bd0d-b94d8394a7d8.png?se=2025-08-20T11%3A49%3A37Z&sp=r&sv=2025-07-05&sr=b&sig=RmP/e3bwQwLmbhTNMopr5hgnEfOmS%2BO6omT0dUTM7x0%3D",
+  };
+  // mp3: "https://via.placeholder.com/200x200.png?text=MP3+QR",
+  // pdf: "https://via.placeholder.com/200x200.png?text=PDF+QR",
+  // video: "https://via.placeholder.com/200x200.png?text=Video+QR",
+  // whatsapp: "https://via.placeholder.com/200x200.png?text=WhatsApp+QR",
+  // social: "https://via.placeholder.com/200x200.png?text=Social+QR",
+  // images: "https://via.placeholder.com/200x200.png?text=Images+QR",
+
+  const frameOptions = [
+    {
+      key: "none",
+      image: null,
+      slot: { top: 0, left: 20, width: 60, height: 60 },
+    }, // fallback, centered
+    {
+      key: "simple",
+      image: "/src/assets/frame_1.png",
+      slot: { top: 1, left: 23, width: 55, height: 55 },
+    },
+    {
+      key: "envelope",
+      image: "/src/assets/frame_3.png",
+      slot: { top: 5, left: 24, width: 55, height: 52 },
+    },
+    {
+      key: "tray",
+      image: "/src/assets/frame_4.png",
+      slot: { top: 15, left: 22, width: 56, height: 56 },
+    },
+    {
+      key: "scanme",
+      image: "/src/assets/frame_5.png",
+      slot: { top: 22, left: 15, width: 66, height: 62 },
+    },
+    {
+      key: "mug",
+      image: "/src/assets/frame_7.png",
+      slot: { top: 8, left: 0, width: 38, height: 38 },
+    },
+    // Scooter-like frame: QR sits a bit right-of-center and smaller
+    {
+      key: "scooter",
+      image: "/src/assets/frame_6.png",
+      slot: { top: 24, left: 20, width: 58, height: 50 },
+    },
+    {
+      key: "alt",
+      image: "/src/assets/frame_2.png",
+      slot: { top: 0, left: 10, width: 80, height: 80 },
+    },
+  ];
+
+  const DEFAULT_SLOT = { top: 20, left: 20, width: 60, height: 60 };
+  const QUIET_ZONE_PCT = 3; // white margin around QR inside slot
+
+  const [selectedFrameIndex, setSelectedFrameIndex] = useState(0);
+  // selectedFrameIndex (your state)
+  const selectedFrame = frameOptions[selectedFrameIndex] || frameOptions[0];
+  const slot = selectedFrame?.slot || DEFAULT_SLOT;
+
+  const qr = qrImages[qrType];
+
+  // const selectedFrame = frameOptions[selectedFrameIndex];
+
   const sliderRef = useRef();
 
   const scroll = (direction) => {
@@ -347,136 +760,1180 @@ const QRGenerator = () => {
     else container.scrollLeft += scrollAmount;
   };
 
-  //   const { title, desc, button } = getTabContent(activeKey);
+  const qrTypes = [
+    { key: "website", icon: <TfiWorld />, label: "Website" },
+    { key: "text", icon: <FaRegEdit />, label: "Text" },
+    { key: "vcard", icon: <RiUserAddLine />, label: "vCard" },
+    { key: "wifi", icon: <FaWifi />, label: "Wi-Fi" },
+    { key: "whatsapp", icon: <Whatsapp />, label: "whatsapp" },
+    { key: "email", icon: <MdEmail />, label: "email" },
+    { key: "SMS", icon: <BsChatDotsFill />, label: "SMS" },
+  ];
+  // { key: "pdf", icon: <FaRegFilePdf />, label: "PDF" },
+  // { key: "images", icon: <FaRegImage />, label: "Images" },
+  // { key: "mp3", icon: <FaMusic />, label: "MP3" },
+  // { key: "video", icon: <MdVideoLibrary />, label: "Video" },
+  // { key: "whatsapp", icon: <FaWhatsapp />, label: "WhatsApp" },
+  // { key: "social", icon: <FaThumbsUp />, label: "Social" },
+
+
+  // const [selectedFrame, setSelectedFrame] = useState(frameOptions[0]);
+  const [frameText, setFrameText] = useState("");
+  const [textColor, setTextColor] = useState("#000000");
+  const [qrColor, setQrColor] = useState("#000000");
+  const [bgColor, setBgColor] = useState("#FFFFFF");
+  const [mobileStep, setMobileStep] = useState("content"); // "content" | "design"
+
+
+  // const { title, desc, button } = getTabContent(activeKey);
 
   return (
     <>
-      <div className="container bg-light min-vh-50 rounded py-5">
-        <Container className="bg-white p-4 rounded shadow-sm py-5">
-          <Tabs
-            activeKey={activeTab}
-            onSelect={(k) => setActiveTab(k)}
-            className="mb-4 custom-tabs"
-          >
-            <Tab
-              eventKey="website"
-              title={
-                <>
-                  <TfiWorld /> Website
-                </>
-              }
-            />
-            <Tab
-              eventKey="text"
-              title={
-                <>
-                  <FaRegEdit /> Text
-                </>
-              }
-            />
-            <Tab
-              eventKey="pdf"
-              title={
-                <>
-                  <FaRegFilePdf /> PDF
-                </>
-              }
-            />
-            <Tab
-              eventKey="images"
-              title={
-                <>
-                  <FaRegImage /> Images
-                </>
-              }
-            />
-            <Tab
-              eventKey="vCard"
-              title={
-                <>
-                  <RiUserAddLine /> vCard Plus
-                </>
-              }
-            />
-            <Tab
-              eventKey="video"
-              title={
-                <>
-                  <MdVideoLibrary /> Video
-                </>
-              }
-            />
-          </Tabs>
-
+      <div className="container-fluid bg-light rounded py-4">
+        {/* DESKTOP / LAPTOP (md and up) */}
+        <Container className="bg-white p-4 rounded shadow-sm d-none d-md-block">
           <Row>
-            {/* Left section changes based on tab */}
-            <Col lg={8}>
-              {tabContent[activeTab]}
+            {/* Left: tabs + content + design */}
+            <Col md={8}>
+              <Tabs
+                activeKey={activeTab}
+                onSelect={(k) => {
+                  setActiveTab(k || "website");
+                  setQrType(k || "website"); // 🔥 update QR type
+                }}
+              >
+                {qrTypes.map((t) => (
+                  <Tab
+                    key={t.key}
+                    eventKey={t.key}
+                    title={
+                      <span className="d-inline-flex align-items-center gap-2">
+                        {t.icon}
+                        {t.label}
+                      </span>
+                    }
+                  >
+                    <div className="pt-3">
+                      {tabContent[t.key]}
+                    </div>
+                  </Tab>
+                ))}
+              </Tabs>
 
-              {/* Optional: frame customization for all tabs */}
-              {activeTab === "website" && (
-                <div className="mt-4">
-                  <h5 className="fw-bold">
-                    <span className="step-number">2</span> Design your QR
-                  </h5>
-                  <Tabs defaultActiveKey="frame" className="mb-3">
-                    <Tab eventKey="frame" title="Frame">
-                      <div className="d-flex gap-3 flex-wrap">
-                        {frameOptions.map((frame, idx) => (
-                          <div key={idx} className="frame-box">
-                            {frame.image ? (
-                              <img src={frame.image} alt={frame.name} />
-                            ) : (
-                              <MdBlockFlipped size={32} />
-                            )}
+              {/* Step 2 – Design your QR (matches your desktop screenshot) */}
+              <div className="mt-4 border rounded p-3">
+                <h5 className="fw-bold mb-3">
+                  <span className="step-number">2</span>
+                  Design your QR
+                </h5>
+
+                <Tabs defaultActiveKey="frame" className="mb-3">
+                  <Tab eventKey="frame" title="Frame">
+                    {/* Frame Selection */}
+                    <div className="d-flex gap-3 overflow-auto pb-2 mb-3">
+                      <div>
+                        {/* Frame Selector Grid */}
+                        <div
+                          style={{
+                            display: "flex",
+                            gap: "0.5rem",
+                            overflowX: "auto",
+                          }}
+                        >
+                          {frameOptions.map((frame, idx) => (
+                            <div
+                      key={idx}
+                      role="button"
+                      className={`border rounded text-center p-2 ${
+                        selectedFrameIndex === idx ? "border-primary bg-light" : ""
+                      }`}
+                      style={{
+                        width: 130,
+                        height: 150,
+                        flex: "0 0 auto",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        position: "relative",
+                        cursor: "pointer",
+                      }}
+                      onClick={() => setSelectedFrameIndex(idx)}
+                    >
+                      {/* Frame Preview */}
+                      {frame.image ? (
+                        <img
+                          src={frame.image}
+                          alt={`Frame ${idx}`}
+                          loading={idx === 0 ? "eager" : "lazy"}
+                          style={{
+                            width: "100%",
+                            height: "100%",
+                            objectFit: "cover",
+                            borderRadius: "6px",
+                            position: "absolute", // Frame at bottom
+                            top: 0,
+                            left: 0,
+                            zIndex: 1,
+                          }}
+                        />
+                      ) : (
+                        <small className="text-muted">No Frame</small>
+                      )}
+
+                      {/* QR Overlay */}
+                      <img
+                        src={qr}
+                        alt="QR Code Preview"
+                        style={{
+                          position: "absolute",
+                          width: "50%",   // adjust to fit frame
+                          height: "50%",
+                          objectFit: "contain",
+                          zIndex: 2,      // QR above frame
+                          top: "15%",     // centered
+                          left: "25%",
+                          pointerEvents: "none",
+                        }}
+                      />
+                    </div>
+
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Frame Settings */}
+                    <div className="bg-light p-3 rounded">
+                      <div className="mb-3">
+                        <label className="form-label fw-bold">Text</label>
+                        <input
+                          type="text"
+                          className="form-control"
+                          placeholder="Scan me!"
+                          value={frameText}
+                          onChange={(e) => setFrameText(e.target.value)}
+                        />
+                      </div>
+
+                      <Row className="g-3">
+                        <Col md={4}>
+                          <label className="form-control fw-bold">
+                            Text color
+                            <input
+                              type="color"
+                              className="form-control-color ms-2"
+                              value={textColor}
+                              onChange={(e) => setTextColor(e.target.value)}
+                            />
+                          </label>
+                        </Col>
+                        <Col md={4}>
+                          <label className="form-control fw-bold">
+                            Colour
+                            <input
+                              type="color"
+                              className="form-control-color ms-2"
+                              value={qrColor}
+                              onChange={(e) => setQrColor(e.target.value)}
+                            />
+                          </label>
+                        </Col>
+                        <Col md={4}>
+                          <label className="form-control fw-bold">
+                            Background colour
+                            <input
+                              type="color"
+                              className="form-control-color ms-2"
+                              value={bgColor}
+                              onChange={(e) => setBgColor(e.target.value)}
+                            />
+                          </label>
+                        </Col>
+                      </Row>
+                    </div>
+                  </Tab>
+
+                  <Tab eventKey="shape" title="Shape">
+                    <div className="mt-4">
+                      {/* Shape Style Section */}
+                      <div className="border rounded p-3 mb-4">
+                        <h5 className="fw-bold mb-3">Shape style</h5>
+                        <div className="d-flex flex-wrap gap-2 mb-3">
+                          {[...Array(8)].map((_, i) => (
+                            <button
+                              key={`shape-${i + 1}`} // ✅ clearer, more explicit
+                              className="btn btn-light border p-2"
+                              style={{
+                                width: "50px",
+                                height: "50px",
+                                objectFit: "contain",
+                              }}
+                            >
+                              <img
+                                src={`/shapes/shape${i + 1}.png`}
+                                alt={`Shape ${i + 1}`}
+                                className="img-fluid"
+                              />
+                            </button>
+                          ))}
+                        </div>
+                        <br />
+                        <div className="d-flex gap-3 align-items-center">
+                          <div>
+                            <label className="form-label">
+                              Border colour
+                              <input
+                                type="color"
+                                className="form-control form-control-color"
+                                defaultValue="#000000"
+                              />
+                            </label>
+                          </div>
+                          <div>
+                            <label className="form-label">
+                              Background colour
+                              <input
+                                type="color"
+                                className="form-control form-control-color"
+                                defaultValue="#FFFFFF"
+                              />
+                            </label>
+                          </div>
+                          <button className="btn btn-outline-primary mt-4">
+                            Invert
+                          </button>
+                        </div>
+                      </div>
+
+                      {/* Border & Center Style Section */}
+                      <div className="border rounded p-3">
+                        <h5 className="fw-bold mb-3">Border style</h5>
+                        <div className="d-flex flex-wrap gap-2 mb-3">
+                          {[...Array(10)].map((_, i) => (
+                            <button
+                              key={`border-${i + 1}`} // ✅ key on top-level element
+                              className="btn btn-light border p-2"
+                              style={{ width: "50px", height: "50px" }}
+                            >
+                              <img
+                                src={`/borders/border${i + 1}.png`}
+                                alt={`Border ${i + 1}`}
+                                className="img-fluid"
+                              />
+                            </button>
+                          ))}
+                        </div>
+                        <br />
+                        <h5 className="fw-bold mb-3">Center style</h5>
+                        <div className="d-flex flex-wrap gap-2 mb-3">
+                          {[...Array(10)].map((_, i) => (
+                            <button
+                              key={`center-${i + 1}`} // ✅ better than just `i`
+                              className="btn btn-light border p-2"
+                              style={{ width: "50px", height: "50px" }}
+                            >
+                              <img
+                                src={`/centers/center${i + 1}.png`}
+                                alt={`Center ${i + 1}`}
+                                className="img-fluid"
+                              />
+                            </button>
+                          ))}
+                        </div>
+                        <br />
+                        <div className="d-flex gap-3 align-items-center">
+                          <div>
+                            <label className="form-label">Border colour</label>
+                            <input
+                              type="color"
+                              className="form-control form-control-color"
+                              defaultValue="#000000"
+                            />
+                          </div>
+                          <div>
+                            <label className="form-label">
+                              Background colour
+                            </label>
+                            <input
+                              type="color"
+                              className="form-control form-control-color"
+                              defaultValue="#000000"
+                            />
+                          </div>
+                          <button className="btn btn-outline-primary mt-4">
+                            Invert
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </Tab>
+
+                  <Tab eventKey="logo" title="Logo">
+                    <div className="p-3">
+                      <h6 className="mb-3 fw-bold">Select a logo</h6>
+
+                      {/* Logo options */}
+                      <div
+                        className="d-flex gap-3 overflow-auto mb-3 pb-2"
+                        style={{ whiteSpace: "nowrap" }}
+                      >
+                        <div
+                          role="button"
+                          className="border rounded p-2 text-center"
+                        >
+                          <RxValueNone className="LoGo_122" />
+                        </div>
+                        <div
+                          role="button"
+                          className="border rounded p-2 text-center"
+                        >
+                          <SiWhatsapp className="LoGo_122" />
+                        </div>
+                        <div
+                          role="button"
+                          className="border rounded p-2 text-center"
+                        >
+                          <RiLink className="LoGo_122" />
+                        </div>
+                        <div
+                          role="button"
+                          className="border rounded p-2 text-center"
+                        >
+                          <CiLocationOn className="LoGo_122" />
+                        </div>
+                        <div
+                          role="button"
+                          className="border rounded p-2 text-center"
+                        >
+                          <FaWifi className="LoGo_122" />
+                        </div>
+                        <div
+                          role="button"
+                          className="border rounded p-2 text-center"
+                        >
+                          <SlCalender className="LoGo_122" />
+                        </div>
+                        <div
+                          role="button"
+                          className="border rounded p-2 text-center"
+                        >
+                          <TfiEmail className="LoGo_122" />
+                        </div>
+                        <div
+                          role="button"
+                          className="border rounded p-2 text-center"
+                        >
+                          <RiQrScan2Line className="LoGo_122" />
+                        </div>
+                        <div
+                          role="button"
+                          className="border rounded p-2 text-center"
+                        >
+                          <GrGallery className="LoGo_122" />
+                        </div>
+                        <div
+                          role="button"
+                          className="border rounded p-2 text-center"
+                        >
+                          <MdDinnerDining className="LoGo_122" />
+                        </div>
+                        <div
+                          role="button"
+                          className="border rounded p-2 text-center"
+                        >
+                          <FaQrcode className="LoGo_122" />
+                        </div>
+                        <div
+                          role="button"
+                          className="border rounded p-2 text-center"
+                        >
+                          <FaPaypal className="LoGo_122" />
+                        </div>
+                        <div
+                          role="button"
+                          className="border rounded p-2 text-center"
+                        >
+                          <FaBitcoin className="LoGo_122" />
+                        </div>
+                      </div>
+
+                      {/* Upload logo */}
+                      <div className="border rounded p-3 text-center">
+                        <input
+                          type="file"
+                          accept="image/*"
+                          className="form-control"
+                        />
+                      </div>
+                    </div>
+                  </Tab>
+
+                  <Tab eventKey="level" title="Level">
+                    <div className="mt-3">
+                      <h6 className="fw-bold mb-3">Select a level</h6>
+                      <div className="d-flex gap-4 flex-wrap">
+                        {[
+                          {
+                            name: "Level Q",
+                            percent: "25%",
+                            img: "your-q-image.png",
+                          },
+                          {
+                            name: "Level H",
+                            percent: "30%",
+                            img: "your-h-image.png",
+                          },
+                          {
+                            name: "Level M",
+                            percent: "15%",
+                            img: "your-m-image.png",
+                          },
+                          {
+                            name: "Level L",
+                            percent: "7%",
+                            img: "your-l-image.png",
+                          },
+                        ].map((level) => (
+                          <div
+                            key={level.name} // ✅ better: unique & stable
+                            role="button"
+                            onClick={() => setSelectedLevel(level.name)}
+                            className={`border rounded p-2 text-center ${
+                              selectedLevel === level.name
+                                ? "border-primary bg-light"
+                                : ""
+                            }`}
+                            style={{
+                              cursor: "pointer",
+                              width: "auto",
+                              height: "100px",
+                            }}
+                          >
+                            <img
+                              src={level.img}
+                              alt={level.name}
+                              className="img-fluid"
+                              style={{ width: "80px", height: "80px" }}
+                            />
+                            <div className="mt-2 small fw-semibold">
+                              {level.name}
+                            </div>
+                            <div className="text-muted">{level.percent}</div>
                           </div>
                         ))}
                       </div>
-                    </Tab>
-                    <Tab eventKey="shape" title="Shape" />
-                    <Tab eventKey="logo" title="Logo" />
-                    <Tab eventKey="level" title="Level" />
-                  </Tabs>
-                </div>
-              )}
+                    </div>
+                  </Tab>
+                </Tabs>
+              </div>
             </Col>
 
-            {/* Right section stays same for all */}
-            <Col lg={4}>
-              <div className="qr-preview-box text-center">
-                <h5 className="fw-bold mb-3">
-                  <span className="step-number">3</span> Download your QR
-                </h5>
-                <div className="qr-code-display mb-3">
-                  {/* <div>
-                    {Array.isArray(qrcode) &&
-                      qrcode.map((item) => (
-                        <img src={item.qr_image} alt="qr" />
-                      ))}
-                  </div> */}
-                  <img
-                    src="https://qrcodegen-e4bccbhbd7edh9bp.centralindia-01.azurewebsites.net/media/qr_codes/5/27bd785a-2fbb-4930-945b-b414e9e1cfba.png"
-                    alt=""
-                    className="img-fluid"
-                  />
-                </div>
+            {/* Right: Preview + Download (matches your desktop screenshot) */}
+            <Col md={4} className="text-center">
+              <h5 className="fw-bold mb-3">
+                <span className="step-number">3</span>
+                Download your QR
+              </h5>
 
-                <Dropdown>
-                  <Dropdown.Toggle
-                    variant="light"
-                    className="rounded-pill border w-100"
+              <div
+                style={{
+                  position: "relative",
+                  width: "360px", // change as you like
+                  aspectRatio: "1 / 1", // keep preview square; change if you want to match frame aspect
+                  // border: "1px dashed #ddd",
+                }}
+              >
+                {/* Frame (background or foreground—most frames work fine behind the QR) */}
+                {selectedFrame?.image && (
+                  <img
+                    src={selectedFrame.image}
+                    alt="Selected Frame"
+                    style={{
+                      position: "absolute",
+                      inset: 0,
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "contain",
+                      zIndex: 1,
+                      pointerEvents: "none",
+                    }}
+                  />
+                )}
+
+                {/* QR SLOT */}
+                <div
+                  style={{
+                    position: "absolute",
+                    top: `${slot.top}%`,
+                    left: `${slot.left}%`,
+                    width: `${slot.width}%`,
+                    height: `${slot.height}%`,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    zIndex: 2,
+                    // optional: visualize the slot while tuning
+                    // outline: "1px dashed rgba(0,0,0,.2)",
+                  }}
+                >
+                  {/* Quiet zone: keep a little white margin so scanners read it reliably */}
+                  <div
+                    style={{
+                      position: "relative",
+                      width: `${100 - QUIET_ZONE_PCT * 2}%`,
+                      height: `${100 - QUIET_ZONE_PCT * 2}%`,
+                      background: "#fff",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
                   >
-                    Download QR
-                  </Dropdown.Toggle>
-                  <Dropdown.Menu>
-                    <Dropdown.Item>PNG</Dropdown.Item>
-                    <Dropdown.Item>SVG</Dropdown.Item>
-                    <Dropdown.Item>PDF</Dropdown.Item>
-                  </Dropdown.Menu>
-                </Dropdown>
+                   <img
+                      src={qr}
+                      alt="QR Code"
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "contain",
+                      }}
+                    />
+
+                  </div>
+                </div>
+              </div>
+
+              <Dropdown>
+                <Dropdown.Toggle
+                  variant="light"
+                  className="rounded-pill border w-100"
+                >
+                  Download QR
+                </Dropdown.Toggle>
+                <Dropdown.Menu>
+                  <Dropdown.Item>PNG</Dropdown.Item>
+                  <Dropdown.Item>SVG</Dropdown.Item>
+                  <Dropdown.Item>PDF</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+            </Col>
+          </Row>
+        </Container>
+
+        {/* MOBILE (under md) – matches your mobile screenshots */}
+        <Container className="bg-white p-3 rounded shadow-sm d-md-none">
+          {/* preview card */}
+          <div className="border rounded p-3 mb-3">
+            <div className="text-center text-muted small mb-2">Preview</div>
+            <div
+              className="border rounded d-flex align-items-center justify-content-center mb-3"
+              style={{ height: 220 }}
+            >
+              <img
+                src={qrImages[qrType]}
+                alt="QR Code"
+                style={{
+                  width: "250px",
+                  height: "250px",
+                  objectFit: "contain",
+                  border: "1px solid #ddd",
+                }}
+              />
+            </div>
+
+            {/* step toggles */}
+            <div className="d-flex gap-2 mb-3">
+              <Button
+                size="sm"
+                variant={mobileStep === "content" ? "primary" : "light"}
+                className="flex-fill"
+                onClick={() => setMobileStep("content")}
+              >
+                <span className="badge bg-dark me-2">1</span>Content
+              </Button>
+              <Button
+                size="sm"
+                variant={mobileStep === "design" ? "primary" : "light"}
+                className="flex-fill"
+                onClick={() => setMobileStep("design")}
+              >
+                <span className="badge bg-primary me-2">2</span>Design
+              </Button>
+            </div>
+
+            {/* Content step */}
+            {mobileStep === "content" && (
+              <>
+                <Button
+                  variant="light"
+                  className="w-100 border rounded mb-3 d-flex justify-content-between align-items-center"
+                  onClick={() => setShowTypeModal(true)}
+                >
+                  <span className="d-inline-flex align-items-center gap-2">
+                    {qrTypes.find((t) => t.key === activeTab)?.icon}
+                    {qrTypes.find((t) => t.key === activeTab)?.label}
+                  </span>
+                  <span className="caret">▾</span>
+                </Button>
+                {tabContent[activeTab]}
+                <Button variant="primary" className="w-100 rounded-pill mt-3">
+                  Download QR
+                </Button>
+              </>
+            )}
+
+            {/* Design step */}
+            {mobileStep === "design" && (
+              <>
+                <Tabs defaultActiveKey="frame" className="mb-3">
+                  <Tab eventKey="frame" title="Frame">
+                    {/* Frame Selection */}
+                    <div className="d-flex gap-3 overflow-auto pb-2 mb-3">
+                      <div>
+                        {/* Frame Selector Grid */}
+                        <div
+                          style={{
+                            display: "flex",
+                            gap: "0.5rem",
+                            overflowX: "auto",
+                          }}
+                        >
+                          {frameOptions.map((frame, idx) => (
+                            <div
+                              key={idx}
+                              role="button"
+                              className={`border rounded text-center p-2 ${
+                                selectedFrameIndex === idx
+                                  ? "border-primary bg-light"
+                                  : ""
+                              }`}
+                              style={{
+                                width: 120,
+                                height: 130,
+                                flex: "0 0 auto",
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "center",
+                                position: "relative",
+                                cursor: "pointer",
+                              }}
+                              onClick={() => setSelectedFrameIndex(idx)}
+                            >
+                              {/* QR Preview */}
+                              <img
+                                src={qr}
+                                alt="QR Code Preview"
+                                style={{
+                                  position: "absolute",
+                                  width: "50%",
+                                  height: "50%",
+                                  objectFit: "contain",
+                                  zIndex: 1,
+                                  top: "15%",
+                                  left: "25%",
+                                  pointerEvents: "none",
+                                }}
+                              />
+
+                              {/* Frame Preview */}
+                              {frame.image ? (
+                                <img
+                                  src={frame.image}
+                                  alt={`Frame ${idx}`}
+                                  loading={idx === 0 ? "eager" : "lazy"}
+                                  style={{
+                                    width: "100%",
+                                    height: "100%",
+                                    objectFit: "cover",
+                                    borderRadius: "6px",
+                                    zIndex: 2,
+                                    position: "relative",
+                                  }}
+                                />
+                              ) : (
+                                <small className="text-muted">No Frame</small>
+                              )}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Frame Settings */}
+                    <div className="bg-light p-3 rounded">
+                      <div className="mb-3">
+                        <label className="form-label fw-bold">Text</label>
+                        <input
+                          type="text"
+                          className="form-control"
+                          placeholder="Scan me!"
+                          value={frameText}
+                          onChange={(e) => setFrameText(e.target.value)}
+                        />
+                      </div>
+
+                      <Row className="g-3">
+                        <Col md={4}>
+                          <label className="form-control fw-bold">
+                            Text color
+                            <input
+                              type="color"
+                              className="form-control-color ms-2"
+                              value={textColor}
+                              onChange={(e) => setTextColor(e.target.value)}
+                            />
+                          </label>
+                        </Col>
+                        <Col md={4}>
+                          <label className="form-control fw-bold">
+                            Colour
+                            <input
+                              type="color"
+                              className="form-control-color ms-2"
+                              value={qrColor}
+                              onChange={(e) => setQrColor(e.target.value)}
+                            />
+                          </label>
+                        </Col>
+                        <Col md={4}>
+                          <label className="form-control fw-bold">
+                            Background colour
+                            <input
+                              type="color"
+                              className="form-control-color ms-2"
+                              value={bgColor}
+                              onChange={(e) => setBgColor(e.target.value)}
+                            />
+                          </label>
+                        </Col>
+                      </Row>
+                    </div>
+                  </Tab>
+                  <Tab eventKey="shape" title="Shape">
+                    <div className="mt-4">
+                      {/* Shape Style Section */}
+                      <div className="border rounded p-3 mb-4">
+                        <h5 className="fw-bold mb-3">Shape style</h5>
+                        <div className="d-flex flex-wrap gap-2 mb-3">
+                          {[...Array(8)].map((_, i) => (
+                            <button
+                              key={`shape-${i + 1}`} // ✅ more explicit than just i
+                              className="btn btn-light border p-2"
+                              style={{
+                                width: "50px",
+                                height: "50px",
+                                objectFit: "contain",
+                              }}
+                            >
+                              <img
+                                src={`/shapes/shape${i + 1}.png`}
+                                alt={`Shape ${i + 1}`}
+                                className="img-fluid"
+                              />
+                            </button>
+                          ))}
+                        </div>
+                        <br />
+                        <div className="d-flex gap-3 align-items-center">
+                          <div>
+                            <label className="form-label">
+                              Border colour
+                              <input
+                                type="color"
+                                className="form-control form-control-color"
+                                defaultValue="#000000"
+                              />
+                            </label>
+                          </div>
+                          <div>
+                            <label className="form-label">
+                              Background colour
+                              <input
+                                type="color"
+                                className="form-control form-control-color"
+                                defaultValue="#FFFFFF"
+                              />
+                            </label>
+                          </div>
+                          <button className="btn btn-outline-primary mt-4">
+                            Invert
+                          </button>
+                        </div>
+                      </div>
+
+                      {/* Border & Center Style Section */}
+                      <div className="border rounded p-3">
+                        <h5 className="fw-bold mb-3">Border style</h5>
+                        <div className="d-flex flex-wrap gap-2 mb-3">
+                          {[...Array(10)].map((_, i) => (
+                            <button
+                              key={`border-${i + 1}`} // ✅ key directly on the root element
+                              className="btn btn-light border p-2"
+                              style={{ width: "50px", height: "50px" }}
+                            >
+                              <img
+                                src={`/borders/border${i + 1}.png`}
+                                alt={`Border ${i + 1}`}
+                                className="img-fluid"
+                              />
+                            </button>
+                          ))}
+                        </div>
+                        <br />
+                        <h5 className="fw-bold mb-3">Center style</h5>
+                        <div className="d-flex flex-wrap gap-2 mb-3">
+                          {[...Array(10)].map((_, i) => (
+                            <button
+                              key={`center-${i + 1}`} // ✅ descriptive key
+                              className="btn btn-light border p-2"
+                              style={{ width: "50px", height: "50px" }}
+                            >
+                              <img
+                                src={`/centers/center${i + 1}.png`}
+                                alt={`Center ${i + 1}`}
+                                className="img-fluid"
+                              />
+                            </button>
+                          ))}
+                        </div>
+                        <br />
+                        <div className="d-flex gap-3 align-items-center">
+                          <div>
+                            <label className="form-label">Border colour</label>
+                            <input
+                              type="color"
+                              className="form-control form-control-color"
+                              defaultValue="#000000"
+                            />
+                          </div>
+                          <div>
+                            <label className="form-label">
+                              Background colour
+                            </label>
+                            <input
+                              type="color"
+                              className="form-control form-control-color"
+                              defaultValue="#000000"
+                            />
+                          </div>
+                          <button className="btn btn-outline-primary mt-4">
+                            Invert
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </Tab>
+                  <Tab eventKey="logo" title="Logo">
+                    <div className="p-3">
+                      <h6 className="mb-3 fw-bold">Select a logo</h6>
+
+                      {/* Logo options */}
+                      <div
+                        className="d-flex gap-3 overflow-auto mb-3 pb-2"
+                        style={{ whiteSpace: "nowrap" }}
+                      >
+                        <div
+                          role="button"
+                          className="border rounded p-2 text-center"
+                        >
+                          <RxValueNone className="LoGo_122" />
+                        </div>
+                        <div
+                          role="button"
+                          className="border rounded p-2 text-center"
+                        >
+                          <SiWhatsapp className="LoGo_122" />
+                        </div>
+                        <div
+                          role="button"
+                          className="border rounded p-2 text-center"
+                        >
+                          <RiLink className="LoGo_122" />
+                        </div>
+                        <div
+                          role="button"
+                          className="border rounded p-2 text-center"
+                        >
+                          <CiLocationOn className="LoGo_122" />
+                        </div>
+                        <div
+                          role="button"
+                          className="border rounded p-2 text-center"
+                        >
+                          <FaWifi className="LoGo_122" />
+                        </div>
+                        <div
+                          role="button"
+                          className="border rounded p-2 text-center"
+                        >
+                          <SlCalender className="LoGo_122" />
+                        </div>
+                        <div
+                          role="button"
+                          className="border rounded p-2 text-center"
+                        >
+                          <TfiEmail className="LoGo_122" />
+                        </div>
+                        <div
+                          role="button"
+                          className="border rounded p-2 text-center"
+                        >
+                          <RiQrScan2Line className="LoGo_122" />
+                        </div>
+                        <div
+                          role="button"
+                          className="border rounded p-2 text-center"
+                        >
+                          <GrGallery className="LoGo_122" />
+                        </div>
+                        <div
+                          role="button"
+                          className="border rounded p-2 text-center"
+                        >
+                          <MdDinnerDining className="LoGo_122" />
+                        </div>
+                        <div
+                          role="button"
+                          className="border rounded p-2 text-center"
+                        >
+                          <FaQrcode className="LoGo_122" />
+                        </div>
+                        <div
+                          role="button"
+                          className="border rounded p-2 text-center"
+                        >
+                          <FaPaypal className="LoGo_122" />
+                        </div>
+                        <div
+                          role="button"
+                          className="border rounded p-2 text-center"
+                        >
+                          <FaBitcoin className="LoGo_122" />
+                        </div>
+                      </div>
+
+                      {/* Upload logo */}
+                      <div className="border rounded p-3 text-center">
+                        <input
+                          type="file"
+                          accept="image/*"
+                          className="form-control"
+                        />
+                      </div>
+                    </div>
+                  </Tab>
+
+                  <Tab eventKey="level" title="Level">
+                    <div className="mt-3">
+                      <h6 className="fw-bold mb-3">Select a level</h6>
+                      <div className="d-flex gap-4 flex-wrap">
+                        {[
+                          {
+                            name: "Level Q",
+                            percent: "25%",
+                            img: "your-q-image.png",
+                          },
+                          {
+                            name: "Level H",
+                            percent: "30%",
+                            img: "your-h-image.png",
+                          },
+                          {
+                            name: "Level M",
+                            percent: "15%",
+                            img: "your-m-image.png",
+                          },
+                          {
+                            name: "Level L",
+                            percent: "7%",
+                            img: "your-l-image.png",
+                          },
+                        ].map((level) => (
+                          <div
+                            key={level.name} // ✅ stable & descriptive key
+                            role="button"
+                            onClick={() => setSelectedLevel(level.name)}
+                            className={`border rounded p-2 text-center ${
+                              selectedLevel === level.name
+                                ? "border-primary bg-light"
+                                : ""
+                            }`}
+                            style={{
+                              cursor: "pointer",
+                              width: "auto",
+                              height: "100px",
+                            }}
+                          >
+                            <img
+                              src={level.img}
+                              alt={level.name}
+                              className="img-fluid"
+                              style={{ width: "80px", height: "80px" }}
+                            />
+                            <div className="mt-2 small fw-semibold">
+                              {level.name}
+                            </div>
+                            <div className="text-muted">{level.percent}</div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </Tab>
+                </Tabs>
+
+                {/* <div className="bg-light p-2 rounded">
+                  <div className="mb-2">
+                    <label className="form-label fw-bold">Text</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Scan me!"
+                      value={frameText}
+                      onChange={(e) => setFrameText(e.target.value)}
+                    />
+                  </div>
+                  <Row className="g-2">
+                    <Col xs={4}>
+                      <label className="form-control fw-bold">
+                        Text
+                        <input
+                          type="color"
+                          className="form-control-color ms-2"
+                          value={textColor}
+                          onChange={(e) => setTextColor(e.target.value)}
+                        />
+                      </label>
+                    </Col>
+                    <Col xs={4}>
+                      <label className="form-control fw-bold">
+                        Colour
+                        <input
+                          type="color"
+                          className="form-control-color ms-2"
+                          value={qrColor}
+                          onChange={(e) => setQrColor(e.target.value)}
+                        />
+                      </label>
+                    </Col>
+                    <Col xs={4}>
+                      <label className="form-control fw-bold">
+                        BG
+                        <input
+                          type="color"
+                          className="form-control-color ms-2"
+                          value={bgColor}
+                          onChange={(e) => setBgColor(e.target.value)}
+                        />
+                      </label>
+                    </Col>
+                  </Row>
+                </div> */}
+
+                <Button variant="primary" className="w-100 rounded-pill mt-3">
+                  Download QR
+                </Button>
+              </>
+            )}
+          </div>
+        </Container>
+
+        {/* modal for mobile type selection */}
+        <Modal
+          show={showTypeModal}
+          onHide={() => setShowTypeModal(false)}
+          centered
+        >
+          <Modal.Header closeButton>
+            <Modal.Title>Select a QR type</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <ListGroup>
+              {qrTypes.map((t) => (
+                <ListGroup.Item
+                  key={`qr-${t.key}`} // ✅ scoped, descriptive key
+                  action
+                  onClick={() => {
+                    setActiveTab(t.key);
+                    setShowTypeModal(false);
+                  }}
+                >
+                  <span className="d-inline-flex align-items-center gap-2">
+                    {t.icon}
+                    {t.label}
+                  </span>
+                </ListGroup.Item>
+              ))}
+            </ListGroup>
+          </Modal.Body>
+        </Modal>
+      </div>
+
+      <div className="py-5 text-center bg-white">
+        <Container>
+          <h1 className="fw-bold">
+            QR Code Generator: Create your Free QR Code
+          </h1>
+          <p className="text-muted mb-5">
+            Customize it with your color, shape and logo in 3 simple steps.
+          </p>
+          <h2 className="fw-semibold mb-5">How to create a QR code?</h2>
+
+          <Row className="g-4 justify-content-center">
+            <Col md={4}>
+              <div className="d-flex flex-column align-items-center px-3">
+                <img
+                  src="/src/assets/step1.png"
+                  alt="Step 2"
+                  loading="lazy"
+                  className="img-fluid h-auto w-auto mb-3"
+                />
+                <h3 className="fw-bold">Choose the content of your QR code</h3>
+                <p className="text-muted">
+                  Select from a wide variety of options: PDF, menu, video,
+                  business cards, web, apps, etc.
+                </p>
+              </div>
+            </Col>
+            <Col md={4}>
+              <div className="d-flex flex-column align-items-center px-3">
+                <img
+                  src="/src/assets/step2.png"
+                  alt="Step 2"
+                  loading="lazy"
+                  className="img-fluid h-auto w-auto mb-3"
+                />
+                <h3 className="fw-bold">Customize and design it to measure</h3>
+                <p className="text-muted">
+                  Fill in all the information and use our design tool to make
+                  your QR unique.
+                </p>
+              </div>
+            </Col>
+            <Col md={4}>
+              <div className="d-flex flex-column align-items-center px-3">
+                <img
+                  src="/src/assets/step3.png"
+                  alt="Step 2"
+                  loading="lazy"
+                  className="img-fluid h-auto w-auto mb-3"
+                />
+                <h3 className="fw-bold">Download your QR code</h3>
+                <p className="text-muted">
+                  Get your QR code in different formats (pdf, png, svg), print
+                  it or show it in a digital format and voila!
+                </p>
               </div>
             </Col>
           </Row>
+
+          <div className="mt-5">
+            <Button
+              variant="primary"
+              size="lg"
+              className="px-4 py-2 fw-semibold rounded-pill"
+            >
+              Create QR code
+            </Button>
+          </div>
         </Container>
       </div>
 
@@ -497,8 +1954,8 @@ const QRGenerator = () => {
       <Container className="py-5 text-center">
         <h2 className="mb-5 fw-bold">Your all-in-one marketing platform</h2>
         <Row className="g-4">
-          {features.map((feat, idx) => (
-            <Col key={idx} xs={12} sm={6} md={4} lg={4}>
+          {features.map((feat) => (
+            <Col key={feat.title} xs={12} sm={6} md={4} lg={4}>
               <Card className="h-100 feature-card">
                 <Card.Body>
                   <div className="icon-box hover-icon mb-3 mx-auto">
@@ -512,6 +1969,7 @@ const QRGenerator = () => {
               </Card>
             </Col>
           ))}
+
           <Col xs={12} sm={6} md={4} lg={4}>
             <PixelIntegrationCard />
           </Col>
@@ -534,8 +1992,13 @@ const QRGenerator = () => {
 
         <div className="position-relative">
           <div className="d-flex align-items-center gap-3">
-            <button onClick={() => scroll("left")} className="arrow-btn">
-              <FaArrowLeft />
+            {/* Left button with aria-label */}
+            <button
+              onClick={() => scroll("left")}
+              className="arrow-btn"
+              aria-label="Scroll left"
+            >
+              <FaArrowLeft aria-hidden="true" />
             </button>
 
             <div className="slider-container" ref={sliderRef}>
@@ -543,10 +2006,14 @@ const QRGenerator = () => {
                 <Card.Img
                   variant="top"
                   src={qr_image_1}
+                  alt="Business card with QR code"
                   className="qr-slide-img"
+                  loading="lazy"
+                  decoding="async"
                 />
                 <Card.Body>
-                  <Card.Title>Business cards</Card.Title>
+                  {/* Changed to h2 for correct heading hierarchy */}
+                  <Card.Title as="h2">Business cards</Card.Title>
                   <Card.Text className="text-muted">
                     Turn your card into an interactive tool by adding a QR code
                     that connects clients and employers with your work, social
@@ -555,6 +2022,7 @@ const QRGenerator = () => {
                   <a
                     href="#"
                     className="text-primary fixed-auto fw-semibold text-decoration-none more-info-btn"
+                    aria-label="More info about Business cards"
                   >
                     More Info →
                   </a>
@@ -565,18 +2033,22 @@ const QRGenerator = () => {
                 <Card.Img
                   variant="top"
                   src={qr_image_2}
+                  alt="Pamphlet with QR code"
                   className="qr-slide-img"
+                  loading="lazy"
+                  decoding="async"
                 />
                 <Card.Body>
-                  <Card.Title>Pamphlets</Card.Title>
+                  <Card.Title as="h2">Pamphlets</Card.Title>
                   <Card.Text className="text-muted">
                     Expand the printed information on your pamphlets with a QR
                     code, offering interactive content and measuring its reach
-                    in real time,social networks and contact information.
+                    in real time.
                   </Card.Text>
                   <a
                     href="#"
                     className="text-primary fixed-auto fw-semibold text-decoration-none more-info-btn"
+                    aria-label="More info about Pamphlets"
                   >
                     More Info →
                   </a>
@@ -587,10 +2059,13 @@ const QRGenerator = () => {
                 <Card.Img
                   variant="top"
                   src={qr_image_3}
+                  alt="Brochure with QR code"
                   className="qr-slide-img"
+                  loading="lazy"
+                  decoding="async"
                 />
                 <Card.Body>
-                  <Card.Title>Brochures</Card.Title>
+                  <Card.Title as="h2">Brochures</Card.Title>
                   <Card.Text className="text-muted">
                     Complement the content of your brochures by adding a QR code
                     that provides access to multimedia content such as videos
@@ -599,19 +2074,24 @@ const QRGenerator = () => {
                   <a
                     href="#"
                     className="text-primary fw-semibold text-decoration-none more-info-btn"
+                    aria-label="More info about Brochures"
                   >
                     More Info →
                   </a>
                 </Card.Body>
               </Card>
+
               <Card className="qr-slide-card">
                 <Card.Img
                   variant="top"
                   src={qr_image_6}
+                  alt="Bottle with QR code"
                   className="qr-slide-img"
+                  loading="lazy"
+                  decoding="async"
                 />
                 <Card.Body>
-                  <Card.Title>Bottles and cans</Card.Title>
+                  <Card.Title as="h2">Bottles and cans</Card.Title>
                   <Card.Text className="text-muted">
                     Turn your packaging into smart labels with a QR code that
                     offers access to information about origin, ingredients and
@@ -620,48 +2100,59 @@ const QRGenerator = () => {
                   <a
                     href="#"
                     className="text-primary fw-semibold text-decoration-none more-info-btn"
+                    aria-label="More info about Bottles and cans"
                   >
                     More Info →
                   </a>
                 </Card.Body>
               </Card>
+
               <Card className="qr-slide-card">
                 <Card.Img
                   variant="top"
                   src={qr_image_5}
+                  alt="Product packaging with QR code"
                   className="qr-slide-img"
+                  loading="lazy"
+                  decoding="async"
                 />
                 <Card.Body>
-                  <Card.Title>Product packaging</Card.Title>
+                  <Card.Title as="h2">Product packaging</Card.Title>
                   <Card.Text className="text-muted">
                     Reduce the text on your packaging and provide access to key
                     information, exclusive discounts and social media through a
-                    simple scan,social contact information.
+                    simple scan.
                   </Card.Text>
                   <a
                     href="#"
                     className="text-primary fw-semibold text-decoration-none more-info-btn"
+                    aria-label="More info about Product packaging"
                   >
                     More Info →
                   </a>
                 </Card.Body>
               </Card>
+
               <Card className="qr-slide-card">
                 <Card.Img
                   variant="top"
                   src={qr_image_4}
+                  alt="Menu with QR code"
                   className="qr-slide-img"
+                  loading="lazy"
+                  decoding="async"
                 />
                 <Card.Body>
-                  <Card.Title>Menu</Card.Title>
+                  <Card.Title as="h2">Menu</Card.Title>
                   <Card.Text className="text-muted">
-                    Keep your menu up to date with a QR code on your menu.
-                    Forget about reprints and make it easy for your diners to
-                    access interactive options, contact information.
+                    Keep your menu up to date with a QR code. Forget about
+                    reprints and make it easy for your diners to access
+                    interactive options.
                   </Card.Text>
                   <a
                     href="#"
                     className="text-primary fw-semibold text-decoration-none more-info-btn"
+                    aria-label="More info about Menu"
                   >
                     More Info →
                   </a>
@@ -669,8 +2160,13 @@ const QRGenerator = () => {
               </Card>
             </div>
 
-            <button onClick={() => scroll("right")} className="arrow-btn">
-              <FaArrowRight />
+            {/* Right button with aria-label */}
+            <button
+              onClick={() => scroll("right")}
+              className="arrow-btn"
+              aria-label="Scroll right"
+            >
+              <FaArrowRight aria-hidden="true" />
             </button>
           </div>
         </div>
@@ -684,49 +2180,129 @@ const QRGenerator = () => {
 
       {/* Explore our extensive collection of QR codes */}
 
-      <div className="container my-5">
-        <div className="row">
-          <div className="col-md-8 offset-sm-2 text-primary text-center mb-3">
-            <h6>QR CODES FOR</h6>
-          </div>
-          <div className="col-md-12 text-center mb-3">
-            <h1>Explore our extensive collection of QR codes</h1>
-          </div>
-          <div className="col-md-8 offset-sm-2 text-center mb-5">
-            <h6>
-              QR codes can contain a wide range of content and at QRFY we offer
-              them all.
-            </h6>
-          </div>
-        </div>
-        <div className="row align-items-center rounded shadow overflow-hidden">
-          <div className="col-md-12 p-0">
-            <img
-              src={
-                tabData.find((item) => item.key === activeKey)?.image || img_7
-              }
-              alt="Hero Visual"
-              className="img-fluid"
-              style={{ objectFit: "cover", width: "100%", height: "100%" }}
-            />
-          </div>
-        </div>
-      </div>
-      <div className="container text-center">
-        <div className="row justify-content-center">
-          {tabData.map((item) => (
-            <div className="col-md-3 col-10" key={item.key}>
-              <div
-                style={{ cursor: "pointer", height: "5vh" }}
-                onClick={() => setActiveKey(item.activeKey || item.key)}
-              >
-                <i className={`bi ${item.icon} fs-3`}></i>
-                <button className="text-center btn btn-outline-primary mt-2 p-3">
-                  {item.label}
+      <div className="container text-center py-5">
+        {/* Header */}
+        <p className="text-primary fw-bold">QR CODES FOR</p>
+        <h2 className="fw-bold">
+          Explore our extensive collection of QR codes
+        </h2>
+        <p className="text-muted">
+          QR codes can contain a wide range of content and at QRFY we offer them
+          all.
+        </p>
+
+        {/* Desktop View (Split Layout) */}
+        <div className="d-none d-md-flex justify-content-center mt-4">
+          <div className="card shadow-lg border-0 w-100">
+            <div className="row Img_Slide g-0 align-items-center">
+              {/* Text Side */}
+              <div className="col-md-4 p-5 Img_Slide_1 text-start text-white rounded-start">
+                <h4>{content[activeKey].title}</h4>
+                <button className="btn mt-3">
+                  {content[activeKey].button}
                 </button>
               </div>
+              {/* Image Side */}
+              <div className="col-md-8">
+                <img
+                  src={content[activeKey].img}
+                  className="img-fluid rounded-end"
+                  alt="QR showcase"
+                />
+              </div>
             </div>
-          ))}
+          </div>
+        </div>
+
+        {/* Mobile View (Card Slider) */}
+        <div className="d-block d-md-none mt-4">
+          <div
+            id="qrCarousel"
+            className="carousel slide"
+            data-bs-ride="carousel"
+          >
+            <div className="carousel-inner">
+              {Object.keys(content).map((key, index) => (
+                <div
+                  key={key}
+                  className={`carousel-item ${index === 0 ? "active" : ""}`}
+                >
+                  <div
+                    className="card text-white text-center shadow-lg border-0 rounded"
+                    style={{
+                      backgroundImage: `url(${content[key].img})`,
+                      backgroundSize: "cover",
+                    }}
+                  >
+                    <div
+                      className="card-body d-flex flex-column justify-content-end p-4"
+                      style={{
+                        background:
+                          "linear-gradient(to top, rgba(0,0,0,0.7), transparent)",
+                      }}
+                    >
+                      <h5 className="fw-bold">{content[key].title}</h5>
+                      <button className="btn btn-light mt-3">
+                        {content[key].button}
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Carousel Controls */}
+            <button
+              className="carousel-control-prev"
+              type="button"
+              data-bs-target="#qrCarousel"
+              data-bs-slide="prev"
+            >
+              <span className="carousel-control-prev-icon"></span>
+            </button>
+            <button
+              className="carousel-control-next"
+              type="button"
+              data-bs-target="#qrCarousel"
+              data-bs-slide="next"
+            >
+              <span className="carousel-control-next-icon"></span>
+            </button>
+          </div>
+        </div>
+
+        {/* Tabs (Desktop only) */}
+        <div className="d-none d-md-flex justify-content-center mt-4">
+          <ul className="nav nav-tabs flex-wrap">
+            <li className="nav-item">
+              <button
+                className={`nav-link ${
+                  activeKey === "wedding" ? "active" : ""
+                }`}
+                onClick={() => setActiveKey("wedding")}
+              >
+                QR code for weddings
+              </button>
+            </li>
+            <li className="nav-item">
+              <button
+                className={`nav-link ${activeKey === "ngo" ? "active" : ""}`}
+                onClick={() => setActiveKey("ngo")}
+              >
+                QR code for NGOs
+              </button>
+            </li>
+            <li className="nav-item">
+              <button
+                className={`nav-link ${
+                  activeKey === "photographer" ? "active" : ""
+                }`}
+                onClick={() => setActiveKey("photographer")}
+              >
+                QR code for Photographers
+              </button>
+            </li>
+          </ul>
         </div>
       </div>
 
@@ -745,8 +2321,13 @@ const QRGenerator = () => {
           </div>
         </div>
         <div className="row justify-content-center">
-          <div className="col-md-5 ofset-sm-1">
-            <img src={img_10} className="QR111" />
+          <div className="col-md-5 img_10_png">
+            <img
+              src={img_10}
+              alt="QR code"
+              className="img-fluid"
+              loading="lazy"
+            />
           </div>
           <div className="col-md-4">
             <div className="accordion" id="qrAccordion">
@@ -785,8 +2366,7 @@ const QRGenerator = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      {" "}
-                      Learn more
+                      Learn more about QR codes
                     </a>
                     .
                   </div>
@@ -872,10 +2452,14 @@ const QRGenerator = () => {
                 src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200"
                 alt="Donald Jackman"
                 className="rounded-circle position-absolute top-0 start-50 translate-middle"
-                style={{ width: "100px", height: "100px", objectFit: "cover" }}
+                width="100"
+                height="100"
+                loading="lazy"
+                style={{ objectFit: "cover" }}
               />
+
               <div className="card-body mt-4">
-                <h5 className="card-title mb-1">Donald Jackman</h5>
+                <h3 className="card-title mb-1">Donald Jackman</h3>
                 <p className="text-muted mb-3">Content Creator</p>
                 <p className="card-text">
                   I've been using imagify for nearly two years, primarily for
@@ -897,10 +2481,13 @@ const QRGenerator = () => {
                 src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=200"
                 alt="Richard Nelson"
                 className="rounded-circle position-absolute top-0 start-50 translate-middle"
-                style={{ width: "100px", height: "100px", objectFit: "cover" }}
+                width="100"
+                height="100"
+                loading="lazy"
+                style={{ objectFit: "cover" }}
               />
               <div className="card-body mt-4">
-                <h5 className="card-title mb-1">Richard Nelson</h5>
+                <h3 className="card-title mb-1">Richard Nelson</h3>
                 <p className="text-muted mb-3">Instagram Influencer</p>
                 <p className="card-text">
                   I've been using imagify for nearly two years, primarily for
@@ -921,10 +2508,13 @@ const QRGenerator = () => {
                 src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200&h=200&auto=format&fit=crop"
                 alt="James Washington"
                 className="rounded-circle position-absolute top-0 start-50 translate-middle"
-                style={{ width: "100px", height: "100px", objectFit: "cover" }}
+                width="100"
+                height="100"
+                loading="lazy"
+                style={{ objectFit: "cover" }}
               />
               <div className="card-body mt-4">
-                <h5 className="card-title mb-1">James Washington</h5>
+                <h3 className="card-title mb-1">James Washington</h3>
                 <p className="text-muted mb-3">Marketing Manager</p>
                 <p className="card-text">
                   I've been using imagify for nearly two years, primarily for
@@ -1264,7 +2854,14 @@ const QRGenerator = () => {
         <div className="row mb-5">
           <div className="col-md-2"></div>
           <div className="col-md-4">
-            <img src={img_11} className="QR_12" />
+            <img
+              src={img_11}
+              alt="QR Code"
+              className="QR_12"
+              width="200"
+              height="200"
+              loading="lazy"
+            />
           </div>
           <div className="col-md-4 py-5">
             <h1>Want to know more?</h1>
@@ -1288,11 +2885,11 @@ const QRGenerator = () => {
         <div className="container py-5 d-flex flex-column align-items-center">
           <div className="mb-4">
             <img
-              src={img1}
+              src="/src/assets/logo.jpg"
               alt="QRFY Logo"
-              width="100"
-              height="40"
-              className="me-2 rounded-5"
+              width={120}
+              height={60}
+              style={{ objectFit: "contain" }}
             />
           </div>
           <p className="text-center text-sm" style={{ maxWidth: "600px" }}>

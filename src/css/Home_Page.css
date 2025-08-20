@@ -228,3 +228,54 @@
   font-size: 20px;
   font-weight: 350;
 }
+.Frame_img{
+  width: 200px;
+  height: 200px;
+}
+.LoGo_122{
+  width: 50px;
+  height: 50px;
+}
+.text-muted.no-delay {
+  opacity: 0;
+  animation: fadein 5s forwards;
+}
+.text-muted.no-delay {
+  opacity: 1 !important;
+  animation: none !important;
+}
+body {
+  font-family: "MyFont", Arial, sans-serif;
+}
+.img_10_png img{
+  height: 100%;
+  width: auto;
+}
+.Img_Slide img{
+  height: auto;
+  width: 100vh;
+  object-fit: contain;
+}
+.Img_Slide_1{
+  height: 100%;
+  width: auto;
+  object-fit: cover;
+  background-color: #251129;
+}
+.Img_Slide_1 h4{
+  font-size: 35px;
+}
+.Img_Slide_1 button{
+  border: 1px solid white;
+  color: white;
+  border-radius: 10px;
+}
+.Img_Slide_1 button:hover{
+  border: 1px solid white;
+  color: white;
+  background-color: #3f3142;
+}
+.Img_Slide_2{
+  border: 1px solid white;
+  border-radius: 50px !important;
+}
