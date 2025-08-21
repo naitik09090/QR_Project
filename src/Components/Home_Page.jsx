@@ -778,7 +778,7 @@ const QRGenerator = () => {
     {
       key: "scooter",
       image: frame_6,
-      slot: { top: 24, left: 20, width: 58, height: 50 },
+      slot: { top: 24, left: 21, width: 58, height: 50 },
     },
     {
       key: "alt",
