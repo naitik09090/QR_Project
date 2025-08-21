@@ -97,6 +97,15 @@ import frame_6 from "../assets/frame_6.png";
 import frame_7 from "../assets/frame_7.png";
 import logo from "../assets/logo.jpg";
 
+
+import QR_1 from "../assets/QR_1.png";
+import Text_QR from "../assets/Text_QR.png";
+import Email_QR from "../assets/Email_QR.png";
+import Vcard_QR from "../assets/Vcard_QR.png";
+import Wifi_QR from "../assets/Wifi_QR.png";
+import Whatsapp_QR from "../assets/Whatsapp_QR.png";
+import SMS_QR from "../assets/SMS_QR.png";
+
 const features = [
   {
     icon: <FaChartLine size={24} />,
@@ -722,17 +731,13 @@ const QRGenerator = () => {
 
 
   const qrImages = {
-    website:
-      "https://qrcodegenstor.blob.core.windows.net/media/qr_codes/25/3da9d91c-2f3b-4b6d-8ec6-d620643e85cd.png?se=2025-08-21T07%3A56%3A54Z&sp=r&sv=2025-07-05&sr=b&sig=7IjbyU79yy3UhMwJneYjVCODEoavjzvZg8XULA8v46Q%3D",
-    text: "https://qrcodegenstor.blob.core.windows.net/media/qr_codes/25/e850fa8a-9473-4ba3-a6ec-45cafb66c6f0.png?se=2025-08-21T07%3A55%3A22Z&sp=r&sv=2025-07-05&sr=b&sig=GxWdXCbmK08QlJg5ssAN8IYyFz7T1/wUHTUdlo2uvXs%3D",
-    email:
-      "https://qrcodegenstor.blob.core.windows.net/media/qr_codes/25/8c578898-b1e1-4a10-932a-40c02eca187d.png?se=2025-08-21T07%3A56%3A13Z&sp=r&sv=2025-07-05&sr=b&sig=P%2BaMMQEd8DL7/Pvvkq65FerzAcBVQzIMnhZQf/N15oM%3D",
-    vcard:
-      "https://qrcodegenstor.blob.core.windows.net/media/qr_codes/25/d6702e5f-fe42-4630-9e8c-d0967109c390.png?se=2025-08-21T07%3A54%3A45Z&sp=r&sv=2025-07-05&sr=b&sig=trtLl6%2BJgJ4w%2BAqo2sczR/gZ3YwERIoKWSyYYpYR1xc%3D",
-    wifi: "https://qrcodegenstor.blob.core.windows.net/media/qr_codes/25/8cd3358d-8471-4fcc-91cc-9cf20e62a9e4.png?se=2025-08-21T07%3A55%3A28Z&sp=r&sv=2025-07-05&sr=b&sig=85xGJVvBR/YbDVUda/5R8RgHuo7KxJFHazrsnj2AsgQ%3D",
-    whatsapp:
-      "https://qrcodegenstor.blob.core.windows.net/media/qr_codes/25/4458d97d-ba3c-4a1f-8d4b-6670cccf8441.png?se=2025-08-21T07%3A52%3A17Z&sp=r&sv=2025-07-05&sr=b&sig=fvLgX39dISqfrN7edT66Agy1DuPbgoR/vmXbPqxU6Zg%3D",
-    SMS: "https://qrcodegenstor.blob.core.windows.net/media/qr_codes/25/3baaf408-50fe-4c80-a7c1-1b74185aa3a6.png?se=2025-08-21T07%3A56%3A34Z&sp=r&sv=2025-07-05&sr=b&sig=seLD96V8QErx7%2B%2BwJ3LSuya4wDT3CcgPLGPJw%2BX0EwI%3D",
+    website: QR_1,
+    text: Text_QR,
+    email: Email_QR,
+    vcard: Vcard_QR,
+    wifi: Wifi_QR,
+    whatsapp: Whatsapp_QR,
+    SMS: SMS_QR,
   };
 
   // mp3: "https://via.placeholder.com/200x200.png?text=MP3+QR",
