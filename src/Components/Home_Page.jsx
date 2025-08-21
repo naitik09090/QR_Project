@@ -723,16 +723,16 @@ const QRGenerator = () => {
 
   const qrImages = {
     website:
-      "https://qrcodegenstor.blob.core.windows.net/media/qr_codes/24/2c718be4-e36a-49c9-b1d1-df597b75378e.png?se=2025-08-21T05%3A57%3A53Z&sp=r&sv=2025-07-05&sr=b&sig=MT3o8bhwLnEFbJVG4Wb4rzDCfyykztazQyqTE/HY4zA%3D",
-    text: "https://qrcodegenstor.blob.core.windows.net/media/qr_codes/23/2ee4a34f-f73d-4e11-a9f6-c2e6086c4f97.png?se=2025-08-21T04%3A52%3A55Z&sp=r&sv=2025-07-05&sr=b&sig=b2JFraOBU7FS4BnFaRGRjUHGL5NysEvFwL%2BreKRWQKk%3D",
+      "https://qrcodegenstor.blob.core.windows.net/media/qr_codes/25/3da9d91c-2f3b-4b6d-8ec6-d620643e85cd.png?se=2025-08-21T07%3A56%3A54Z&sp=r&sv=2025-07-05&sr=b&sig=7IjbyU79yy3UhMwJneYjVCODEoavjzvZg8XULA8v46Q%3D",
+    text: "https://qrcodegenstor.blob.core.windows.net/media/qr_codes/25/e850fa8a-9473-4ba3-a6ec-45cafb66c6f0.png?se=2025-08-21T07%3A55%3A22Z&sp=r&sv=2025-07-05&sr=b&sig=GxWdXCbmK08QlJg5ssAN8IYyFz7T1/wUHTUdlo2uvXs%3D",
     email:
-      "https://qrcodegenstor.blob.core.windows.net/media/qr_codes/23/93eda8d7-c212-483e-8676-29405dba2bd5.png?se=2025-08-21T04%3A52%3A46Z&sp=r&sv=2025-07-05&sr=b&sig=rF/aGTtDgt%2BO6FoCMc6vuVAri1gQ%2BJTaxnHNzIQfjVE%3D",
+      "https://qrcodegenstor.blob.core.windows.net/media/qr_codes/25/8c578898-b1e1-4a10-932a-40c02eca187d.png?se=2025-08-21T07%3A56%3A13Z&sp=r&sv=2025-07-05&sr=b&sig=P%2BaMMQEd8DL7/Pvvkq65FerzAcBVQzIMnhZQf/N15oM%3D",
     vcard:
-      "https://qrcodegenstor.blob.core.windows.net/media/qr_codes/23/a9d47dda-c144-4ddc-a343-262a669c3d33.png?se=2025-08-21T04%3A52%3A50Z&sp=r&sv=2025-07-05&sr=b&sig=J3AP/mmf6B1GKJMNp9sFGp29TI1IZRGumCw4yRCpX1Q%3D",
-    wifi: "https://qrcodegenstor.blob.core.windows.net/media/qr_codes/23/f4108d69-56c0-4dcc-8641-7ec95ec66339.png?se=2025-08-21T04%3A52%3A58Z&sp=r&sv=2025-07-05&sr=b&sig=v96S/1jooHnHCB%2Bn3EzwaSGYaUwIS/2N1MJqqlOpihk%3D",
+      "https://qrcodegenstor.blob.core.windows.net/media/qr_codes/25/d6702e5f-fe42-4630-9e8c-d0967109c390.png?se=2025-08-21T07%3A54%3A45Z&sp=r&sv=2025-07-05&sr=b&sig=trtLl6%2BJgJ4w%2BAqo2sczR/gZ3YwERIoKWSyYYpYR1xc%3D",
+    wifi: "https://qrcodegenstor.blob.core.windows.net/media/qr_codes/25/8cd3358d-8471-4fcc-91cc-9cf20e62a9e4.png?se=2025-08-21T07%3A55%3A28Z&sp=r&sv=2025-07-05&sr=b&sig=85xGJVvBR/YbDVUda/5R8RgHuo7KxJFHazrsnj2AsgQ%3D",
     whatsapp:
-      "https://qrcodegenstor.blob.core.windows.net/media/qr_codes/23/8acd190d-1f6c-45a6-bd85-8613095cd77f.png?se=2025-08-21T04%3A52%3A54Z&sp=r&sv=2025-07-05&sr=b&sig=/g9bgxCrNMx8wey/Oq/JRGahkHnkGUgVv%2Bqfazn8xrQ%3D",
-    SMS: "https://qrcodegenstor.blob.core.windows.net/media/qr_codes/23/e2cf0589-ab6b-4fed-8637-83d0bb853dfc.png?se=2025-08-21T04%3A52%3A54Z&sp=r&sv=2025-07-05&sr=b&sig=5TxQBnZzTpsafKuhEdewhHpfHBFJ%2B1VSZBNUDy27lLs%3D",
+      "https://qrcodegenstor.blob.core.windows.net/media/qr_codes/25/4458d97d-ba3c-4a1f-8d4b-6670cccf8441.png?se=2025-08-21T07%3A52%3A17Z&sp=r&sv=2025-07-05&sr=b&sig=fvLgX39dISqfrN7edT66Agy1DuPbgoR/vmXbPqxU6Zg%3D",
+    SMS: "https://qrcodegenstor.blob.core.windows.net/media/qr_codes/25/3baaf408-50fe-4c80-a7c1-1b74185aa3a6.png?se=2025-08-21T07%3A56%3A34Z&sp=r&sv=2025-07-05&sr=b&sig=seLD96V8QErx7%2B%2BwJ3LSuya4wDT3CcgPLGPJw%2BX0EwI%3D",
   };
 
   // mp3: "https://via.placeholder.com/200x200.png?text=MP3+QR",
