@@ -101,7 +101,7 @@ import logo from "../assets/logo.jpg";
 import QR_1 from "../assets/QR_1.png";
 import Text_QR from "../assets/Text_QR.png";
 import Email_QR from "../assets/Email_QR.png";
-import Vcard_QR from "../assets/Vcard_QR.png";
+import Vcard_QR from "../assets/VCard_QR.png";
 import Wifi_QR from "../assets/Wifi_QR.png";
 import Whatsapp_QR from "../assets/Whatsapp_QR.png";
 import SMS_QR from "../assets/SMS_QR.png";
