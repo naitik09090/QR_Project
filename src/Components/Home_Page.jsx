@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useState } from "react";
 import React from "react";
 import { Container } from "react-bootstrap";
@@ -86,6 +86,7 @@ import { GrGallery } from "react-icons/gr";
 import { MdDinnerDining } from "react-icons/md";
 import { FaPaypal } from "react-icons/fa";
 import { FaBitcoin } from "react-icons/fa";
+// import { MdOutlineHideSource } from "react-icons/md";
 
 const features = [
   {
@@ -656,38 +657,75 @@ const QRGenerator = () => {
     //   </>
     // ),
   };
-  //   const [qrcode, setQrcode] = useState([]);
+    // const [qrcode, setQrcode] = useState([]);
 
-  //   useEffect(() => {
-  //     const fetchData = async () => {
-  //       try {
-  //         const res = await fetch(
-  //           "https://qrcodegen-e4bccbhbd7edh9bp.centralindia-01.azurewebsites.net/api/api/qr-codes/"
-  //         );
-  //         if (!res.ok) throw new Error("Failed to fetch QR codes");
-  //         const data = await res.json();
-  //         console.log("API data:", data); // 👈 Check structure
-  //         setQrcode(Array.isArray(data) ? data : data.qrCodes || []);
-  //       } catch (error) {
-  //         console.error(error);
-  //       }
-  //     };
-  //     fetchData();
-  //   }, []);
+    // useEffect(() => {
+    //   const fetchData = async () => {
+    //     try {
+    //       const res = await fetch(
+    //         "https://qrcodegen-e4bccbhbd7edh9bp.centralindia-01.azurewebsites.net/api/api/qr-codes/"
+    //       );
+    //       if (!res.ok) throw new Error("Failed to fetch QR codes");
+    //       const data = await res.json();
+    //       console.log("API data:", data); // 👈 Check structure
+    //       setQrcode(Array.isArray(data) ? data : data.qrCodes || []);
+    //     } catch (error) {
+    //       console.error(error);
+    //     }
+    //   };
+    //   fetchData();
+    // }, []);
+
+// async function generateQrCode() {
+//   try {
+//     const response = await fetch(
+//       "https://qrcodegen-e4bccbhbd7edh9bp.centralindia-01.azurewebsites.net/api/api/qr-codes/",
+//       {
+//         method: "POST",
+//         headers: {
+//           "Content-Type": "application/json",
+//           Authorization: `Bearer {{access_token}}`, // replace with your token
+//         },
+//       }
+//     );
+
+//     if (!response.ok) throw new Error("Failed to generate QR Code");
+
+//     const result = await response.json();
+//     return result.qr_image_url; // ✅ only image URL
+//   } catch (err) {
+//     console.error("QR API Error:", err);
+//     return null;
+//   }
+// }
+
+// useEffect(() => {
+//   async function fetchQr() {
+//     const qrUrl = await generateQrCode({
+//       url: frameText || "https://example.com", // 👈 your text or URL
+//       fillColor: qrColor,
+//       backColor: bgColor,
+//     });
+//     if (qrUrl) setQr(qrUrl);
+//   }
+//   fetchQr();
+// }, [frameText, qrColor, bgColor]);
+
 
   const qrImages = {
     website:
-      "https://qrcodegenstor.blob.core.windows.net/media/qr_codes/22/5544466b-77d3-452f-9dbf-058d3364cbec.png?se=2025-08-20T11%3A48%3A55Z&sp=r&sv=2025-07-05&sr=b&sig=azvG9X6exxYAAk2jXGZyhLzxGhVUJ2Jnme7MigVy2zo%3D",
-    text: "https://qrcodegenstor.blob.core.windows.net/media/qr_codes/22/4e7f1abb-2ccd-40ea-ab95-20d3083d0dcf.png?se=2025-08-20T11%3A50%3A06Z&sp=r&sv=2025-07-05&sr=b&sig=L1vuOFWF0y53XE95a%2BCaaqZMhZHA4SAn2MsXrwRiUgs%3D",
+      "https://qrcodegenstor.blob.core.windows.net/media/qr_codes/24/2c718be4-e36a-49c9-b1d1-df597b75378e.png?se=2025-08-21T05%3A57%3A53Z&sp=r&sv=2025-07-05&sr=b&sig=MT3o8bhwLnEFbJVG4Wb4rzDCfyykztazQyqTE/HY4zA%3D",
+    text: "https://qrcodegenstor.blob.core.windows.net/media/qr_codes/23/2ee4a34f-f73d-4e11-a9f6-c2e6086c4f97.png?se=2025-08-21T04%3A52%3A55Z&sp=r&sv=2025-07-05&sr=b&sig=b2JFraOBU7FS4BnFaRGRjUHGL5NysEvFwL%2BreKRWQKk%3D",
     email:
-      "https://qrcodegenstor.blob.core.windows.net/media/qr_codes/22/50951a51-2b9e-410c-9c00-8dee0e73f34c.png?se=2025-08-20T11%3A49%3A43Z&sp=r&sv=2025-07-05&sr=b&sig=gM3y5AP4z%2BG22BALj0in28h6rVCnV4TaX9ebkxRCXhM%3D",
+      "https://qrcodegenstor.blob.core.windows.net/media/qr_codes/23/93eda8d7-c212-483e-8676-29405dba2bd5.png?se=2025-08-21T04%3A52%3A46Z&sp=r&sv=2025-07-05&sr=b&sig=rF/aGTtDgt%2BO6FoCMc6vuVAri1gQ%2BJTaxnHNzIQfjVE%3D",
     vcard:
-      "https://qrcodegenstor.blob.core.windows.net/media/qr_codes/22/1f5a4673-7d71-400b-8709-8e69b1ffaa19.png?se=2025-08-20T11%3A49%3A53Z&sp=r&sv=2025-07-05&sr=b&sig=A5cznjEIH7wARvXyhQ8ZLmpRVRrjXcT3%2BSNr96fVTw8%3D",
-    wifi: "https://qrcodegenstor.blob.core.windows.net/media/qr_codes/22/339542d4-44e8-40d9-8c84-754cd953b391.png?se=2025-08-20T11%3A50%3A13Z&sp=r&sv=2025-07-05&sr=b&sig=3u1hWC7tJ0KBzYwXhI3BL451iQjf6umr/LeZ7aXvdfw%3D",
+      "https://qrcodegenstor.blob.core.windows.net/media/qr_codes/23/a9d47dda-c144-4ddc-a343-262a669c3d33.png?se=2025-08-21T04%3A52%3A50Z&sp=r&sv=2025-07-05&sr=b&sig=J3AP/mmf6B1GKJMNp9sFGp29TI1IZRGumCw4yRCpX1Q%3D",
+    wifi: "https://qrcodegenstor.blob.core.windows.net/media/qr_codes/23/f4108d69-56c0-4dcc-8641-7ec95ec66339.png?se=2025-08-21T04%3A52%3A58Z&sp=r&sv=2025-07-05&sr=b&sig=v96S/1jooHnHCB%2Bn3EzwaSGYaUwIS/2N1MJqqlOpihk%3D",
     whatsapp:
-      "https://qrcodegenstor.blob.core.windows.net/media/qr_codes/22/fae1d3a8-8eaa-4091-b22d-413afa476d8e.png?se=2025-08-20T11%3A50%3A01Z&sp=r&sv=2025-07-05&sr=b&sig=rzjzuvk7qfuvXH3LXgk17anPFcXT8uR7cXSmM5QHpnI%3D",
-    SMS: "https://qrcodegenstor.blob.core.windows.net/media/qr_codes/22/f347bbf0-d0e2-4812-bd0d-b94d8394a7d8.png?se=2025-08-20T11%3A49%3A37Z&sp=r&sv=2025-07-05&sr=b&sig=RmP/e3bwQwLmbhTNMopr5hgnEfOmS%2BO6omT0dUTM7x0%3D",
+      "https://qrcodegenstor.blob.core.windows.net/media/qr_codes/23/8acd190d-1f6c-45a6-bd85-8613095cd77f.png?se=2025-08-21T04%3A52%3A54Z&sp=r&sv=2025-07-05&sr=b&sig=/g9bgxCrNMx8wey/Oq/JRGahkHnkGUgVv%2Bqfazn8xrQ%3D",
+    SMS: "https://qrcodegenstor.blob.core.windows.net/media/qr_codes/23/e2cf0589-ab6b-4fed-8637-83d0bb853dfc.png?se=2025-08-21T04%3A52%3A54Z&sp=r&sv=2025-07-05&sr=b&sig=5TxQBnZzTpsafKuhEdewhHpfHBFJ%2B1VSZBNUDy27lLs%3D",
   };
+
   // mp3: "https://via.placeholder.com/200x200.png?text=MP3+QR",
   // pdf: "https://via.placeholder.com/200x200.png?text=PDF+QR",
   // video: "https://via.placeholder.com/200x200.png?text=Video+QR",
@@ -695,11 +733,58 @@ const QRGenerator = () => {
   // social: "https://via.placeholder.com/200x200.png?text=Social+QR",
   // images: "https://via.placeholder.com/200x200.png?text=Images+QR",
 
+  // Desktop view
   const frameOptions = [
     {
+      key: "null",
+      image: "/src/assets/null1.png",
+      slot: { top: 0, left: 0, width: 100, height: 100 },
+    },
+    {
+      key: "simple",
+      image: "/src/assets/frame_1.png",
+      slot: { top: 1, left: 23, width: 55, height: 55 },
+    },
+    {
+      key: "envelope",
+      image: "/src/assets/frame_3.png",
+      slot: { top: 5, left: 24, width: 55, height: 52 },
+    },
+    {
+      key: "tray",
+      image: "/src/assets/frame_4.png",
+      slot: { top: 15, left: 22, width: 56, height: 56 },
+    },
+    {
+      key: "scanme",
+      image: "/src/assets/frame_5.png",
+      slot: { top: 22, left: 15, width: 66, height: 62 },
+    },
+    {
+      key: "mug",
+      image: "/src/assets/frame_7.png",
+      slot: { top: 8, left: 0, width: 38, height: 38 },
+    },
+    // Scooter-like frame: QR sits a bit right-of-center and smaller
+    {
+      key: "scooter",
+      image: "/src/assets/frame_6.png",
+      slot: { top: 24, left: 20, width: 58, height: 50 },
+    },
+    {
+      key: "alt",
+      image: "/src/assets/frame_2.png",
+      slot: { top: 0, left: 10, width: 80, height: 80 },
+    },
+  ];
+
+  // Mobile view
+
+  const frameOptions1 = [
+    {
       key: "none",
-      image: null,
-      slot: { top: 0, left: 20, width: 60, height: 60 },
+      image: "/src/assets/null1.png",
+      slot: { top: 0, left: 0, width: 100, height: 100 },
     }, // fallback, centered
     {
       key: "simple",
@@ -743,7 +828,9 @@ const QRGenerator = () => {
   const QUIET_ZONE_PCT = 3; // white margin around QR inside slot
 
   const [selectedFrameIndex, setSelectedFrameIndex] = useState(0);
+  // const [selectedFrame1Index, setSelectedFrame1Index] = useState(0);
   // selectedFrameIndex (your state)
+  // const selectedFrame1 = frameOptions1[selectedFrameIndex] || frameOptions1[0];
   const selectedFrame = frameOptions[selectedFrameIndex] || frameOptions[0];
   const slot = selectedFrame?.slot || DEFAULT_SLOT;
 
@@ -776,14 +863,12 @@ const QRGenerator = () => {
   // { key: "whatsapp", icon: <FaWhatsapp />, label: "WhatsApp" },
   // { key: "social", icon: <FaThumbsUp />, label: "Social" },
 
-
   // const [selectedFrame, setSelectedFrame] = useState(frameOptions[0]);
   const [frameText, setFrameText] = useState("");
   const [textColor, setTextColor] = useState("#000000");
   const [qrColor, setQrColor] = useState("#000000");
   const [bgColor, setBgColor] = useState("#FFFFFF");
   const [mobileStep, setMobileStep] = useState("content"); // "content" | "design"
-
 
   // const { title, desc, button } = getTabContent(activeKey);
 
@@ -813,9 +898,7 @@ const QRGenerator = () => {
                       </span>
                     }
                   >
-                    <div className="pt-3">
-                      {tabContent[t.key]}
-                    </div>
+                    <div className="pt-3">{tabContent[t.key]}</div>
                   </Tab>
                 ))}
               </Tabs>
@@ -829,129 +912,131 @@ const QRGenerator = () => {
 
                 <Tabs defaultActiveKey="frame" className="mb-3">
                   <Tab eventKey="frame" title="Frame">
-                    {/* Frame Selection */}
-                    <div className="d-flex gap-3 overflow-auto pb-2 mb-3">
-                      <div>
-                        {/* Frame Selector Grid */}
-                        <div
-                          style={{
-                            display: "flex",
-                            gap: "0.5rem",
-                            overflowX: "auto",
-                          }}
-                        >
-                          {frameOptions.map((frame, idx) => (
-                            <div
-                      key={idx}
-                      role="button"
-                      className={`border rounded text-center p-2 ${
-                        selectedFrameIndex === idx ? "border-primary bg-light" : ""
-                      }`}
-                      style={{
-                        width: 130,
-                        height: 150,
-                        flex: "0 0 auto",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        position: "relative",
-                        cursor: "pointer",
-                      }}
-                      onClick={() => setSelectedFrameIndex(idx)}
-                    >
-                      {/* Frame Preview */}
-                      {frame.image ? (
-                        <img
-                          src={frame.image}
-                          alt={`Frame ${idx}`}
-                          loading={idx === 0 ? "eager" : "lazy"}
-                          style={{
-                            width: "100%",
-                            height: "100%",
-                            objectFit: "cover",
-                            borderRadius: "6px",
-                            position: "absolute", // Frame at bottom
-                            top: 0,
-                            left: 0,
-                            zIndex: 1,
-                          }}
-                        />
-                      ) : (
-                        <small className="text-muted">No Frame</small>
-                      )}
+  {/* Frame Selection */}
+  <div className="d-flex gap-3 overflow-auto pb-2 mb-3">
+    <div>
+      {/* Frame Selector Grid */}
+      <div
+        style={{
+          display: "flex",
+          gap: "0.5rem",
+          overflowX: "auto",
+        }}
+      >
+        {frameOptions1.map((frame, idx) => (
+          <div
+            key={idx}
+            role="button"
+            className={`border rounded text-center p-2 ${
+              selectedFrameIndex === idx ? "border-primary bg-light" : ""
+            }`}
+            style={{
+              width: 130,
+              height: 150,
+              flex: "0 0 auto",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              position: "relative",
+              cursor: "pointer",
+            }}
+            onClick={() => setSelectedFrameIndex(idx)}
+          >
+            {/* Frame Preview */}
+            {frame.image ? (
+              <img
+                src={frame.image}
+                alt={`Frame ${idx}`}
+                loading={idx === 0 ? "eager" : "lazy"}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  borderRadius: "6px",
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  zIndex: 1,
+                }}
+              />
+            ) : (
+              <span></span>
+            )}
+            {/* QR Overlay */}
+{qr && frame.slot && (
+  <img
+    src={qr}
+    alt="QR Code Preview"
+    style={{
+      position: "absolute",
+      objectFit: "contain",
+      zIndex: 2,
+      pointerEvents: "none",
+      top: `${frame.slot.top}%`,
+      left: `${frame.slot.left}%`,
+      width: `${frame.slot.width}%`,
+      height: `${frame.slot.height}%`,
+    }}
+  />
+)}
 
-                      {/* QR Overlay */}
-                      <img
-                        src={qr}
-                        alt="QR Code Preview"
-                        style={{
-                          position: "absolute",
-                          width: "50%",   // adjust to fit frame
-                          height: "50%",
-                          objectFit: "contain",
-                          zIndex: 2,      // QR above frame
-                          top: "15%",     // centered
-                          left: "25%",
-                          pointerEvents: "none",
-                        }}
-                      />
-                    </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
 
-                          ))}
-                        </div>
-                      </div>
-                    </div>
+  {/* Frame Settings */}
+  <div className="bg-light p-3 rounded">
+    <div className="mb-3">
+      <label className="form-label fw-bold">Text</label>
+      <input
+        type="text"
+        className="form-control"
+        placeholder="Scan me!"
+        value={frameText}
+        onChange={(e) => setFrameText(e.target.value)}
+      />
+    </div>
 
-                    {/* Frame Settings */}
-                    <div className="bg-light p-3 rounded">
-                      <div className="mb-3">
-                        <label className="form-label fw-bold">Text</label>
-                        <input
-                          type="text"
-                          className="form-control"
-                          placeholder="Scan me!"
-                          value={frameText}
-                          onChange={(e) => setFrameText(e.target.value)}
-                        />
-                      </div>
+    <Row className="g-3">
+      <Col md={4}>
+        <label className="form-control fw-bold">
+          Text color
+          <input
+            type="color"
+            className="form-control-color ms-2"
+            value={textColor}
+            onChange={(e) => setTextColor(e.target.value)}
+          />
+        </label>
+      </Col>
+      <Col md={4}>
+        <label className="form-control fw-bold">
+          Colour
+          <input
+            type="color"
+            className="form-control-color ms-2"
+            value={qrColor}
+            onChange={(e) => setQrColor(e.target.value)}
+          />
+        </label>
+      </Col>
+      <Col md={4}>
+        <label className="form-control fw-bold">
+          Background colour
+          <input
+            type="color"
+            className="form-control-color ms-2"
+            value={bgColor}
+            onChange={(e) => setBgColor(e.target.value)}
+          />
+        </label>
+      </Col>
+    </Row>
+  </div>
+</Tab>
 
-                      <Row className="g-3">
-                        <Col md={4}>
-                          <label className="form-control fw-bold">
-                            Text color
-                            <input
-                              type="color"
-                              className="form-control-color ms-2"
-                              value={textColor}
-                              onChange={(e) => setTextColor(e.target.value)}
-                            />
-                          </label>
-                        </Col>
-                        <Col md={4}>
-                          <label className="form-control fw-bold">
-                            Colour
-                            <input
-                              type="color"
-                              className="form-control-color ms-2"
-                              value={qrColor}
-                              onChange={(e) => setQrColor(e.target.value)}
-                            />
-                          </label>
-                        </Col>
-                        <Col md={4}>
-                          <label className="form-control fw-bold">
-                            Background colour
-                            <input
-                              type="color"
-                              className="form-control-color ms-2"
-                              value={bgColor}
-                              onChange={(e) => setBgColor(e.target.value)}
-                            />
-                          </label>
-                        </Col>
-                      </Row>
-                    </div>
-                  </Tab>
 
                   <Tab eventKey="shape" title="Shape">
                     <div className="mt-4">
@@ -1288,7 +1373,7 @@ const QRGenerator = () => {
                       justifyContent: "center",
                     }}
                   >
-                   <img
+                    <img
                       src={qr}
                       alt="QR Code"
                       style={{
@@ -1297,7 +1382,6 @@ const QRGenerator = () => {
                         objectFit: "contain",
                       }}
                     />
-
                   </div>
                 </div>
               </div>
@@ -1328,16 +1412,71 @@ const QRGenerator = () => {
               className="border rounded d-flex align-items-center justify-content-center mb-3"
               style={{ height: 220 }}
             >
-              <img
-                src={qrImages[qrType]}
-                alt="QR Code"
+              <div
                 style={{
-                  width: "250px",
-                  height: "250px",
-                  objectFit: "contain",
-                  border: "1px solid #ddd",
+                  position: "relative",
+                  width: "360px", // change as you like
+                  aspectRatio: "1 / 1", // keep preview square; change if you want to match frame aspect
+                  // border: "1px dashed #ddd",
                 }}
-              />
+              >
+                {/* Frame (background or foreground—most frames work fine behind the QR) */}
+                {selectedFrame?.image && (
+                  <img
+                    src={selectedFrame.image}
+                    alt="Selected Frame"
+                    style={{
+                      position: "absolute",
+                      inset: 0,
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "contain",
+                      zIndex: 1,
+                      pointerEvents: "none",
+                    }}
+                  />
+                )}
+
+                {/* QR SLOT */}
+                <div
+                  style={{
+                    position: "absolute",
+                    top: `${slot.top}%`,
+                    left: `${slot.left}%`,
+                    width: `${slot.width}%`,
+                    height: `${slot.height}%`,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    zIndex: 2,
+                    // optional: visualize the slot while tuning
+                    // outline: "1px dashed rgba(0,0,0,.2)",
+                  }}
+                >
+                  {/* Quiet zone: keep a little white margin so scanners read it reliably */}
+                  <div
+                    style={{
+                      position: "relative",
+                      width: `${100 - QUIET_ZONE_PCT * 2}%`,
+                      height: `${100 - QUIET_ZONE_PCT * 2}%`,
+                      background: "#fff",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <img
+                      src={qr}
+                      alt="QR Code"
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "contain",
+                      }}
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* step toggles */}
@@ -1363,6 +1502,29 @@ const QRGenerator = () => {
             {/* Content step */}
             {mobileStep === "content" && (
               <>
+              {/* <Tabs
+                activeKey={activeTab}
+                onSelect={(k) => {
+                  setActiveTab(k || "website");
+                  setQrType(k || "website"); // 🔥 update QR type
+                }}
+              >
+                {qrTypes.map((t) => (
+                  <Tab
+                    key={t.key}
+                    eventKey={t.key}
+                    title={
+                      <span className="d-inline-flex align-items-center gap-2">
+                        {t.icon}
+                        {t.label}
+                      </span>
+                    }
+                  >
+                    <div className="pt-3">{tabContent[t.key]}</div>
+                  </Tab>
+                ))}
+              </Tabs> */}
+
                 <Button
                   variant="light"
                   className="w-100 border rounded mb-3 d-flex justify-content-between align-items-center"
@@ -1374,6 +1536,29 @@ const QRGenerator = () => {
                   </span>
                   <span className="caret">▾</span>
                 </Button>
+                
+                <Modal show={showTypeModal} onHide={() => setShowTypeModal(false)} centered>
+                  <Modal.Header closeButton>
+                    <Modal.Title>Select QR Type</Modal.Title>
+                  </Modal.Header>
+                  <Modal.Body>
+                    {qrTypes.map((t) => (
+                      <Button
+                        key={t.key}
+                        variant={t.key === activeTab ? "primary" : "light"}
+                        className="w-100 d-flex align-items-center justify-content-start gap-2 mb-2"
+                        onClick={() => {
+                          setActiveTab(t.key);
+                          setQrType(t.key);
+                          setShowTypeModal(false); // close after selection
+                        }}
+                      >
+                        {t.icon}
+                        {t.label}
+                      </Button>
+                    ))}
+                  </Modal.Body>
+                </Modal>
                 {tabContent[activeTab]}
                 <Button variant="primary" className="w-100 rounded-pill mt-3">
                   Download QR
@@ -1397,7 +1582,7 @@ const QRGenerator = () => {
                             overflowX: "auto",
                           }}
                         >
-                          {frameOptions.map((frame, idx) => (
+                          {frameOptions1.map((frame, idx) => (
                             <div
                               key={idx}
                               role="button"
@@ -1407,8 +1592,8 @@ const QRGenerator = () => {
                                   : ""
                               }`}
                               style={{
-                                width: 120,
-                                height: 130,
+                                width: 130,
+                                height: 150,
                                 flex: "0 0 auto",
                                 display: "flex",
                                 alignItems: "center",
@@ -1418,22 +1603,6 @@ const QRGenerator = () => {
                               }}
                               onClick={() => setSelectedFrameIndex(idx)}
                             >
-                              {/* QR Preview */}
-                              <img
-                                src={qr}
-                                alt="QR Code Preview"
-                                style={{
-                                  position: "absolute",
-                                  width: "50%",
-                                  height: "50%",
-                                  objectFit: "contain",
-                                  zIndex: 1,
-                                  top: "15%",
-                                  left: "25%",
-                                  pointerEvents: "none",
-                                }}
-                              />
-
                               {/* Frame Preview */}
                               {frame.image ? (
                                 <img
@@ -1445,13 +1614,34 @@ const QRGenerator = () => {
                                     height: "100%",
                                     objectFit: "cover",
                                     borderRadius: "6px",
-                                    zIndex: 2,
-                                    position: "relative",
+                                    position: "absolute", // Frame at bottom
+                                    top: 0,
+                                    left: 0,
+                                    zIndex: 1,
                                   }}
                                 />
                               ) : (
-                                <small className="text-muted">No Frame</small>
+                                <span></span>
                               )}
+
+                              {/* QR Overlay */}
+{qr && frame.slot && (
+  <img
+    src={qr}
+    alt="QR Code Preview"
+    style={{
+      position: "absolute",
+      objectFit: "contain",
+      zIndex: 2,
+      pointerEvents: "none",
+      top: `${frame.slot.top}%`,
+      left: `${frame.slot.left}%`,
+      width: `${frame.slot.width}%`,
+      height: `${frame.slot.height}%`,
+    }}
+  />
+)}
+
                             </div>
                           ))}
                         </div>
@@ -1508,6 +1698,7 @@ const QRGenerator = () => {
                       </Row>
                     </div>
                   </Tab>
+
                   <Tab eventKey="shape" title="Shape">
                     <div className="mt-4">
                       {/* Shape Style Section */}
@@ -1516,7 +1707,7 @@ const QRGenerator = () => {
                         <div className="d-flex flex-wrap gap-2 mb-3">
                           {[...Array(8)].map((_, i) => (
                             <button
-                              key={`shape-${i + 1}`} // ✅ more explicit than just i
+                              key={`shape-${i + 1}`} // ✅ clearer, more explicit
                               className="btn btn-light border p-2"
                               style={{
                                 width: "50px",
@@ -1566,7 +1757,7 @@ const QRGenerator = () => {
                         <div className="d-flex flex-wrap gap-2 mb-3">
                           {[...Array(10)].map((_, i) => (
                             <button
-                              key={`border-${i + 1}`} // ✅ key directly on the root element
+                              key={`border-${i + 1}`} // ✅ key on top-level element
                               className="btn btn-light border p-2"
                               style={{ width: "50px", height: "50px" }}
                             >
@@ -1583,7 +1774,7 @@ const QRGenerator = () => {
                         <div className="d-flex flex-wrap gap-2 mb-3">
                           {[...Array(10)].map((_, i) => (
                             <button
-                              key={`center-${i + 1}`} // ✅ descriptive key
+                              key={`center-${i + 1}`} // ✅ better than just `i`
                               className="btn btn-light border p-2"
                               style={{ width: "50px", height: "50px" }}
                             >
@@ -1622,6 +1813,7 @@ const QRGenerator = () => {
                       </div>
                     </div>
                   </Tab>
+
                   <Tab eventKey="logo" title="Logo">
                     <div className="p-3">
                       <h6 className="mb-3 fw-bold">Select a logo</h6>
@@ -1749,7 +1941,7 @@ const QRGenerator = () => {
                           },
                         ].map((level) => (
                           <div
-                            key={level.name} // ✅ stable & descriptive key
+                            key={level.name} // ✅ better: unique & stable
                             role="button"
                             onClick={() => setSelectedLevel(level.name)}
                             className={`border rounded p-2 text-center ${
@@ -1837,7 +2029,7 @@ const QRGenerator = () => {
         </Container>
 
         {/* modal for mobile type selection */}
-        <Modal
+        {/* <Modal
           show={showTypeModal}
           onHide={() => setShowTypeModal(false)}
           centered
@@ -1864,7 +2056,7 @@ const QRGenerator = () => {
               ))}
             </ListGroup>
           </Modal.Body>
-        </Modal>
+        </Modal> */}
       </div>
 
       <div className="py-5 text-center bg-white">
@@ -2677,7 +2869,7 @@ const QRGenerator = () => {
                     aria-expanded="false"
                     aria-controls="collapseFive"
                   >
-                    Can a generate QR codes be used for commerical purposes?
+                    Can a generate QR codes be used for commercial purposes?
                   </button>
                 </h2>
                 <div
