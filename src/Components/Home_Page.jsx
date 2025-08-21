@@ -95,6 +95,7 @@ import frame_4 from "../assets/frame_4.png";
 import frame_5 from "../assets/frame_5.png";
 import frame_6 from "../assets/frame_6.png";
 import frame_7 from "../assets/frame_7.png";
+import logo from "../assets/logo.jpg";
 
 const features = [
   {
@@ -3085,7 +3086,7 @@ const QRGenerator = () => {
         <div className="container py-5 d-flex flex-column align-items-center">
           <div className="mb-4">
             <img
-              src="/src/assets/logo.jpg"
+              src={logo}
               alt="QRFY Logo"
               width={120}
               height={60}
