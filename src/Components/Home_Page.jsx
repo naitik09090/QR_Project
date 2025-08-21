@@ -13,9 +13,9 @@ import { Tab } from "react-bootstrap";
 import { Card } from "react-bootstrap";
 import { Modal } from "react-bootstrap";
 
-// import step1Img from "../assets/step1.png";
-// import step2Img from "../assets/step2.png";
-// import step3Img from "../assets/step3.png";
+import step1 from "../assets/step1.png";
+import step2 from "../assets/step2.png";
+import step3 from "../assets/step3.png";
 import "bootstrap/dist/css/bootstrap.min.css";
 // import img2 from "../assets/Google.png";
 import { TfiWorld } from "react-icons/tfi";
@@ -65,9 +65,9 @@ import qr_image_3 from "../assets/qr_image_3.png";
 import qr_image_4 from "../assets/qr_image_4.png";
 import qr_image_5 from "../assets/qr_image_5.png";
 import qr_image_6 from "../assets/qr_image_6.png";
-// import img_7 from "../assets/img_7.png";
-// import img_8 from "../assets/img_8.png";
-// import img_9 from "../assets/img_9.png";
+import img_7 from "../assets/img_7.png";
+import img_8 from "../assets/img_8.png";
+import img_9 from "../assets/img_9.png";
 import img_10 from "../assets/img_10.jpg";
 import img_11 from "../assets/img_11.png";
 // import img1 from "../assets/logo.jpg";
@@ -87,6 +87,14 @@ import { MdDinnerDining } from "react-icons/md";
 import { FaPaypal } from "react-icons/fa";
 import { FaBitcoin } from "react-icons/fa";
 // import { MdOutlineHideSource } from "react-icons/md";
+import null_1 from "../assets/null1.png";
+import frame_1 from "../assets/frame_1.png";
+import frame_2 from "../assets/frame_2.png";
+import frame_3 from "../assets/frame_3.png";
+import frame_4 from "../assets/frame_4.png";
+import frame_5 from "../assets/frame_5.png";
+import frame_6 from "../assets/frame_6.png";
+import frame_7 from "../assets/frame_7.png";
 
 const features = [
   {
@@ -263,17 +271,17 @@ const QRGenerator = () => {
     wedding: {
       title: "Create a unique invitation for an unforgettable event.",
       button: "See more",
-      img: "/src/assets/img_7.png",
+      img: img_7,
     },
     ngo: {
       title: "Connect the world to your cause and facilitate donations.",
       button: "See more",
-      img: "/src/assets/img_8.png",
+      img: img_8,
     },
     photographer: {
       title: "Share your portfolio instantly with a single scan.",
       button: "See more",
-      img: "/src/assets/img_9.png",
+      img: img_9,
     },
   };
 
@@ -737,43 +745,43 @@ const QRGenerator = () => {
   const frameOptions = [
     {
       key: "null",
-      image: "/src/assets/null1.png",
+      image: null_1,
       slot: { top: 0, left: 0, width: 100, height: 100 },
     },
     {
       key: "simple",
-      image: "/src/assets/frame_1.png",
+      image: frame_1,
       slot: { top: 1, left: 23, width: 55, height: 55 },
     },
     {
       key: "envelope",
-      image: "/src/assets/frame_3.png",
+      image: frame_3,
       slot: { top: 5, left: 24, width: 55, height: 52 },
     },
     {
       key: "tray",
-      image: "/src/assets/frame_4.png",
+      image: frame_4,
       slot: { top: 15, left: 22, width: 56, height: 56 },
     },
     {
       key: "scanme",
-      image: "/src/assets/frame_5.png",
+      image: frame_5,
       slot: { top: 22, left: 15, width: 66, height: 62 },
     },
     {
       key: "mug",
-      image: "/src/assets/frame_7.png",
+      image: frame_7,
       slot: { top: 8, left: 0, width: 38, height: 38 },
     },
     // Scooter-like frame: QR sits a bit right-of-center and smaller
     {
       key: "scooter",
-      image: "/src/assets/frame_6.png",
+      image: frame_6,
       slot: { top: 24, left: 20, width: 58, height: 50 },
     },
     {
       key: "alt",
-      image: "/src/assets/frame_2.png",
+      image: frame_2,
       slot: { top: 0, left: 10, width: 80, height: 80 },
     },
   ];
@@ -783,43 +791,43 @@ const QRGenerator = () => {
   const frameOptions1 = [
     {
       key: "none",
-      image: "/src/assets/null1.png",
+      image: null_1,
       slot: { top: 0, left: 0, width: 100, height: 100 },
     }, // fallback, centered
     {
       key: "simple",
-      image: "/src/assets/frame_1.png",
+      image: frame_1,
       slot: { top: 1, left: 23, width: 55, height: 55 },
     },
     {
       key: "envelope",
-      image: "/src/assets/frame_3.png",
+      image: frame_3,
       slot: { top: 5, left: 24, width: 55, height: 52 },
     },
     {
       key: "tray",
-      image: "/src/assets/frame_4.png",
+      image:frame_4,
       slot: { top: 15, left: 22, width: 56, height: 56 },
     },
     {
       key: "scanme",
-      image: "/src/assets/frame_5.png",
+      image: frame_5,
       slot: { top: 22, left: 15, width: 66, height: 62 },
     },
     {
       key: "mug",
-      image: "/src/assets/frame_7.png",
+      image: frame_7,
       slot: { top: 8, left: 0, width: 38, height: 38 },
     },
     // Scooter-like frame: QR sits a bit right-of-center and smaller
     {
       key: "scooter",
-      image: "/src/assets/frame_6.png",
+      image: frame_6,
       slot: { top: 24, left: 20, width: 58, height: 50 },
     },
     {
       key: "alt",
-      image: "/src/assets/frame_2.png",
+      image: frame_2,
       slot: { top: 0, left: 10, width: 80, height: 80 },
     },
   ];
@@ -2073,7 +2081,7 @@ const QRGenerator = () => {
             <Col md={4}>
               <div className="d-flex flex-column align-items-center px-3">
                 <img
-                  src="/src/assets/step1.png"
+                  src={step1}
                   alt="Step 2"
                   loading="lazy"
                   className="img-fluid h-auto w-auto mb-3"
@@ -2088,7 +2096,7 @@ const QRGenerator = () => {
             <Col md={4}>
               <div className="d-flex flex-column align-items-center px-3">
                 <img
-                  src="/src/assets/step2.png"
+                  src={step2}
                   alt="Step 2"
                   loading="lazy"
                   className="img-fluid h-auto w-auto mb-3"
@@ -2103,7 +2111,7 @@ const QRGenerator = () => {
             <Col md={4}>
               <div className="d-flex flex-column align-items-center px-3">
                 <img
-                  src="/src/assets/step3.png"
+                  src={step3}
                   alt="Step 2"
                   loading="lazy"
                   className="img-fluid h-auto w-auto mb-3"
