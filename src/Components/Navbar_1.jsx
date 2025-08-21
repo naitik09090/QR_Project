@@ -3,6 +3,7 @@ import React from "react"
 import { FaQrcode } from "react-icons/fa";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import logo from "../assets/logo.jpg"; // Adjust the path as necessary
 
 const Navbar = () => {
   return (
@@ -12,10 +13,10 @@ const Navbar = () => {
           {/* Logo */}
           <a className="navbar-brand d-flex align-items-center" href="/">
             <img
-              src="/src/assets/logo.jpg"
+              src={logo}
               alt="QRFY Logo"
-              width={120}
-              height={60}
+              width={174}
+              height={64}
               style={{ objectFit: "contain" }}
             />
           </a>
