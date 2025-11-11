@@ -2,3 +2,12 @@ img {
   width: 120px;
   height: auto;
 }
+
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  padding: 10px 5px;
+  color: #015F9E;
+}

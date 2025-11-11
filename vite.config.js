@@ -1,15 +1,18 @@
-import vitePluginImp from 'vite-plugin-imp'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import Icons from 'unplugin-icons/vite';
+import { FileSystemIconLoader } from 'unplugin-icons/loaders';
 
-export default {
+export default defineConfig({
   plugins: [
-    vitePluginImp({
-      libList: [
-        {
-          libName: 'react-icons',
-          style: () => false,
-          libDirectory: 'lib/icons'
-        }
-      ]
-    })
-  ]
-}
+    react(),
+    Icons({
+      compiler: 'jsx',
+      autoInstall: true,
+      customCollections: {
+        // Optional: If using custom icons
+        custom: FileSystemIconLoader('./src/assets/icons'),
+      },
+    }),
+  ],
+});

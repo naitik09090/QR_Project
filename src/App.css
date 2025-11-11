@@ -1,0 +1,37 @@
+Button{
+    border: none !important;
+    background-color: #015f9e !important;
+    color: white !important;
+}
+.button2{
+    color: #015f9e !important;
+    border: none !important;
+}
+
+body{
+    background-color: #ebf7ff !important;
+}
+.Buton_2_BG{
+    background-color: #ebf7ff !important;
+    color: black !important;
+}
+.Buton_3_BG{
+    background-color: #ffffff !important;
+    color: black !important;
+}
+.Buton_1_BG{
+    padding: 50px !important;
+    border-radius: 45px;
+    background-color: #ffffff !important;
+    color: black !important;
+    box-shadow: 10px 24px 52px 10px rgba(0,0,0,0.08);
+}
+.Buton_5_BG{
+    width: auto;
+    height: 100vh;
+    padding: 50px !important;
+    border-radius: 45px;
+    background-color: #ffffff !important;
+    color: black !important;
+    box-shadow: 10px 24px 52px 10px rgba(0,0,0,0.08);
+}

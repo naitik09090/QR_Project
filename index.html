@@ -6,14 +6,87 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description"
     content="Generate and customize QR codes easily with our tool. Supports text, URLs, and more for instant sharing." />
-  <link rel="icon" type="image/x-icon" href="/src/assets/logo_1.jpg">
   <title>QR Code Generator</title>
+
+  <!-- ✅ Fonts (optimized loading) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="/assets/index-D7Ldze5v.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" as="style"
+    onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  </noscript>
+
+  <!-- ✅ Inline Critical CSS (only above-the-fold styles) -->
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background: #fff;
+    }
+
+    .navbar {
+      background: #fff;
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: auto;
+      padding: 1rem;
+    }
+
+    /* Add more critical styles if first paint needs them */
+  </style>
+
+  <!-- ✅ Preconnect for faster CDN -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+
+  <!-- ✅ Non-blocking Bootstrap CSS -->
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" as="style"
+    onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  </noscript>
+
+  <!-- ✅ Non-blocking App CSS -->
+  <link rel="preload" href="/assets/index-D7Ldze5v.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="/assets/index-D7Ldze5v.css">
+  </noscript>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SXM06X9478"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-SXM06X9478');
+  </script>
+
 </head>
+
 
 <body>
   <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
+  <script src="app.js" defer></script>
 
+  <!-- Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- ✅ React entry -->
+  <script type="module" src="/src/main.jsx" defer></script>
+
+
+  <!-- ✅ Bootstrap JS (deferred, not render-blocking) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
 </body>
+<script>
+  window.addEventListener("load", function () {
+    var s = document.createElement("script");
+    s.src = "bootstrap.bundle.min.js";
+    document.body.appendChild(s);
+  });
+</script>
 
 </html>

@@ -1,9 +1,8 @@
-import React from "react"
+import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import { Button } from "react-bootstrap";
-import { FaQrcode } from 'react-icons/fa';
-import "bootstrap/dist/css/bootstrap.min.css";
+import { FaQrcode } from "react-icons/fa";
 
 const BackToTopButton = () => {
   const [visible, setVisible] = useState(false);
@@ -30,17 +29,19 @@ const BackToTopButton = () => {
       variant="dark"
       className="back-to-top-btn"
       onClick={scrollToTop}
+      aria-label="Back to top" // ✅ accessible name
+      title="Back to top" // (optional tooltip on hover)
       style={{
         position: "fixed",
         bottom: "10px",
         right: "10px",
         display: visible ? "inline" : "none",
-        borderRadius: "50%",
-        padding: "10px 15px",
+        borderRadius: "20%",
+        padding: "15px 15px",
         zIndex: 1000,
       }}
     >
-      <FaQrcode size={24} />
+      <FaQrcode size={24} aria-hidden="true" />
     </Button>
   );
 };

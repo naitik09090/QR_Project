@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Form } from "react-bootstrap";
@@ -15,54 +15,40 @@ export default function LoginForm() {
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
-  const handleLogin = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-
-    try {
-      const res = await fetch(
-        "https://qrcodegen-e4bccbhbd7edh9bp.centralindia-01.azurewebsites.net/api/auth/login/",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
+      let { name: a, value: r } = e.target;
+      setFormData((e) => ({ ...e, [a]: r }));
+    },
+    handleLogin = async (e) => {
+      e.preventDefault(), setLoading(!0);
+      try {
+        let a = await fetch(
+            "https://qrcodegen-e4bccbhbd7edh9bp.centralindia-01.azurewebsites.net/api/auth/login/",
+            {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(formData),
+            }
+          ),
+          r = await a.json();
+        if (a.ok)
+          alert(`Welcome, ${r.user?.name || "User"}`),
+            console.log("User logged in:", r.user),
+            localStorage.setItem("token", r.token),
+            navigate("/");
+        else {
+          let t =
+            r?.detail ||
+            r?.message ||
+            "Invalid email or password. Please try again.";
+          alert(t), console.log("Server response:", r);
         }
-      );
-
-      const data = await res.json();
-
-      if (res.ok) {
-        alert(`Welcome, ${data.user?.name || "User"}`);
-        console.log("User logged in:", data.user);
-        localStorage.setItem("token", data.token);
-
-        // ✅ Redirect to dashboard/home page after login
-        navigate("/");
-      } else {
-        // Show backend error if available
-        const errorMsg =
-          data?.detail ||
-          data?.message ||
-          "Invalid email or password. Please try again.";
-        alert(errorMsg);
-        console.log("Server response:", data);
+      } catch (n) {
+        console.error("Error logging in:", n),
+          alert("An error occurred. Please try again later.");
+      } finally {
+        setLoading(!1);
       }
-    } catch (error) {
-      console.error("Error logging in:", error);
-      alert("An error occurred. Please try again later.");
-    } finally {
-      setLoading(false);
-    }
-  };
+    };
 
   return (
     <div className="container-fluid d-flex justify-content-center align-items-center vh-100">
@@ -70,7 +56,7 @@ export default function LoginForm() {
         src={qr_image}
         alt="QR Code"
         className="img-fluid"
-        style={{ Width: "auto",height: "auto" }}
+        style={{ Width: "auto", height: "auto" }}
       />
 
       <Form
@@ -131,5 +117,3 @@ export default function LoginForm() {
     </div>
   );
 }
-
-

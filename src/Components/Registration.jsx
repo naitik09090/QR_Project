@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import qr_image from "../assets/qr_image.png";
 
+
 export default function Registration() {
   const [formData, setFormData] = useState({
     username: "",
