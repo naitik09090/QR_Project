@@ -44,7 +44,7 @@ import { MdEmail } from "react-icons/md";
 //   FaListUl,
 //   FaBuilding,
 // } from "react-icons/fa";
-// import { FaCircleCheck } from "react-icons/fa6";
+import { FaCircleCheck } from "react-icons/fa6";
 import { FaChartLine } from "react-icons/fa";
 import { FaEdit } from "react-icons/fa";
 import { FaQrcode } from "react-icons/fa";
