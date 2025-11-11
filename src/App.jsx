@@ -70,25 +70,46 @@ const paramToCode = (param) => {
   return null;
 };
 
-// 🚀 CountryRedirect
-// - Runs on app root and updates localStorage based on detection (replace detect logic as needed)
-// - Redirects "/" to "/<CODE>"
+/* ---------------------------
+   New: Timezone -> Country detection
+   --------------------------- */
+const detectCountryFromTimezone = (tz) => {
+  if (!tz || typeof tz !== "string") return null;
+  const t = tz.toLowerCase();
+
+  // India
+  if (t.includes("kolkata") || t.includes("india") || t.includes("mumbai") || t.includes("delhi") || t.includes("asia/kolkata")) return "IN";
+  // United Kingdom
+  if (t.includes("london") || t.includes("gmt") || t.includes("europe/london")) return "GB";
+  // France
+  if (t.includes("paris") || t.includes("europe/paris")) return "FR";
+  // Japan
+  if (t.includes("tokyo") || t.includes("asia/tokyo")) return "JP";
+  // Australia
+  if (t.includes("sydney") || t.includes("melbourne") || t.includes("australia")) return "AU";
+  // Broad Americas (map to US — you can refine later)
+  if (t.includes("america/") || t.includes("est") || t.includes("pst") || t.includes("cst") || t.includes("mst")) return "US";
+  // Germany example
+  if (t.includes("berlin") || t.includes("germany") || t.includes("europe/berlin")) return "DE";
+
+  // fallback null
+  return null;
+};
+
+// 🚀 CountryRedirect (updated: uses timezone detection and redirects WHEN user opens root or a country route)
 const CountryRedirect = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // TODO: Replace this simple detection with real IP-based detection if you want
-  const detectCountryKey = () => {
-    // currently default to the key "india"
-    return "india";
-  };
-
   useEffect(() => {
-    const detectedKey = detectCountryKey(); // e.g., "india"
-    const detectedCode = (COUNTRY_DATA[detectedKey] && COUNTRY_DATA[detectedKey].code) 
-      ? COUNTRY_DATA[detectedKey].code.toUpperCase() 
-      : "IN";
-    const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone || "UTC";
+    // run only in browser
+    if (typeof window === "undefined") return;
+
+    // 1) detect via timezone (reflects PC clock/timezone)
+    const tz = Intl?.DateTimeFormat?.().resolvedOptions?.().timeZone || "";
+    const detectedCode = detectCountryFromTimezone(tz) || "IN"; // default to IN
+
+    const timezone = tz || "UTC";
 
     // Build updated data keyed by CODE
     const updatedData = {};
@@ -103,33 +124,41 @@ const CountryRedirect = () => {
       };
     });
 
-    const storedCountryCode = localStorage.getItem("user_country");
+    const storedCountryCode = window.localStorage.getItem("user_country");
 
     if (storedCountryCode !== detectedCode) {
-      localStorage.setItem("all_countries", JSON.stringify(updatedData));
-      localStorage.setItem("user_country", detectedCode);
-      localStorage.setItem("user_lang", navigator.language || COUNTRY_DATA[detectedKey].lang);
-      localStorage.setItem("user_timezone", timezone);
-      console.log("Country changed → localStorage updated:", detectedCode);
+      window.localStorage.setItem("all_countries", JSON.stringify(updatedData));
+      window.localStorage.setItem("user_country", detectedCode);
+      window.localStorage.setItem("user_lang", navigator.language || COUNTRY_DATA["india"].lang);
+      window.localStorage.setItem("user_timezone", timezone);
+      console.log("Timezone detected → localStorage updated:", detectedCode, "tz:", tz);
     } else {
       // still refresh times
-      localStorage.setItem("all_countries", JSON.stringify(updatedData));
-      console.log("Same country → refreshed all_countries times:", storedCountryCode);
+      window.localStorage.setItem("all_countries", JSON.stringify(updatedData));
+      console.log("Timezone detected but same country → refreshed all_countries times:", storedCountryCode);
     }
 
-    // Redirect root "/" to detected country code path (only if we are on "/")
+    // Decide whether current path is a country-route (root or /<code> or /<key>)
+    const pathSegment = location.pathname.replace(/^\//, "").toUpperCase();
+    const isCountryRoute =
+      location.pathname === "/" ||
+      !!COUNTRY_CODE_MAP[pathSegment] ||
+      Object.keys(COUNTRY_DATA).includes(pathSegment.toLowerCase());
+
+    // If user opened root or a country route, redirect to detectedCode when different
     const targetPath = `/${detectedCode}`;
-    if (location.pathname === "/") {
+    if (isCountryRoute && window.location.pathname.toUpperCase() !== targetPath.toUpperCase()) {
       navigate(targetPath, { replace: true });
     }
   }, [location.pathname, navigate]);
 
-  // Also listen to storage changes from other tabs and redirect current tab to that code
+  // Listen for storage updates from other tabs
   useEffect(() => {
+    if (typeof window === "undefined") return;
     const onStorage = (e) => {
       if (e.key === "user_country" && e.newValue) {
         const code = e.newValue;
-        if (window.location.pathname !== `/${code}`) {
+        if (window.location.pathname.toUpperCase() !== `/${code}`) {
           navigate(`/${code}`, { replace: true });
         }
       }
@@ -150,13 +179,15 @@ const CountryPage = () => {
   const code = paramToCode(rawParam);
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
+
     if (!code) {
       // invalid param: redirect to default IN
       navigate("/IN", { replace: true });
       return;
     }
 
-    const storedCountryCode = localStorage.getItem("user_country");
+    const storedCountryCode = window.localStorage.getItem("user_country");
     const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone || "UTC";
 
     // Build updated data keyed by CODE (refresh currentTime + active flag)
@@ -174,14 +205,14 @@ const CountryPage = () => {
 
     // If URL code differs from localStorage → update localStorage
     if (storedCountryCode !== code) {
-      localStorage.setItem("all_countries", JSON.stringify(updatedData));
-      localStorage.setItem("user_country", code);
-      localStorage.setItem("user_lang", navigator.language || (COUNTRY_CODE_MAP[code] && COUNTRY_CODE_MAP[code].lang));
-      localStorage.setItem("user_timezone", timezone);
+      window.localStorage.setItem("all_countries", JSON.stringify(updatedData));
+      window.localStorage.setItem("user_country", code);
+      window.localStorage.setItem("user_lang", navigator.language || (COUNTRY_CODE_MAP[code] && COUNTRY_CODE_MAP[code].lang));
+      window.localStorage.setItem("user_timezone", timezone);
       console.log("✅ URL changed → localStorage updated to:", code);
     } else {
       // still refresh all_countries times
-      localStorage.setItem("all_countries", JSON.stringify(updatedData));
+      window.localStorage.setItem("all_countries", JSON.stringify(updatedData));
       console.log("⟳ Refreshed all_countries times for:", code);
     }
   }, [code, navigate]);
@@ -189,7 +220,7 @@ const CountryPage = () => {
   // Read the stored info (all_countries is keyed by CODE)
   const stored = (() => {
     try {
-      return JSON.parse(localStorage.getItem("all_countries")) || {};
+      return JSON.parse(typeof window !== "undefined" ? window.localStorage.getItem("all_countries") : null) || {};
     } catch {
       return {};
     }
@@ -217,10 +248,12 @@ const CountryPage = () => {
 // ⚡ Main App
 function App() {
   useEffect(() => {
-    const noSelectElements = document.querySelectorAll(".no-select");
-    noSelectElements.forEach((el) => {
-      el.style.userSelect = "none";
-    });
+    if (typeof document !== "undefined") {
+      const noSelectElements = document.querySelectorAll(".no-select");
+      noSelectElements.forEach((el) => {
+        el.style.userSelect = "none";
+      });
+    }
   }, []);
 
   return (
