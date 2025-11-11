@@ -24,7 +24,30 @@ const COUNTRY_DATA = {
   india: { code: "IN", timezone: "Asia/Kolkata", lang: "en-IN", active: true },
   uk: { code: "GB", timezone: "Europe/London", lang: "en-GB", active: false },
   usa: { code: "US", timezone: "America/New_York", lang: "en-US", active: false },
-  fr: { code: "FR", timezone: "Europe/Paris", lang: "fr-FR", active: false },
+  canada: { code: "CA", timezone: "America/Toronto", lang: "en-CA", active: false },
+  australia: { code: "AU", timezone: "Australia/Sydney", lang: "en-AU", active: false },
+  france: { code: "FR", timezone: "Europe/Paris", lang: "fr-FR", active: false },
+  germany: { code: "DE", timezone: "Europe/Berlin", lang: "de-DE", active: false },
+  japan: { code: "JP", timezone: "Asia/Tokyo", lang: "ja-JP", active: false },
+  china: { code: "CN", timezone: "Asia/Shanghai", lang: "zh-CN", active: false },
+  southkorea: { code: "KR", timezone: "Asia/Seoul", lang: "ko-KR", active: false },
+  singapore: { code: "SG", timezone: "Asia/Singapore", lang: "en-SG", active: false },
+  newzealand: { code: "NZ", timezone: "Pacific/Auckland", lang: "en-NZ", active: false },
+  brazil: { code: "BR", timezone: "America/Sao_Paulo", lang: "pt-BR", active: false },
+  mexico: { code: "MX", timezone: "America/Mexico_City", lang: "es-MX", active: false },
+  argentina: { code: "AR", timezone: "America/Argentina/Buenos_Aires", lang: "es-AR", active: false },
+  russia: { code: "RU", timezone: "Europe/Moscow", lang: "ru-RU", active: false },
+  southafrica: { code: "ZA", timezone: "Africa/Johannesburg", lang: "en-ZA", active: false },
+  nigeria: { code: "NG", timezone: "Africa/Lagos", lang: "en-NG", active: false },
+  pakistan: { code: "PK", timezone: "Asia/Karachi", lang: "en-PK", active: false },
+  bangladesh: { code: "BD", timezone: "Asia/Dhaka", lang: "bn-BD", active: false },
+  sri_lanka: { code: "LK", timezone: "Asia/Colombo", lang: "si-LK", active: false },
+  uae: { code: "AE", timezone: "Asia/Dubai", lang: "ar-AE", active: false },
+  saudi: { code: "SA", timezone: "Asia/Riyadh", lang: "ar-SA", active: false },
+  spain: { code: "ES", timezone: "Europe/Madrid", lang: "es-ES", active: false },
+  italy: { code: "IT", timezone: "Europe/Rome", lang: "it-IT", active: false },
+  chile: { code: "CL", timezone: "America/Santiago", lang: "es-CL", active: false }
+  // add more entries here as needed...
 };
 
 /**
@@ -48,20 +71,15 @@ const COUNTRY_CODE_MAP = buildCountryCodeMap();
 const paramToCode = (param) => {
   if (!param) return null;
   const p = String(param).trim();
-  // If likely a code (2 letters)
   if (p.length === 2) {
     const upper = p.toUpperCase();
     if (COUNTRY_CODE_MAP[upper]) return upper;
-    // allow UK -> GB
     if (upper === "UK" && COUNTRY_CODE_MAP["GB"]) return "GB";
   }
-  // else try to match by original key or country name (case-insensitive)
   const lower = p.toLowerCase();
-  // match original keys: "india", "uk", "usa", "fr"
   if (COUNTRY_DATA[lower] && COUNTRY_DATA[lower].code) {
     return COUNTRY_DATA[lower].code.toUpperCase();
   }
-  // fallback try find by name field (if added)
   const found = Object.values(COUNTRY_CODE_MAP).find((c) => {
     const name = c.name || c.keyName || "";
     return name.toLowerCase() === lower || name.toLowerCase().includes(lower);
@@ -77,22 +95,31 @@ const detectCountryFromTimezone = (tz) => {
   if (!tz || typeof tz !== "string") return null;
   const t = tz.toLowerCase();
 
-  // India
-  if (t.includes("kolkata") || t.includes("india") || t.includes("mumbai") || t.includes("delhi") || t.includes("asia/kolkata")) return "IN";
-  // United Kingdom
-  if (t.includes("london") || t.includes("gmt") || t.includes("europe/london")) return "GB";
-  // France
-  if (t.includes("paris") || t.includes("europe/paris")) return "FR";
-  // Japan
-  if (t.includes("tokyo") || t.includes("asia/tokyo")) return "JP";
-  // Australia
-  if (t.includes("sydney") || t.includes("melbourne") || t.includes("australia")) return "AU";
-  // Broad Americas (map to US — you can refine later)
-  if (t.includes("america/") || t.includes("est") || t.includes("pst") || t.includes("cst") || t.includes("mst")) return "US";
-  // Germany example
-  if (t.includes("berlin") || t.includes("germany") || t.includes("europe/berlin")) return "DE";
+  // 1) Try match against the timezone strings in COUNTRY_DATA (best effort)
+  for (const entryKey of Object.keys(COUNTRY_DATA)) {
+    const entry = COUNTRY_DATA[entryKey];
+    if (!entry.timezone) continue;
+    // match substrings like "asia/kolkata" or "america/new_york"
+    if (t.includes(entry.timezone.toLowerCase().replace("_", "_").split("/").pop())) {
+      return entry.code.toUpperCase();
+    }
+    // also allow matching entire IANA timezone (e.g. "asia/kolkata")
+    if (t.includes(entry.timezone.toLowerCase())) {
+      return entry.code.toUpperCase();
+    }
+  }
 
-  // fallback null
+  // 2) Common abbreviation fallbacks
+  if (t.includes("kolkata") || t.includes("india") || t.includes("ist")) return "IN";
+  if (t.includes("london") || t.includes("gmt")) return "GB";
+  if (t.includes("paris") || t.includes("cet")) return "FR"; // could be FR/DE/IT/ES - choose one or refine
+  if (t.includes("tokyo") || t.includes("jst")) return "JP";
+  if (t.includes("sydney") || t.includes("australia")) return "AU";
+  if (t.includes("new_york") || t.includes("est") || t.includes("eastern")) return "US";
+  if (t.includes("los_angeles") || t.includes("pst") || t.includes("pacific")) return "US";
+  if (t.includes("toronto") || t.includes("eastern")) return "CA";
+
+  // fallback null (you may choose a default like "IN")
   return null;
 };
 
