@@ -1,0 +1,29 @@
+.learn_BTn {
+    border: none;
+    background-color: transparent !important;
+    color: black !important;
+    position: relative;
+    bottom: 10px;
+}
+
+.vertical-line {
+    width: 1px;
+    background-color: #e0e0e0;
+    height: 100%;
+    margin-left: 50px
+}
+
+.claendar_Icon {
+    height: 20px;
+    width: 20px;
+}
+
+.sidebar-scrollable {
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.sidebar-scrollable::-webkit-scrollbar {
+    display: none;
+}

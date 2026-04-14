@@ -1,0 +1,7 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.no-select {
+    user-select: none;
+}

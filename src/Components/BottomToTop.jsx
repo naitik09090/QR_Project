@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { Button } from "react-bootstrap";
 import { FaQrcode } from "react-icons/fa";
+// import "../css/BottomToTop.scss";
 
 const BackToTopButton = () => {
   const [visible, setVisible] = useState(false);

@@ -1,0 +1,18 @@
+img {
+  width: 120px;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  padding: 10px 5px;
+  color: #015f9e;
+
+  &:active,
+  &:focus,
+  &:hover {
+    text-decoration: none;
+    padding: 10px 5px;
+    color: #015f9e;
+  }
+}

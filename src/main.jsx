@@ -16,7 +16,11 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './App';
+import './index.css';
+
+import { HelmetProvider } from 'react-helmet-async';
 
 const container = document.getElementById('root');
 if (!container) throw new Error('No #root element found in index.html');
@@ -24,8 +28,10 @@ if (!container) throw new Error('No #root element found in index.html');
 const root = createRoot(container);
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <HelmetProvider>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </HelmetProvider>
   </React.StrictMode>
 );

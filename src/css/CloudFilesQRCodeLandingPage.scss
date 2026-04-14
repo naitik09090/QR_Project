@@ -1,0 +1,77 @@
+$primary1: #00a1ff; // Cloud Sky Blue
+$primary: #015f9e; // Site Primary Blue
+$white: #ffffff;
+$text-main: #1a202c;
+$text-muted: #718096;
+$border-color: #e2e8f0;
+$bg-light: #f8fafc;
+$cloud-accent: #0084cc;
+
+.cloud-landing-container {
+    background-color: $white;
+    color: $text-main;
+    font-family: 'Inter', sans-serif;
+    padding-bottom: 0;
+
+    .hero-section {
+        padding: 80px 0;
+        text-align: center;
+        border-bottom: 1px solid $border-color;
+        margin-bottom: 50px;
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: $text-main;
+            margin-bottom: 20px;
+            
+            span {
+                color: $primary;
+            }
+        }
+
+        .hero-subtitle {
+            font-size: 1.15rem;
+            color: $text-muted;
+            max-width: 800px; margin: 0 auto; line-height: 1.6; } }
+
+    .generator-card {
+        background: $white; border: 1px solid $border-color; border-radius: 24px; padding: 40px; box-shadow: 0 15px 35px rgba(0,0,0,0.05); margin-bottom: 80px;
+
+        .form-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 25px; color: $text-main; display: flex; align-items: center; gap: 10px;
+            svg { color: $primary1; } }
+
+        .custom-form-group { margin-bottom: 25px;
+            label { font-weight: 600; margin-bottom: 10px; display: block; font-size: 1rem; }
+            .custom-input { width: 100%; padding: 14px 18px; border: 2px solid $border-color; border-radius: 12px; font-size: 1rem; transition: all 0.2s;
+                &:focus { outline: none; border-color: $primary; box-shadow: 0 0 0 4px rgba($primary, 0.1); } } }
+
+        .qr-preview-container { background: $bg-light; border-radius: 20px; padding: 40px; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; border: 1px solid $border-color;
+            .qr-wrapper { background: white; padding: 20px; border-radius: 16px; box-shadow: 0 8px 20px rgba(0,0,0,0.06); margin-bottom: 25px; }
+            .btn-download { width: 100%; background: $primary; color: white; border: none; padding: 14px; border-radius: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 10px; transition: all 0.2s;
+                &:hover { box-shadow: 0 5px 15px rgba($primary, 0.3); transform: translateY(-2px); } } } }
+
+    .info-section { margin-bottom: 100px;
+        h2 { font-size: 2.5rem; font-weight: 800; margin-bottom: 50px; text-align: center;
+            &::after { content: ''; display: block; width: 60px; height: 5px; background: $primary; margin: 20px auto 0; border-radius: 10px; } }
+
+        .benefit-card { background: $white; padding: 35px; border-radius: 24px; height: 100%; border: 1px solid $border-color; transition: all 0.3s ease;
+            &:hover { border-color: $primary; background: $bg-light; transform: translateY(-5px); }
+            .icon-wrapper { font-size: 2rem; color: $primary; margin-bottom: 25px; }
+            h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 15px; }
+            p { color: $text-muted; line-height: 1.6; } }
+
+        .cloud-guide-box { padding: 40px; background: $bg-light; border-radius: 30px; border: 1px solid $border-color;
+            h3 { font-weight: 800; margin-bottom: 30px; }
+            .guide-item { display: flex; gap: 15px; margin-bottom: 20px;
+                .guide-bullet { width: 8px; height: 8px; background: $primary; border-radius: 50%; margin-top: 8px; flex-shrink: 0; }
+                p { margin-bottom: 0; font-weight: 500; font-size: 1.05rem; } } } }
+
+    .faq-section {
+        .faq-item-custom { border: 1px solid $border-color; border-radius: 16px; overflow: hidden; background: $white;
+            .faq-question-btn { width: 100%; padding: 20px 25px; display: flex; justify-content: space-between; align-items: center; background: none; border: none; text-align: left; font-weight: 700; font-size: 1.1rem; color: $primary; transition: all 0.2s;
+                &.active { background: rgba($primary, 0.05); color: $primary; }
+                &:hover { background: rgba($primary, 0.02); }
+                .icon { font-size: 1.5rem; color: $primary; } }
+            .faq-answer-content { padding: 0 25px 20px; color: $text-muted; line-height: 1.6; font-size: 1rem; } } }
+}

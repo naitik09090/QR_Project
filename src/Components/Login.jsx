@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Form } from "react-bootstrap";
 import qr_image from "../assets/qr_image.png";
+import { sendEvent } from "../gaEvents.jsx";
 
 export default function LoginForm() {
   const navigate = useNavigate();
@@ -15,20 +16,20 @@ export default function LoginForm() {
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
-      let { name: a, value: r } = e.target;
-      setFormData((e) => ({ ...e, [a]: r }));
-    },
+    let { name: a, value: r } = e.target;
+    setFormData((e) => ({ ...e, [a]: r }));
+  },
     handleLogin = async (e) => {
       e.preventDefault(), setLoading(!0);
       try {
         let a = await fetch(
-            "https://qrcodegen-e4bccbhbd7edh9bp.centralindia-01.azurewebsites.net/api/auth/login/",
-            {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify(formData),
-            }
-          ),
+          "https://qrcodegen-e4bccbhbd7edh9bp.centralindia-01.azurewebsites.net/api/auth/login/",
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(formData),
+          }
+        ),
           r = await a.json();
         if (a.ok)
           alert(`Welcome, ${r.user?.name || "User"}`),
@@ -56,8 +57,15 @@ export default function LoginForm() {
         src={qr_image}
         alt="QR Code"
         className="img-fluid"
-        style={{ Width: "auto", height: "auto" }}
+        style={{ width: "auto", height: "auto" }}
+        onClick={() =>
+          sendEvent("homepage_logo_click", {
+            event_category: "Navigation",
+            event_label: "Home QR Image Clicked",
+          })
+        }
       />
+
 
       <Form
         onSubmit={handleLogin}

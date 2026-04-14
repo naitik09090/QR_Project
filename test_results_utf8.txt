@@ -1,0 +1,898 @@
+﻿
+[1m[46m RUN [49m[22m [36mv4.0.16 [39m[90mC:/Users/Granthik/Desktop/QRIFY_Main/QRTY_Code/QRCodeFE[39m
+
+[90mstdout[2m | src/App.test.jsx[2m > [22m[2mApp Routing & Layout[2m > [22m[2mrenders Navbar by default
+[22m[39mhideHeaderParam [1mnull[22m
+
+[90mstdout[2m | src/App.test.jsx[2m > [22m[2mApp Routing & Layout[2m > [22m[2mhides Navbar when hideHeader=true
+[22m[39mhideHeaderParam true
+
+[90mstdout[2m | src/App.test.jsx[2m > [22m[2mApp Routing & Layout[2m > [22m[2mrenders Home page on / route
+[22m[39mhideHeaderParam [1mnull[22m
+
+ [32mΓ£ô[39m src/App.test.jsx[2m > [22mApp Routing & Layout[2m > [22mrenders Navbar by default[32m 217[2mms[22m[39m
+ [32mΓ£ô[39m src/App.test.jsx[2m > [22mApp Routing & Layout[2m > [22mhides Navbar when hideHeader=true[32m 24[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/WhatsAppQRCodeLandingPage.test.jsx[2m > [22mWhatsAppQRCodeLandingPage[2m > [22mrenders main title[33m 795[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/MenuQRCodeLandingPage.test.jsx[2m > [22mMenuQRCodeLandingPage[2m > [22mrenders main title[33m 791[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/LocationQRCodeLandingPage.test.jsx[2m > [22mLocationQRCodeLandingPage[2m > [22mrenders main title[33m 817[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/PDFQRCodeLandingPage.test.jsx[2m > [22mPDFQRCodeLandingPage[2m > [22mrenders main title[33m 804[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/MenuQRCodeLandingPage.test.jsx[2m > [22mMenuQRCodeLandingPage[2m > [22mrenders FAQ section[32m 228[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/WhatsAppQRCodeLandingPage.test.jsx[2m > [22mWhatsAppQRCodeLandingPage[2m > [22mrenders FAQ section[32m 217[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/LocationQRCodeLandingPage.test.jsx[2m > [22mLocationQRCodeLandingPage[2m > [22mrenders FAQ section[32m 186[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/PDFQRCodeLandingPage.test.jsx[2m > [22mPDFQRCodeLandingPage[2m > [22mrenders FAQ section title[32m 176[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/MenuQRCodeLandingPage.test.jsx[2m > [22mMenuQRCodeLandingPage[2m > [22mcustom FAQ toggle works[32m 215[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/WhatsAppQRCodeLandingPage.test.jsx[2m > [22mWhatsAppQRCodeLandingPage[2m > [22mcustom FAQ toggle works[32m 227[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/PDFQRCodeLandingPage.test.jsx[2m > [22mPDFQRCodeLandingPage[2m > [22mcustom FAQ toggle works[32m 222[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/LocationQRCodeLandingPage.test.jsx[2m > [22mLocationQRCodeLandingPage[2m > [22mcustom FAQ toggle works[32m 236[2mms[22m[39m
+[90mstdout[2m | src/App.test.jsx[2m > [22m[2mApp Routing & Layout[2m > [22m[2mrenders Blog page on /blog route
+[22m[39mhideHeaderParam [1mnull[22m
+
+ [31m├ù[39m src/App.test.jsx[2m > [22mApp Routing & Layout[2m > [22mrenders Home page on / route[33m 1049[2mms[22m[39m
+[31m   ΓåÆ Unable to find an element with the placeholder text of: https://theqrify.com/
+
+Ignored nodes: comments, script, style
+[36m<body>[31m
+  [36m<div>[31m
+    [36m<nav[31m
+      [33mclass[31m=[32m"navbar custom-navbar navbar-expand-lg bg-white d-block"[31m
+    [36m>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"container-fluid d-flex align-items-center"[31m
+      [36m>[31m
+        [36m<a[31m
+          [33maria-label[31m=[32m"Home page"[31m
+          [33mhref[31m=[32m"/"[31m
+        [36m>[31m
+          [36m<img[31m
+            [33malt[31m=[32m"TheQRIFY Logo"[31m
+            [33mheight[31m=[32m"44"[31m
+            [33msrc[31m=[32m"/src/assets/logo.webp"[31m
+            [33mstyle[31m=[32m"object-fit: contain;"[31m
+            [33mwidth[31m=[32m"44"[31m
+          [36m/>[31m
+        [36m</a>[31m
+        [36m<button[31m
+          [33maria-label[31m=[32m"Toggle navigation"[31m
+          [33mclass[31m=[32m"navbar-toggler"[31m
+          [33mtype[31m=[32m"button"[31m
+        [36m>[31m
+          [36m<svg[31m
+            [33mfill[31m=[32m"currentColor"[31m
+            [33mheight[31m=[32m"24"[31m
+            [33mstroke[31m=[32m"currentColor"[31m
+            [33mstroke-width[31m=[32m"0"[31m
+            [33mviewBox[31m=[32m"0 0 448 512"[31m
+            [33mwidth[31m=[32m"24"[31m
+            [33mxmlns[31m=[32m"http://www.w3.org/2000/svg"[31m
+          [36m>[31m
+            [36m<path[31m
+              [33md[31m=[32m"M0 224h192V32H0v192zM64 96h64v64H64V96zm192-64v192h192V32H256zm128 128h-64V96h64v64zM0 480h192V288H0v192zm64-128h64v64H64v-64zm352-64h32v128h-96v-32h-32v96h-64V288h96v32h64v-32zm0 160h32v32h-32v-32zm-64 0h32v32h-32v-32z"[31m
+            [36m/>[31m
+          [36m</svg>[31m
+        [36m</button>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"collapse navbar-collapse"[31m
+          [33mid[31m=[32m"collapsibleNavbar"[31m
+        [36m>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"d-flex flex-column flex-lg-row justify-content-end ms-auto text-center gap-1"[31m
+          [36m>[31m
+            [36m<a[31m
+              [33mhref[31m=[32m"/blog"[31m
+            [36m>[31m
+              [0mBlog[0m
+            [36m</a>[31m
+            [36m<a[31m
+              [33mhref[31m=[32m"/about"[31m
+            [36m>[31m
+              [0mAbout[0m
+            [36m</a>[31m
+            [36m<a[31m
+              [33mhref[31m=[32m"/privacy_policy"[31m
+            [36m>[31m
+              [0mPrivacy Policy[0m
+            [36m</a>[31m
+            [36m<a[31m
+              [33mhref[31m=[32m"/terms"[31m
+            [36m>[31m
+              [0mTerms[0m
+            [36m</a>[31m
+            [36m<a[31m
+              [33mhref[31m=[32m"/contact"[31m
+            [36m>[31m
+              [0mContact[0m
+            [36m</a>[31m
+          [36m</div>[31m
+        [36m</div>[31m
+      [36m</div>[31m
+    [36m</nav>[31m
+    [36m<button[31m
+      [33maria-label[31m=[32m"Back to top"[31m
+      [33mclass[31m=[32m"back-to-top-btn btn btn-dark"[31m
+      [33mstyle[31m=[32m"position: fixed; bottom: 10px; right: 10px; display: none; border-radius: 20%; padding: 15px; z-index: 1000;"[31m
+      [33mtitle[31m=[32m"Back to top"[31m
+      [33mtype[31m=[32m"button"[31m
+    [36m>[31m
+      [36m<svg[31m
+        [33maria-hidden[31m=[32m"true"[31m
+        [33mfill[31m=[32m"currentColor"[31m
+        [33mheight[31m=[32m"24"[31m
+        [33mstroke[31m=[32m"currentColor"[31m
+        [33mstroke-width[31m=[32m"0"[31m
+        [33mviewBox[31m=[32m"0 0 448 512"[31m
+        [33mwidth[31m=[32m"24"[31m
+        [33mxmlns[31m=[32m"http://www.w3.org/2000/svg"[31m
+      [36m>[31m
+        [36m<path[31m
+          [33md[31m=[32m"M0 224h192V32H0v192zM64 96h64v64H64V96zm192-64v192h192V32H256zm128 128h-64V96h64v64zM0 480h192V288H0v192zm64-128h64v64H64v-64zm352-64h32v128h-96v-32h-32v96h-64V288h96v32h64v-32zm0 160h32v32h-32v-32zm-64 0h32v32h-32v-32z"[31m
+        [36m/>[31m
+      [36m</svg>[31m
+    [36m</button>[31m
+    [36m<main[31m
+      [33mclass[31m=[32m"no-select"[31m
+      [33mid[31m=[32m"main-content"[31m
+      [33mstyle[31m=[32m"user-select: none;"[31m
+    [36m>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"text-center py-5"[31m
+      [36m>[31m
+        [0mLoading...[0m
+      [36m</div>[31m
+    [36m</main>[31m
+  [36m</div>[31m
+[36m</body>[31m
+
+Ignored nodes: comments, script, style
+[36m<body>[31m
+  [36m<div>[31m
+    [36m<nav[31m
+      [33mclass[31m=[32m"navbar custom-navbar navbar-expand-lg bg-white d-block"[31m
+    [36m>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"container-fluid d-flex align-items-center"[31m
+      [36m>[31m
+        [36m<a[31m
+          [33maria-label[31m=[32m"Home page"[31m
+          [33mhref[31m=[32m"/"[31m
+        [36m>[31m
+          [36m<img[31m
+            [33malt[31m=[32m"TheQRIFY Logo"[31m
+            [33mheight[31m=[32m"44"[31m
+            [33msrc[31m=[32m"/src/assets/logo.webp"[31m
+            [33mstyle[31m=[32m"object-fit: contain;"[31m
+            [33mwidth[31m=[32m"44"[31m
+          [36m/>[31m
+        [36m</a>[31m
+        [36m<button[31m
+          [33maria-label[31m=[32m"Toggle navigation"[31m
+          [33mclass[31m=[32m"navbar-toggler"[31m
+          [33mtype[31m=[32m"button"[31m
+        [36m>[31m
+          [36m<svg[31m
+            [33mfill[31m=[32m"currentColor"[31m
+            [33mheight[31m=[32m"24"[31m
+            [33mstroke[31m=[32m"currentColor"[31m
+            [33mstroke-width[31m=[32m"0"[31m
+            [33mviewBox[31m=[32m"0 0 448 512"[31m
+            [33mwidth[31m=[32m"24"[31m
+            [33mxmlns[31m=[32m"http://www.w3.org/2000/svg"[31m
+          [36m>[31m
+            [36m<path[31m
+              [33md[31m=[32m"M0 224h192V32H0v192zM64 96h64v64H64V96zm192-64v192h192V32H256zm128 128h-64V96h64v64zM0 480h192V288H0v192zm64-128h64v64H64v-64zm352-64h32v128h-96v-32h-32v96h-64V288h96v32h64v-32zm0 160h32v32h-32v-32zm-64 0h32v32h-32v-32z"[31m
+            [36m/>[31m
+          [36m</svg>[31m
+        [36m</button>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"collapse navbar-collapse"[31m
+          [33mid[31m=[32m"collapsibleNavbar"[31m
+        [36m>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"d-flex flex-column flex-lg-row justify-content-end ms-auto text-center gap-1"[31m
+          [36m>[31m
+            [36m<a[31m
+              [33mhref[31m=[32m"/blog"[31m
+            [36m>[31m
+              [0mBlog[0m
+            [36m</a>[31m
+            [36m<a[31m
+              [33mhref[31m=[32m"/about"[31m
+            [36m>[31m
+              [0mAbout[0m
+            [36m</a>[31m
+            [36m<a[31m
+              [33mhref[31m=[32m"/privacy_policy"[31m
+            [36m>[31m
+              [0mPrivacy Policy[0m
+            [36m</a>[31m
+            [36m<a[31m
+              [33mhref[31m=[32m"/terms"[31m
+            [36m>[31m
+              [0mTerms[0m
+            [36m</a>[31m
+            [36m<a[31m
+              [33mhref[31m=[32m"/contact"[31m
+            [36m>[31m
+              [0mContact[0m
+            [36m</a>[31m
+          [36m</div>[31m
+        [36m</div>[31m
+      [36m</div>[31m
+    [36m</nav>[31m
+    [36m<button[31m
+      [33maria-label[31m=[32m"Back to top"[31m
+      [33mclass[31m=[32m"back-to-top-btn btn btn-dark"[31m
+      [33mstyle[31m=[32m"position: fixed; bottom: 10px; right: 10px; display: none; border-radius: 20%; padding: 15px; z-index: 1000;"[31m
+      [33mtitle[31m=[32m"Back to top"[31m
+      [33mtype[31m=[32m"button"[31m
+    [36m>[31m
+      [36m<svg[31m
+        [33maria-hidden[31m=[32m"true"[31m
+        [33mfill[31m=[32m"currentColor"[31m
+        [33mheight[31m=[32m"24"[31m
+        [33mstroke[31m=[32m"currentColor"[31m
+        [33mstroke-width[31m=[32m"0"[31m
+        [33mviewBox[31m=[32m"0 0 448 512"[31m
+        [33mwidth[31m=[32m"24"[31m
+        [33mxmlns[31m=[32m"http://www.w3.org/2000/svg"[31m
+      [36m>[31m
+        [36m<path[31m
+          [33md[31m=[32m"M0 224h192V32H0v192zM64 96h64v64H64V96zm192-64v192h192V32H256zm128 128h-64V96h64v64zM0 480h192V288H0v192zm64-128h64v64H64v-64zm352-64h32v128h-96v-32h-32v96h-64V288h96v32h64v-32zm0 160h32v32h-32v-32zm-64 0h32v32h-32v-32z"[31m
+        [36m/>[31m
+      [36m</svg>[31m
+    [36m</button>[31m
+    [36m<main[31m
+      [33mclass[31m=[32m"no-select"[31m
+      [33mid[31m=[32m"main-content"[31m
+      [33mstyle[31m=[32m"user-select: none;"[31m
+    [36m>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"text-center py-5"[31m
+      [36m>[31m
+        [0mLoading...[0m
+      [36m</div>[31m
+    [36m</main>[31m
+  [36m</div>[31m
+[36m</body>[31m[39m
+ [32mΓ£ô[39m src/Components/Test/Home_Page.test.jsx[2m > [22mHome Page (QR Generator)[2m > [22mrenders website input by default[33m 635[2mms[22m[39m
+[90mstdout[2m | src/App.test.jsx[2m > [22m[2mApp Routing & Layout[2m > [22m[2mrenders About page on /about route
+[22m[39mhideHeaderParam [1mnull[22m
+
+ [32mΓ£ô[39m src/App.test.jsx[2m > [22mApp Routing & Layout[2m > [22mrenders Blog page on /blog route[33m 1160[2mms[22m[39m
+[90mstdout[2m | src/App.test.jsx[2m > [22m[2mApp Routing & Layout[2m > [22m[2mrenders Contact page on /contact route
+[22m[39mhideHeaderParam [1mnull[22m
+
+ [32mΓ£ô[39m src/App.test.jsx[2m > [22mApp Routing & Layout[2m > [22mrenders About page on /about route[33m 365[2mms[22m[39m
+[90mstdout[2m | src/App.test.jsx[2m > [22m[2mApp Routing & Layout[2m > [22m[2mrenders Privacy Policy page on /privacy_policy route
+[22m[39mhideHeaderParam [1mnull[22m
+
+ [32mΓ£ô[39m src/App.test.jsx[2m > [22mApp Routing & Layout[2m > [22mrenders Contact page on /contact route[33m 341[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/Home_Page.test.jsx[2m > [22mHome Page (QR Generator)[2m > [22mallows user to type website URL[33m 536[2mms[22m[39m
+[90mstdout[2m | src/App.test.jsx[2m > [22m[2mApp Routing & Layout[2m > [22m[2mrenders Terms page on /terms route
+[22m[39mhideHeaderParam [1mnull[22m
+
+ [32mΓ£ô[39m src/App.test.jsx[2m > [22mApp Routing & Layout[2m > [22mrenders Privacy Policy page on /privacy_policy route[33m 768[2mms[22m[39m
+ [32mΓ£ô[39m src/App.test.jsx[2m > [22mApp Routing & Layout[2m > [22mrenders Terms page on /terms route[33m 635[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/Home_Page.test.jsx[2m > [22mHome Page (QR Generator)[2m > [22mswitches to Text tab[33m 1533[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/BusinessCardQRCodeLandingPage.test.jsx[2m > [22mBusinessCardQRCodeLandingPage[2m > [22mrenders main title[33m 1305[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/BusinessCardQRCodeLandingPage.test.jsx[2m > [22mBusinessCardQRCodeLandingPage[2m > [22mrenders FAQ section[33m 323[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/BusinessCardQRCodeLandingPage.test.jsx[2m > [22mBusinessCardQRCodeLandingPage[2m > [22mcustom FAQ toggle works[32m 239[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/Home_Page.test.jsx[2m > [22mHome Page (QR Generator)[2m > [22mswitches to Email tab[33m 1498[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/Home_Page.test.jsx[2m > [22mHome Page (QR Generator)[2m > [22mswitches between all tab types[33m 2714[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/Blog.test.jsx[2m > [22mBlog Page[2m > [22mrenders Blog heading[33m 954[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/Blog.test.jsx[2m > [22mBlog Page[2m > [22mrenders blog cards[32m 50[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/Blog.test.jsx[2m > [22mBlog Page[2m > [22mpagination next button works[32m 230[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/Blog.test.jsx[2m > [22mBlog Page[2m > [22mclicking blog card navigates to blog-news[32m 45[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/Home_Page.test.jsx[2m > [22mHome Page (QR Generator)[2m > [22mgenerates QR code when user enters website URL[33m 535[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/InstagramQRCodeLandingPage.test.jsx[2m > [22mInstagramQRCodeLandingPage[2m > [22mrenders main title[33m 845[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/EventTicketQRCodeLandingPage.test.jsx[2m > [22mEventTicketQRCodeLandingPage[2m > [22mrenders main title[33m 826[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/GoogleReviewQRCodeLandingPage.test.jsx[2m > [22mGoogleReviewQRCodeLandingPage[2m > [22mrenders main title[33m 910[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/InstagramQRCodeLandingPage.test.jsx[2m > [22mInstagramQRCodeLandingPage[2m > [22mrenders FAQ section[32m 240[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/InstagramQRCodeLandingPage.test.jsx[2m > [22mInstagramQRCodeLandingPage[2m > [22mcustom FAQ toggle works[32m 210[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/EventTicketQRCodeLandingPage.test.jsx[2m > [22mEventTicketQRCodeLandingPage[2m > [22mrenders FAQ section[32m 239[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/EventTicketQRCodeLandingPage.test.jsx[2m > [22mEventTicketQRCodeLandingPage[2m > [22mcustom FAQ toggle works[32m 235[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/GoogleReviewQRCodeLandingPage.test.jsx[2m > [22mGoogleReviewQRCodeLandingPage[2m > [22mrenders FAQ section[32m 265[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/GoogleReviewQRCodeLandingPage.test.jsx[2m > [22mGoogleReviewQRCodeLandingPage[2m > [22mcustom FAQ toggle works[32m 256[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/Home_Page.test.jsx[2m > [22mHome Page (QR Generator)[2m > [22mallows user to fill vCard contact information[33m 1209[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/Privacy.test.jsx[2m > [22mPrivacyPolicyTheQrify[2m > [22mrenders privacy policy heading[33m 1151[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/Privacy.test.jsx[2m > [22mPrivacyPolicyTheQrify[2m > [22mshows effective date[32m 86[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/Privacy.test.jsx[2m > [22mPrivacyPolicyTheQrify[2m > [22mrenders Introduction section[32m 69[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/Privacy.test.jsx[2m > [22mPrivacyPolicyTheQrify[2m > [22mrenders contact email link[32m 56[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/Privacy.test.jsx[2m > [22mPrivacyPolicyTheQrify[2m > [22mrenders official website link[32m 63[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/Blog_News.test.jsx[2m > [22mBlog_News Page[2m > [22mrenders blog details page[33m 310[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/Home_Page.test.jsx[2m > [22mHome Page (QR Generator)[2m > [22mexpands and collapses contact info section in vCard[33m 1616[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/Blog_News.test.jsx[2m > [22mBlog_News Page[2m > [22mrenders sidebar blog list[32m 248[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/Blog_News.test.jsx[2m > [22mBlog_News Page[2m > [22mclicking sidebar card updates main content[33m 1024[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/Home_Page.test.jsx[2m > [22mHome Page (QR Generator)[2m > [22mallows user to compose email QR code[33m 1537[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/Home_Page.test.jsx[2m > [22mHome Page (QR Generator)[2m > [22mallows user to enter WhatsApp number and message[33m 1305[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/Terms.test.jsx[2m > [22mTerms & Conditions Page[2m > [22mrenders terms heading[33m 1214[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/Terms.test.jsx[2m > [22mTerms & Conditions Page[2m > [22mshows effective date[32m 96[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/Terms.test.jsx[2m > [22mTerms & Conditions Page[2m > [22mrenders Acceptance of Terms section[32m 121[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/Terms.test.jsx[2m > [22mTerms & Conditions Page[2m > [22mrenders contact email link[32m 87[2mms[22m[39m
+[90mstdout[2m | src/Components/Test/Contact.test.jsx[2m > [22m[2mContactPage[2m > [22m[2mallows user to fill and submit form with valid data
+[22m[39msend contact: {
+  name: [32m'John Doe'[39m,
+  email: [32m'john@test.com'[39m,
+  subject: [32m'Hiring'[39m,
+  message: [32m'Hello there'[39m
+}
+
+ [32mΓ£ô[39m src/Components/Test/Contact.test.jsx[2m > [22mContactPage[2m > [22mrenders contact page heading[32m 252[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/Contact.test.jsx[2m > [22mContactPage[2m > [22mallows user to fill and submit form with valid data[32m 98[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/Contact.test.jsx[2m > [22mContactPage[2m > [22mshows validation error for invalid email format[32m 77[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/About.test.jsx[2m > [22mAboutTheQrify Page[2m > [22mrenders About page heading[33m 362[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/Contact.test.jsx[2m > [22mContactPage[2m > [22mshows validation error for missing @ in email[32m 32[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/Contact.test.jsx[2m > [22mContactPage[2m > [22mprevents submission with empty required fields[32m 32[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/Contact.test.jsx[2m > [22mContactPage[2m > [22maccepts valid email formats[32m 42[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/About.test.jsx[2m > [22mAboutTheQrify Page[2m > [22mrenders Our Story section[32m 108[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/About.test.jsx[2m > [22mAboutTheQrify Page[2m > [22mrenders Why TheQrify section[32m 73[2mms[22m[39m
+[90mstdout[2m | src/Components/Test/Contact.test.jsx[2m > [22m[2mContactPage[2m > [22m[2mcaptures and logs form data on submission
+[22m[39msend contact: {
+  name: [32m'Jane Smith'[39m,
+  email: [32m'jane.smith@example.com'[39m,
+  subject: [32m'Partnership Inquiry'[39m,
+  message: [32m'I would like to discuss a partnership opportunity.'[39m
+}
+
+[90mstdout[2m | src/Components/Test/Contact.test.jsx[2m > [22m[2mContactPage[2m > [22m[2mclears form fields after successful submission
+[22m[39msend contact: {
+  name: [32m'Test User'[39m,
+  email: [32m'test@example.com'[39m,
+  subject: [32m'Test Subject'[39m,
+  message: [32m'Test message content'[39m
+}
+
+ [32mΓ£ô[39m src/Components/Test/Contact.test.jsx[2m > [22mContactPage[2m > [22mrejects invalid email formats[32m 58[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/Contact.test.jsx[2m > [22mContactPage[2m > [22mcaptures and logs form data on submission[32m 71[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/Contact.test.jsx[2m > [22mContactPage[2m > [22mclears form fields after successful submission[32m 54[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/About.test.jsx[2m > [22mAboutTheQrify Page[2m > [22mrenders contact email link[32m 81[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/About.test.jsx[2m > [22mAboutTheQrify Page[2m > [22mrenders official website link[32m 63[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/YouTubeQRCodeLandingPage.test.jsx[2m > [22mYouTubeQRCodeLandingPage[2m > [22mrenders main title[33m 850[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/YouTubeQRCodeLandingPage.test.jsx[2m > [22mYouTubeQRCodeLandingPage[2m > [22mrenders FAQ section[32m 223[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/YouTubeQRCodeLandingPage.test.jsx[2m > [22mYouTubeQRCodeLandingPage[2m > [22mcustom FAQ toggle works[32m 162[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/BottomToTop.test.jsx[2m > [22mBackToTopButton[2m > [22mbutton is hidden initially[33m 461[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/BottomToTop.test.jsx[2m > [22mBackToTopButton[2m > [22mbutton becomes visible after scrolling[32m 41[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/BottomToTop.test.jsx[2m > [22mBackToTopButton[2m > [22mclicking button scrolls to top[32m 22[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/Navbar_1.test.jsx[2m > [22mNavbar[2m > [22mrenders TheQRIFY logo[32m 79[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/Navbar_1.test.jsx[2m > [22mNavbar[2m > [22mrenders navigation links[32m 24[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/Navbar_1.test.jsx[2m > [22mNavbar[2m > [22mtoggle button opens menu[32m 19[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/WiFiQRCodeLandingPage.test.jsx[2m > [22mWiFiQRCodeLandingPage[2m > [22mrenders main title[32m 114[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/WiFiQRCodeLandingPage.test.jsx[2m > [22mWiFiQRCodeLandingPage[2m > [22mrenders FAQ section title[32m 45[2mms[22m[39m
+ [32mΓ£ô[39m src/Components/Test/WiFiQRCodeLandingPage.test.jsx[2m > [22mWiFiQRCodeLandingPage[2m > [22mcustom FAQ toggle works[32m 252[2mms[22m[39m
+node.exe : 
+At C:\Program 
+Files\nodejs\npx.ps1:29 char:3
++   & $NODE_EXE $NPX_CLI_JS 
+$args
++   
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : 
+    NotSpecified: (:String)   
+  [], RemoteException
+    + FullyQualifiedErrorId : 
+    NativeCommandError
+ 
+[31mΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»[39m[
+1m[41m Failed Suites 1 [49m
+[22m[31mΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»
+[39m
+
+[41m[1m FAIL [22m[49m src/
+Components/Test/NewLandingPage
+s.test.jsx[2m [ src/Component
+s/Test/NewLandingPages.test.js
+x ][22m
+[31m[1mError[22m: Failed 
+to resolve import "../Qr_Landi
+ng_Pages/Qr_Landing_Pages/AppS
+toreQRCodeLandingPage" from "s
+rc/Components/Test/NewLandingP
+ages.test.jsx". Does the file 
+exist?[39m
+  Plugin: 
+[35mvite:import-analysis[39m
+  File: [36mC:/Users/Granthik
+/Desktop/QRIFY_Main/QRTY_Code/
+QRCodeFE/src/Components/Test/N
+ewLandingPages.test.jsx[39m:4
+:0
+[33m  9  |  const 
+__vi_import_1__ = await import
+("@testing-library/react");
+  10 |  const __vi_import_2__ 
+= await import("react");
+  11 |  const __vi_import_3__ 
+= await import("../Qr_Landing_
+Pages/Qr_Landing_Pages/AppStor
+eQRCodeLandingPage");
+     |                        
+               ^
+  12 |  const __vi_import_4__ 
+= await import("../Qr_Landing_
+Pages/Qr_Landing_Pages/SmsQRCo
+deLandingPage");
+  13 |  const __vi_import_5__ 
+= await import("../Qr_Landing_
+Pages/Qr_Landing_Pages/CallQRC
+odeLandingPage");[39m
+[90m [2mΓ¥»[22m TransformPl
+uginContext._formatLog node_mo
+dules/vite/dist/node/chunks/de
+p-Bj7gA1-0.js:[2m31422:43[22
+m[39m
+[90m [2mΓ¥»[22m 
+TransformPluginContext.error n
+ode_modules/vite/dist/node/chu
+nks/dep-Bj7gA1-0.js:[2m31419:
+14[22m[39m
+[90m [2mΓ¥»[22m 
+normalizeUrl node_modules/vite
+/dist/node/chunks/dep-Bj7gA1-0
+.js:[2m29891:18[22m[39m
+[90m [2mΓ¥»[22m node_module
+s/vite/dist/node/chunks/dep-Bj
+7gA1-0.js:[2m29949:32[22m[3
+9m
+[90m [2mΓ¥»[22m TransformPl
+uginContext.transform node_mod
+ules/vite/dist/node/chunks/dep
+-Bj7gA1-0.js:[2m29917:4[22m
+[39m
+[90m [2mΓ¥»[22m Environment
+PluginContainer.transform node
+_modules/vite/dist/node/chunks
+/dep-Bj7gA1-0.js:[2m31220:14
+[22m[39m
+[90m [2mΓ¥»[22m 
+loadAndTransform node_modules/
+vite/dist/node/chunks/dep-Bj7g
+A1-0.js:[2m26307:26[22m[39m
+
+[31m[2mΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»
+ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»
+ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»[1/2]ΓÄ»
+[22m[39m
+
+
+[31mΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»[39
+m[1m[41m Failed Tests 1 [49
+m[22m[31mΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»Γ
+Ä»[39m
+
+[41m[1m FAIL [22m[49m 
+src/App.test.jsx[2m > 
+[22mApp Routing & Layout[2m 
+> [22mrenders Home page on / 
+route
+[31m[1mTestingLibraryElement
+Error[22m[39m: Unable to 
+find an element with the 
+placeholder text of: 
+https://theqrify.com/
+
+Ignored nodes: comments, 
+script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<nav[39m
+      
+[33mclass[39m=[32m"navbar 
+custom-navbar 
+navbar-expand-lg bg-white 
+d-block"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"
+container-fluid d-flex 
+align-items-center"[39m
+      [36m>[39m
+        [36m<a[39m
+          [33maria-label[39m
+=[32m"Home page"[39m
+          
+[33mhref[39m=[32m"/"[39m
+        [36m>[39m
+          [36m<img[39m
+            
+[33malt[39m=[32m"TheQRIFY 
+Logo"[39m
+            [33mheight[39m=
+[32m"44"[39m
+            [33msrc[39m=[32
+m"/src/assets/logo.webp"[39m
+            [33mstyle[39m=[
+32m"object-fit: contain;"[39m
+            
+[33mwidth[39m=[32m"44"[39m
+          [36m/>[39m
+        [36m</a>[39m
+        [36m<button[39m
+          [33maria-label[39m
+=[32m"Toggle navigation"[39m
+          [33mclass[39m=[32
+m"navbar-toggler"[39m
+          [33mtype[39m=[32m
+"button"[39m
+        [36m>[39m
+          [36m<svg[39m
+            [33mfill[39m=[3
+2m"currentColor"[39m
+            [33mheight[39m=
+[32m"24"[39m
+            [33mstroke[39m=
+[32m"currentColor"[39m
+            [33mstroke-width
+[39m=[32m"0"[39m
+            
+[33mviewBox[39m=[32m"0 0 
+448 512"[39m
+            
+[33mwidth[39m=[32m"24"[39m
+            [33mxmlns[39m=[
+32m"http://www.w3.org/2000/svg
+"[39m
+          [36m>[39m
+            [36m<path[39m
+              
+[33md[39m=[32m"M0 
+224h192V32H0v192zM64 96h64v64H
+64V96zm192-64v192h192V32H256zm
+128 128h-64V96h64v64zM0 480h19
+2V288H0v192zm64-128h64v64H64v-
+64zm352-64h32v128h-96v-32h-32v
+96h-64V288h96v32h64v-32zm0 
+160h32v32h-32v-32zm-64 
+0h32v32h-32v-32z"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</button>[39m
+        [36m<div[39m
+          [33mclass[39m=[32
+m"collapse 
+navbar-collapse"[39m
+          [33mid[39m=[32m"c
+ollapsibleNavbar"[39m
+        [36m>[39m
+          [36m<div[39m
+            
+[33mclass[39m=[32m"d-flex 
+flex-column flex-lg-row 
+justify-content-end ms-auto 
+text-center gap-1"[39m
+          [36m>[39m
+            [36m<a[39m
+              [33mhref[39m=
+[32m"/blog"[39m
+            [36m>[39m
+              [0mBlog[0m
+            [36m</a>[39m
+            [36m<a[39m
+              [33mhref[39m=
+[32m"/about"[39m
+            [36m>[39m
+              [0mAbout[0m
+            [36m</a>[39m
+            [36m<a[39m
+              [33mhref[39m=
+[32m"/privacy_policy"[39m
+            [36m>[39m
+              [0mPrivacy 
+Policy[0m
+            [36m</a>[39m
+            [36m<a[39m
+              [33mhref[39m=
+[32m"/terms"[39m
+            [36m>[39m
+              [0mTerms[0m
+            [36m</a>[39m
+            [36m<a[39m
+              [33mhref[39m=
+[32m"/contact"[39m
+            [36m>[39m
+              [0mContact[0m
+            [36m</a>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</nav>[39m
+    [36m<button[39m
+      [33maria-label[39m=[3
+2m"Back to top"[39m
+      [33mclass[39m=[32m"ba
+ck-to-top-btn btn 
+btn-dark"[39m
+      [33mstyle[39m=[32m"po
+sition: fixed; bottom: 10px; 
+right: 10px; display: none; 
+border-radius: 20%; padding: 
+15px; z-index: 1000;"[39m
+      
+[33mtitle[39m=[32m"Back to 
+top"[39m
+      [33mtype[39m=[32m"but
+ton"[39m
+    [36m>[39m
+      [36m<svg[39m
+        [33maria-hidden[39m=
+[32m"true"[39m
+        [33mfill[39m=[32m"c
+urrentColor"[39m
+        [33mheight[39m=[32m
+"24"[39m
+        [33mstroke[39m=[32m
+"currentColor"[39m
+        [33mstroke-width[39m
+=[32m"0"[39m
+        
+[33mviewBox[39m=[32m"0 0 
+448 512"[39m
+        
+[33mwidth[39m=[32m"24"[39m
+        [33mxmlns[39m=[32m"
+http://www.w3.org/2000/svg"[3
+9m
+      [36m>[39m
+        [36m<path[39m
+          
+[33md[39m=[32m"M0 
+224h192V32H0v192zM64 96h64v64H
+64V96zm192-64v192h192V32H256zm
+128 128h-64V96h64v64zM0 480h19
+2V288H0v192zm64-128h64v64H64v-
+64zm352-64h32v128h-96v-32h-32v
+96h-64V288h96v32h64v-32zm0 
+160h32v32h-32v-32zm-64 
+0h32v32h-32v-32z"[39m
+        [36m/>[39m
+      [36m</svg>[39m
+    [36m</button>[39m
+    [36m<main[39m
+      [33mclass[39m=[32m"no
+-select"[39m
+      [33mid[39m=[32m"main-
+content"[39m
+      [33mstyle[39m=[32m"us
+er-select: none;"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"
+text-center py-5"[39m
+      [36m>[39m
+        [0mLoading...[0m
+      [36m</div>[39m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+
+[2m Test Files [22m [1m[31m2 failed[39m[22m[2m | [22m[1m[32m19 passed[39m[22m[90m (21)[39m
+[2m      Tests [22m [1m[31m1 failed[39m[22m[2m | [22m[1m[32m83 passed[39m[22m[90m (84)[39m
+[2m   Start at [22m 12:36:18
+[2m   Duration [22m 27.59s[2m (transform 8.12s, setup 8.55s, import 38.05s, tests 38.11s, environment 77.04s)[22m
+
+
+Ignored nodes: comments, 
+script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<nav[39m
+      
+[33mclass[39m=[32m"navbar 
+custom-navbar 
+navbar-expand-lg bg-white 
+d-block"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"
+container-fluid d-flex 
+align-items-center"[39m
+      [36m>[39m
+        [36m<a[39m
+          [33maria-label[39m
+=[32m"Home page"[39m
+          
+[33mhref[39m=[32m"/"[39m
+        [36m>[39m
+          [36m<img[39m
+            
+[33malt[39m=[32m"TheQRIFY 
+Logo"[39m
+            [33mheight[39m=
+[32m"44"[39m
+            [33msrc[39m=[32
+m"/src/assets/logo.webp"[39m
+            [33mstyle[39m=[
+32m"object-fit: contain;"[39m
+            
+[33mwidth[39m=[32m"44"[39m
+          [36m/>[39m
+        [36m</a>[39m
+        [36m<button[39m
+          [33maria-label[39m
+=[32m"Toggle navigation"[39m
+          [33mclass[39m=[32
+m"navbar-toggler"[39m
+          [33mtype[39m=[32m
+"button"[39m
+        [36m>[39m
+          [36m<svg[39m
+            [33mfill[39m=[3
+2m"currentColor"[39m
+            [33mheight[39m=
+[32m"24"[39m
+            [33mstroke[39m=
+[32m"currentColor"[39m
+            [33mstroke-width
+[39m=[32m"0"[39m
+            
+[33mviewBox[39m=[32m"0 0 
+448 512"[39m
+            
+[33mwidth[39m=[32m"24"[39m
+            [33mxmlns[39m=[
+32m"http://www.w3.org/2000/svg
+"[39m
+          [36m>[39m
+            [36m<path[39m
+              
+[33md[39m=[32m"M0 
+224h192V32H0v192zM64 96h64v64H
+64V96zm192-64v192h192V32H256zm
+128 128h-64V96h64v64zM0 480h19
+2V288H0v192zm64-128h64v64H64v-
+64zm352-64h32v128h-96v-32h-32v
+96h-64V288h96v32h64v-32zm0 
+160h32v32h-32v-32zm-64 
+0h32v32h-32v-32z"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</button>[39m
+        [36m<div[39m
+          [33mclass[39m=[32
+m"collapse 
+navbar-collapse"[39m
+          [33mid[39m=[32m"c
+ollapsibleNavbar"[39m
+        [36m>[39m
+          [36m<div[39m
+            
+[33mclass[39m=[32m"d-flex 
+flex-column flex-lg-row 
+justify-content-end ms-auto 
+text-center gap-1"[39m
+          [36m>[39m
+            [36m<a[39m
+              [33mhref[39m=
+[32m"/blog"[39m
+            [36m>[39m
+              [0mBlog[0m
+            [36m</a>[39m
+            [36m<a[39m
+              [33mhref[39m=
+[32m"/about"[39m
+            [36m>[39m
+              [0mAbout[0m
+            [36m</a>[39m
+            [36m<a[39m
+              [33mhref[39m=
+[32m"/privacy_policy"[39m
+            [36m>[39m
+              [0mPrivacy 
+Policy[0m
+            [36m</a>[39m
+            [36m<a[39m
+              [33mhref[39m=
+[32m"/terms"[39m
+            [36m>[39m
+              [0mTerms[0m
+            [36m</a>[39m
+            [36m<a[39m
+              [33mhref[39m=
+[32m"/contact"[39m
+            [36m>[39m
+              [0mContact[0m
+            [36m</a>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</nav>[39m
+    [36m<button[39m
+      [33maria-label[39m=[3
+2m"Back to top"[39m
+      [33mclass[39m=[32m"ba
+ck-to-top-btn btn 
+btn-dark"[39m
+      [33mstyle[39m=[32m"po
+sition: fixed; bottom: 10px; 
+right: 10px; display: none; 
+border-radius: 20%; padding: 
+15px; z-index: 1000;"[39m
+      
+[33mtitle[39m=[32m"Back to 
+top"[39m
+      [33mtype[39m=[32m"but
+ton"[39m
+    [36m>[39m
+      [36m<svg[39m
+        [33maria-hidden[39m=
+[32m"true"[39m
+        [33mfill[39m=[32m"c
+urrentColor"[39m
+        [33mheight[39m=[32m
+"24"[39m
+        [33mstroke[39m=[32m
+"currentColor"[39m
+        [33mstroke-width[39m
+=[32m"0"[39m
+        
+[33mviewBox[39m=[32m"0 0 
+448 512"[39m
+        
+[33mwidth[39m=[32m"24"[39m
+        [33mxmlns[39m=[32m"
+http://www.w3.org/2000/svg"[3
+9m
+      [36m>[39m
+        [36m<path[39m
+          
+[33md[39m=[32m"M0 
+224h192V32H0v192zM64 96h64v64H
+64V96zm192-64v192h192V32H256zm
+128 128h-64V96h64v64zM0 480h19
+2V288H0v192zm64-128h64v64H64v-
+64zm352-64h32v128h-96v-32h-32v
+96h-64V288h96v32h64v-32zm0 
+160h32v32h-32v-32zm-64 
+0h32v32h-32v-32z"[39m
+        [36m/>[39m
+      [36m</svg>[39m
+    [36m</button>[39m
+    [36m<main[39m
+      [33mclass[39m=[32m"no
+-select"[39m
+      [33mid[39m=[32m"main-
+content"[39m
+      [33mstyle[39m=[32m"us
+er-select: none;"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"
+text-center py-5"[39m
+      [36m>[39m
+        [0mLoading...[0m
+      [36m</div>[39m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+[90m [2mΓ¥»[22m 
+waitForWrapper node_modules/@t
+esting-library/dom/dist/wait-f
+or.js:[2m163:27[22m[39m
+[90m [2mΓ¥»[22m node_module
+s/@testing-library/dom/dist/qu
+ery-helpers.js:[2m86:33[22m
+[39m
+[36m [2mΓ¥»[22m src/App.tes
+t.jsx:[2m45:37[22m[39m
+    [90m 43| [39m
+    [90m 44| [39m        
+[90m// Multiple website 
+inputs exist (desktop + 
+mobile)[39m
+    [90m 45| [39m        
+const inputs = await screen.fi
+ndAllByPlaceholderText("https:
+//ΓÇª
+    [90m   | [39m           
+                         
+[31m^[39m
+    [90m 46| [39m        [3
+4mexpect[39m(inputs[[34m0[3
+9m])[33m.[39m[34mtoBeInTheD
+ocument[39m()[33m;[39m
+    [90m 47| [39m    
+})[33m;[39m
+
+[31m[2mΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»
+ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»
+ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»[2/2]ΓÄ»
+[22m[39m
+

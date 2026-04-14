@@ -1,10 +1,10 @@
-import React from "react";
-import "./App.css";
-// import "./backend/css/Navbar.css"
-import "./css/PlansAndPayments.css";
-// import "./css/MyQRCodes.css"
-import "./css/BottomToTop.css";
-import "./css/Home_Page.css";
+import React, { useEffect } from "react";
+import "./App.scss";
+// import "./backend/css/Navbar.scss"
+import "./css/PlansAndPayments.scss";
+// import "./css/MyQRCodes.scss"
+import "./css/BottomToTop.scss";
+import "./css/Home_Page.scss";
 // import New_QR from "./backend/Dashboards/New_QR.jsx";
 // import Navbar from "./backend/Dashboards/Navbar.jsx";
 // import MyQRCodes from "./backend/Dashboards/MyQRCodes.jsx";
@@ -47,6 +47,15 @@ function App() {
   //   "/setting",
   //   "/user",
   // ];
+
+  useEffect(() => {
+    if (typeof document !== "undefined") {
+      const noSelectElements = document.querySelectorAll(".no-select");
+      noSelectElements.forEach((el) => {
+        el.style.userSelect = "none";
+      });
+    }
+  }, []);
 
   // const isDashboard = dashboardPaths.includes(location.pathname);
   return (

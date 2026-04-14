@@ -1,0 +1,11 @@
+@media (max-width: 768px) {
+  .nav-tabs {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+
+    .nav-item {
+      flex: 0 0 auto;
+    }
+  }
+}

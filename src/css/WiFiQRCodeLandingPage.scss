@@ -1,0 +1,219 @@
+$primary: #015f9e;
+$white: #ffffff;
+$text-main: #2c3e50;
+$text-muted: #4a5568;
+$border-color: #e0e0e0;
+$bg-body: #fdfdfd;
+
+.wifi-landing-container {
+    background-color: $bg-body;
+    color: $text-main;
+    font-family: 'Inter', sans-serif;
+    padding-bottom: 0;
+
+    .hero-section {
+        padding: 60px 0;
+        text-align: center;
+        border-bottom: 1px solid $border-color;
+        margin-bottom: 40px;
+
+        h1 {
+            font-weight: 700;
+            color: $primary;
+            margin-bottom: 15px;
+        }
+
+        .hero-subtitle {
+            color: $text-muted;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+    }
+
+    .generator-card {
+        background: #fff;
+        border: 1px solid rgba($primary, 0.08);
+        border-radius: 24px;
+        padding: 40px;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.06);
+        margin-bottom: 70px;
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: translateY(-5px);
+        }
+
+        .form-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: $primary;
+        }
+
+        .custom-form-group {
+            margin-bottom: 15px;
+            label {
+                font-weight: 500;
+                margin-bottom: 5px;
+                display: block;
+                font-size: 0.9rem;
+            }
+            .custom-input {
+                width: 100%;
+                padding: 10px 12px;
+                border: 1px solid $border-color;
+                border-radius: 6px;
+                font-size: 1rem;
+                &:focus {
+                    outline: none;
+                    border-color: $primary;
+                }
+            }
+        }
+
+        .qr-preview-container {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+
+            .qr-wrapper {
+                background: white;
+                padding: 15px;
+                border: 1px solid $border-color;
+                border-radius: 4px;
+                margin-bottom: 15px;
+            }
+
+            .btn-download {
+                width: 100%;
+                background: $primary;
+                border: none;
+                padding: 10px;
+                font-weight: 500;
+            }
+        }
+    }
+
+    .info-section {
+        margin-bottom: 80px;
+        h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 40px;
+            text-align: center;
+            color: $text-main;
+            
+            &::after {
+                content: '';
+                display: block;
+                width: 50px;
+                height: 4px;
+                background: $primary;
+                margin: 15px auto 0;
+                border-radius: 2px;
+            }
+        }
+
+        .benefit-card {
+            padding: 20px;
+            border: 1px solid $border-color;
+            border-radius: 8px;
+            height: 100%;
+            transition: border-color 0.2s;
+            &:hover {
+                border-color: $primary;
+            }
+            .icon-wrapper {
+                color: $primary;
+                margin-bottom: 10px;
+                font-size: 1.2rem;
+            }
+            h3 { font-size: 1.1rem; font-weight: 600; }
+            p { font-size: 0.9rem; color: $text-muted; }
+        }
+
+        .use-case-box {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            h3 { font-size: 1.2rem; margin-bottom: 15px; color: $primary; }
+            ul li { margin-bottom: 10px; font-size: 0.95rem; }
+        }
+    }
+
+    .faq-section {
+        // padding: 40px 0;
+        
+        .faq-title {
+            h1 {
+                font-size: 2.5rem;
+                font-weight: 700;
+                margin-bottom: 15px;
+                text-align: center;
+                color: $primary;
+            }
+            p {
+                text-align: center;
+                color: $text-muted;
+                margin-bottom: 40px;
+            }
+        }
+
+        .accordion-button:not(.collapsed) {
+            background-color: $primary !important;
+            color: $white !important;
+            box-shadow: none !important;
+        }
+
+        .accordion-header h2::after {
+            display: none;
+        }
+
+        .accordion-button::after {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E") !important;
+        }
+
+        .accordion-button:not(.collapsed)::after {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 11.354a.5.5 0 0 0 .708 0L8 5.707l5.646 5.647a.5.5 0 0 0 .708-.708l-6-6a.5.5 0 0 0-.708 0l-6 6a.5.5 0 0 0 0 .708'/%3E%3C/svg%3E") !important;
+        }
+
+        .accordion-button {
+            font-weight: 500;
+            border-radius: 25px !important;
+            margin-bottom: 10px;
+            padding: 15px 30px;
+            background: white;
+            color: $text-main;
+            border: 1px solid $border-color;
+        }
+
+        .accordion-body {
+            border: 1px solid $border-color !important;
+            border-radius: 25px !important;
+            margin-bottom: 10px;
+            padding: 20px 30px;
+            color: $text-muted;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .accordion-item {
+            background: transparent;
+            border: none;
+            margin-bottom: 0px;
+            border-radius: 0 !important;
+            box-shadow: none;
+            overflow: visible;
+
+            &:hover {
+                box-shadow: none;
+                transform: none;
+            }
+        }
+    }
+}

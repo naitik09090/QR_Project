@@ -1,245 +1,195 @@
-import React, { useEffect } from "react";
+// File: TermsConditionsTheQrify.jsx
+import React from "react";
 
-export default function TermsConditions() {
-  // Inject Bootstrap 5 and Google Font
-  useEffect(() => {
-    const addLink = (href, id) => {
-      if (document.getElementById(id)) return;
-      const link = document.createElement("link");
-      link.rel = "stylesheet";
-      link.href = href;
-      link.id = id;
-      document.head.appendChild(link);
-    };
+export default function TermsConditionsTheQrify({ effectiveDate = new Date().toISOString().slice(0, 10) }) {
+  // inject Bootstrap & font only once
 
-    addLink("https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css", "bs5");
-    addLink("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap", "font-inter");
-  }, []);
 
-  const fontFamily = `"Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial`;
+  const style = {
+    color: "#0f172a",
+  };
 
   return (
-    <div style={{
-      fontFamily,
-      background: 'transparent',
-      minHeight: '100vh'
-    }}>
-
-      <div className="text-center py-5">
-        <h1 className="fw-bold">📜 Terms & Conditions</h1>
-        <small className="text-secondary">
-          Effective Date: [Insert Date] | Website:
-          <a href="https://theqrify.com"
-            target="_blank"
-            rel="noreferrer"
-            style={{ color: '#015f9e', textDecoration: 'none', fontWeight: '500' }}>
-             theqrify.com
-          </a>
-          <p style={{ fontSize: '0.95rem', opacity: 0.85 }}>
-            Company: Infosync.ai (Product: TheQRify)
-          </p>
-        </small>
-      </div>
-
-      {/* Main Content */}
-      <main className="mb-5">
-        <article className="container" style={{ maxWidth: '1300px' }}>
-
-          {/* 1. Acceptance of Terms */}
-          <section className="mb-3">
-            <h2 className="fw-bold mb-3" style={{ color: '#1e293b', fontSize: '1.75rem' }}>
-              <span style={{ marginRight: '0.5rem' }}>⭐</span> Acceptance of Terms
-            </h2>
-            <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: '#334155' }}>
-              By using or accessing TheQRify ("we," "our," or "us"), you agree to comply with these Terms & Conditions.
-              If you do not agree with any part of these terms, please discontinue using the website immediately.
+    <div style={{ background: "#fff", minHeight: "100vh" }}>
+      <div style={style}>
+        <div className="container" style={{ maxWidth: 1000 }}>
+          {/* Header */}
+          <header className="py-5 text-center">
+            <h1 className="fw-bold h3">📜 Terms & Conditions – <a href="https://theqrify.com" target="_blank" rel="noreferrer" style={{ color: '#015f9e', textDecoration: 'none', fontWeight: '500' }}>TheQrify</a></h1>
+            <p className="mb-1 text-muted">
+              Last updated: <strong>{effectiveDate}</strong>
             </p>
-          </section>
+          </header>
 
-          <hr style={{ margin: '2rem 0', border: 'none', height: '1px', background: '#e2e8f0' }} />
+          {/* Terms content */}
+            <section id="acceptance" className="mb-4">
+              <h2 className="h5 fw-bold">1. Acceptance of Terms</h2>
+              <p>
+                These Terms & Conditions govern your use of the TheQrify platform, including QR code generation, customization tools,
+                downloads, and other services provided through theqrify.com. By using TheQrify you accept and agree to follow these terms.
+                If you do not agree, please discontinue using our platform immediately.
+              </p>
+            </section>
 
-          {/* 2. Use of the Service */}
-          <section className="mb-3">
-            <h2 className="fw-bold mb-3" style={{ color: '#1e293b', fontSize: '1.75rem' }}>
-              <span style={{ marginRight: '0.5rem' }}>⭐</span> Use of the Service
-            </h2>
-            <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: '#334155', marginBottom: '1.25rem' }}>
-              TheQRify provides tools to create, download, and manage QR codes. You agree to use the service only for lawful purposes
-              and not for distributing malicious or harmful content, phishing, spam, or fraudulent activities, or creating QR codes
-              that lead to illegal or offensive material.
-            </p>
-            <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: '#334155' }}>
-              We reserve the right to suspend or terminate access if misuse is detected.
-            </p>
-          </section>
+            <section id="use-services" className="mb-4">
+              <h2 className="h5 fw-bold">2. Use of Our Services</h2>
+              <p>
+                TheQrify offers tools that allow users to:
+              </p>
+              <ul>
+                <li>Generate QR codes.</li>
+                <li>Customize design, color, shapes, and logos.</li>
+                <li>Download QR codes in PNG, SVG, and PDF formats.</li>
+                <li>Use QR codes for web links, videos, menus, business cards, apps, and more.</li>
+              </ul>
+              <p className="mb-0">All generated QR codes are based on user input. We provide the tool — the content behind each QR belongs to you.</p>
+            </section>
 
-          <hr style={{ margin: '2rem 0', border: 'none', height: '1px', background: '#e2e8f0' }} />
+            <section id="user-responsibility" className="mb-4">
+              <h2 className="h5 fw-bold">3. User Responsibility (Strict Clause)</h2>
 
-          {/* 3. Intellectual Property */}
-          <section className="mb-3">
-            <h2 className="fw-bold mb-3" style={{ color: '#1e293b', fontSize: '1.75rem' }}>
-              <span style={{ marginRight: '0.5rem' }}>⭐</span> Intellectual Property
-            </h2>
-            <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: '#334155' }}>
-              All website content, including text, design, graphics, code, and functionality, is owned or licensed by TheQRify.
-              You may not copy, modify, reproduce, or distribute our materials without prior written permission.
-            </p>
-          </section>
+              <h6 className="fw-semibold mt-2">3.1 Sole Responsibility for Content</h6>
+              <p>
+                You are fully and solely responsible for all URLs, files, PDFs, text, business details, media, or data you input into the platform.
+                TheQrify does not review, monitor, verify, or validate your content. Any consequences arising from your content or QR code usage are entirely your responsibility.
+              </p>
 
-          <hr style={{ margin: '2rem 0', border: 'none', height: '1px', background: '#e2e8f0' }} />
+              <h6 className="fw-semibold mt-2">3.2 Prohibited Misuse</h6>
+              <p>You must not generate QR codes containing or redirecting to:</p>
+              <ul>
+                <li>Illegal or harmful content.</li>
+                <li>Malware, spyware, viruses, or phishing.</li>
+                <li>Fraudulent or scam-related material.</li>
+                <li>Hate speech, violence, or abusive content.</li>
+                <li>Pornographic, explicit, or adult content (if restricted by region).</li>
+                <li>Copyright-infringing material.</li>
+                <li>Impersonation, identity theft, or deceptive content.</li>
+                <li>Any action violating U.S., Indian, or local laws.</li>
+              </ul>
+            </section>
 
-          {/* 4. Generated QR Codes */}
-          <section className="mb-3">
-            <h2 className="fw-bold mb-3" style={{ color: '#1e293b', fontSize: '1.75rem' }}>
-              <span style={{ marginRight: '0.5rem' }}>⭐</span> Generated QR Codes
-            </h2>
-            <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: '#334155', marginBottom: '1.25rem' }}>
-              QR codes created through TheQRify are generated instantly and are not stored permanently on our servers.
-              You are solely responsible for the content linked or encoded within the QR code.
-            </p>
-            <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: '#334155' }}>
-              TheQRify is not liable for misuse, broken links, or expired URLs associated with your generated QR codes.
-            </p>
-          </section>
+            <section id="legal-compliance" className="mb-4">
+              <h2 className="h5 fw-bold">4. Legal Compliance (Multi-Jurisdiction Obligations)</h2>
+              <p>
+                Since TheQrify is operated as a U.S.-based company, you must comply with applicable laws where you use the platform.
+              </p>
 
-          <hr style={{ margin: '2rem 0', border: 'none', height: '1px', background: '#e2e8f0' }} />
+              <h6 className="fw-semibold mt-2">4.1 U.S. Laws</h6>
+              <p>Including but not limited to:</p>
+              <ul>
+                <li>Digital Millennium Copyright Act (DMCA).</li>
+                <li>Computer Fraud and Abuse Act (CFAA).</li>
+                <li>Federal Trade Commission (FTC) guidelines.</li>
+                <li>U.S. privacy & data regulations.</li>
+              </ul>
 
-          {/* 5. Paid Features & Subscriptions */}
-          <section className="mb-3">
-            <h2 className="fw-bold mb-3" style={{ color: '#1e293b', fontSize: '1.75rem' }}>
-              <span style={{ marginRight: '0.5rem' }}>⭐</span> Paid Features & Subscriptions
-            </h2>
-            <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: '#334155', marginBottom: '1.25rem' }}>
-              TheQRify offers both free and premium plans. By purchasing a subscription, you agree to provide accurate payment details,
-              not share account credentials, and understand that subscription fees are non-refundable once activated (unless required by law).
-            </p>
-            <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: '#334155' }}>
-              We may change pricing or plans at any time, with prior notice to existing users.
-            </p>
-          </section>
+              <h6 className="fw-semibold mt-2">4.2 Indian Laws (If you use the platform from India)</h6>
+              <ul>
+                <li>Information Technology Act, 2000.</li>
+                <li>Rules on data privacy and digital security.</li>
+                <li>Indian cybercrime & fraud regulations.</li>
+              </ul>
 
-          <hr style={{ margin: '2rem 0', border: 'none', height: '1px', background: '#e2e8f0' }} />
+              <h6 className="fw-semibold mt-2">4.3 Local Laws in Your Country</h6>
+              <p>You must follow local laws regarding digital content, online safety, data protection, QR usage restrictions, copyright & IP laws. Failure to comply may result in termination of service and legal action.</p>
+            </section>
 
-          {/* 6. Third-Party Services */}
-          <section className="mb-3">
-            <h2 className="fw-bold mb-3" style={{ color: '#1e293b', fontSize: '1.75rem' }}>
-              <span style={{ marginRight: '0.5rem' }}>⭐</span> Third-Party Services
-            </h2>
-            <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: '#334155', marginBottom: '1.25rem' }}>
-              TheQRify may use third-party services such as Google Analytics for usage insights, Google AdSense for advertisements,
-              and payment gateways for premium plans.
-            </p>
-            <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: '#334155' }}>
-              These third parties may collect data under their respective privacy policies. TheQRify is not responsible for their practices.
-            </p>
-          </section>
+            <section id="intellectual-property" className="mb-4">
+              <h2 className="h5 fw-bold">5. Intellectual Property & Legal Protection</h2>
+              <p>
+                All intellectual property on TheQrify — including website design, brand identity, layout, code, scripts, algorithms, features,
+                tools, QR design interfaces, templates, icons, and visual elements — is the exclusive property of TheQrify.
+              </p>
+              <p className="mb-0"><strong>You may not:</strong></p>
+              <ul>
+                <li>Copy, reproduce, or clone our platform.</li>
+                <li>Resell or commercially distribute any part of our system.</li>
+                <li>Reverse-engineer, decompile, or attempt to extract our source code.</li>
+                <li>Replicate our design, branding, templates, or interface.</li>
+                <li>Create competing platforms using our assets or code.</li>
+                <li>Modify or redistribute our platform content.</li>
+              </ul>
 
-          <hr style={{ margin: '2rem 0', border: 'none', height: '1px', background: '#e2e8f0' }} />
+              <h6 className="fw-semibold mt-2">Legal Action for Violation</h6>
+              <p>If you engage in unauthorized copying or other violations, we may suspend or terminate your access, and pursue legal action under applicable laws (U.S., Indian, or local). You may be liable for damages and enforcement costs.</p>
+            </section>
 
-          {/* 7. Limitation of Liability */}
-          <section className="mb-3">
-            <h2 className="fw-bold mb-3" style={{ color: '#1e293b', fontSize: '1.75rem' }}>
-              <span style={{ marginRight: '0.5rem' }}>⭐</span> Limitation of Liability
-            </h2>
-            <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: '#334155', marginBottom: '1.25rem' }}>
-              TheQRify is provided "as is" without any warranties of any kind, express or implied. We do not guarantee uninterrupted
-              availability, accuracy, or fitness for a particular purpose.
-            </p>
-            <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: '#334155' }}>
-              We are not responsible for losses arising from the use of or inability to use our platform.
-            </p>
-          </section>
+            <section id="liability" className="mb-4">
+              <h2 className="h5 fw-bold">6. Limitations of Liability</h2>
+              <p>
+                You agree that TheQrify is not liable for:
+              </p>
+              <ul>
+                <li>Damages resulting from incorrect or harmful QR code content.</li>
+                <li>Loss caused by expired links or broken external websites.</li>
+                <li>Issues arising from third-party redirection.</li>
+                <li>Loss of revenue, business opportunities, or data.</li>
+                <li>Service downtime, technical glitches, or interruptions.</li>
+              </ul>
+              <p className="mb-0">All services are provided “as is” without warranties.</p>
+            </section>
 
-          <hr style={{ margin: '2rem 0', border: 'none', height: '1px', background: '#e2e8f0' }} />
+            <section id="future-features" className="mb-4">
+              <h2 className="h5 fw-bold">7. Future Features: Subscriptions & Business Plans</h2>
+              <p>In upcoming versions (TheQrify 2.0), we may introduce:</p>
+              <ul>
+                <li>Paid subscription plans.</li>
+                <li>Bulk QR generation.</li>
+                <li>Dynamic QR codes.</li>
+                <li>Analytics & scan tracking.</li>
+                <li>Ad-free premium experience.</li>
+                <li>Branded templates and business solutions.</li>
+              </ul>
+              <p>Paid features will have separate pricing and terms, which will be displayed before purchase.</p>
+            </section>
 
-          {/* 8. Privacy & Data Protection */}
-          <section className="mb-3">
-            <h2 className="fw-bold mb-3" style={{ color: '#1e293b', fontSize: '1.75rem' }}>
-              <span style={{ marginRight: '0.5rem' }}>⭐</span> Privacy & Data Protection
-            </h2>
-            <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: '#334155' }}>
-              Your privacy is important to us. Please review our{' '}
-              <a href="/privacy-policy"
-                style={{ color: '#015f9e', textDecoration: 'none', fontWeight: '500' }}>
-                Privacy Policy
-              </a>{' '}
-              to understand how we collect, use, and protect information.
-            </p>
-          </section>
+            <section id="ads" className="mb-4">
+              <h2 className="h5 fw-bold">8. Advertisements (Future Version)</h2>
+              <p>
+                The free version may include display ads, sponsored templates, and promotional placements provided by third-party ad networks.
+                TheQrify does not endorse advertiser content and is not responsible for their claims.
+              </p>
+            </section>
 
-          <hr style={{ margin: '2rem 0', border: 'none', height: '1px', background: '#e2e8f0' }} />
+            <section id="third-party" className="mb-4">
+              <h2 className="h5 fw-bold">9. Third-Party Links</h2>
+              <p>
+                QR codes created on TheQrify may redirect users to external websites. TheQrify is not responsible for third-party website content,
+                privacy practices, security issues, or misleading/harmful material. Users should review third-party terms and privacy policies before engaging.
+              </p>
+            </section>
 
-          {/* 9. Termination */}
-          <section className="mb-3">
-            <h2 className="fw-bold mb-3" style={{ color: '#1e293b', fontSize: '1.75rem' }}>
-              <span style={{ marginRight: '0.5rem' }}>⭐</span> Termination
-            </h2>
-            <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: '#334155' }}>
-              We reserve the right to suspend or terminate access to TheQRify at any time, without notice,
-              if we believe you've violated these terms.
-            </p>
-          </section>
+            <section id="termination" className="mb-4">
+              <h2 className="h5 fw-bold">10. Termination of Use</h2>
+              <p>
+                We may suspend, restrict, or block your access if you violate these Terms, misuse the platform, break applicable laws, or use the service
+                for harmful/illegal purposes. We reserve the right to take action without prior notice where necessary.
+              </p>
+            </section>
 
-          <hr style={{ margin: '2rem 0', border: 'none', height: '1px', background: '#e2e8f0' }} />
+            <section id="changes" className="mb-4">
+              <h2 className="h5 fw-bold">11. Changes to These Terms</h2>
+              <p>
+                TheQrify may modify, update, or revise these Terms at any time. Changes will be posted on this page with an updated “Last Revised” date.
+                Continued use of the website after updates means you accept the revised Terms.
+              </p>
+            </section>
 
-          {/* 10. Changes to These Terms */}
-          <section className="mb-3">
-            <h2 className="fw-bold mb-3" style={{ color: '#1e293b', fontSize: '1.75rem' }}>
-              <span style={{ marginRight: '0.5rem' }}>⭐</span> Changes to These Terms
-            </h2>
-            <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: '#334155' }}>
-              We may modify or update these Terms & Conditions from time to time. The latest version will always be available at{' '}
-              <a href="https://theqrify.com/terms"
-                target="_blank"
-                rel="noreferrer"
-                style={{ color: '#015f9e', textDecoration: 'none', fontWeight: '500' }}>
-                https://theqrify.com/terms
-              </a>.
-            </p>
-          </section>
+            <section id="contact-terms" className="mb-4">
+              <h2 className="h5 fw-bold">12. Contact Us</h2>
+              <p>If you have any questions, legal concerns, or need support, contact us:</p>
+              <ul>
+                <li>📩 Email: <a href="mailto:support@theqrify.com" style={{ color: '#015f9e', textDecoration: 'none', fontWeight: '500' }}>support@theqrify.com</a></li>
+                <li>🌐 Website: <a href="https://theqrify.com" target="_blank" rel="noreferrer" style={{ color: '#015f9e', textDecoration: 'none', fontWeight: '500' }}>https://theqrify.com</a></li>
+              </ul>
+              <p className="small text-muted mb-0">Owner: TheQrify</p>
+            </section>
 
-          <hr style={{ margin: '2rem 0', border: 'none', height: '1px', background: '#e2e8f0' }} />
+            <hr />
 
-          {/* 11. Contact Us */}
-          <section className="mb-3">
-            <h2 className="fw-bold mb-3" style={{ color: '#1e293b', fontSize: '1.75rem' }}>
-              <span style={{ marginRight: '0.5rem' }}>⭐</span> Contact Us
-            </h2>
-            <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: '#334155', marginBottom: '1.25rem' }}>
-              If you have any questions or concerns about these Terms, please contact us:
-            </p>
-            <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: '#334155' }}>
-              <strong>📧 Email:</strong>{' '}
-              <a href="mailto:support@theqrify.com"
-                style={{ color: '#015f9e', textDecoration: 'none', fontWeight: '500' }}>
-                support@theqrify.com
-              </a>
-              <br />
-              <strong>🌐 Website:</strong>{' '}
-              <a href="https://theqrify.com"
-                target="_blank"
-                rel="noreferrer"
-                style={{ color: '#015f9e', textDecoration: 'none', fontWeight: '500' }}>
-                https://theqrify.com
-              </a>
-            </p>
-          </section>
-
-        </article>
-      </main>
-
-      {/* Footer */}
-      <footer className="text-center py-4" style={{
-        background: 'transparent',
-        borderTop: '1px solid #e2e8f0',
-        color: '#64748b'
-      }}>
-        <div className="container">
-          <p className="mb-0" style={{ fontSize: '0.95rem' }}>
-            © {new Date().getFullYear()} TheQRify (Infosync.ai) — All Rights Reserved.
-          </p>
+            <p className="small text-muted">© {new Date().getFullYear()} TheQrify — All Rights Reserved.</p>
         </div>
-      </footer>
+      </div>
     </div>
   );
 }

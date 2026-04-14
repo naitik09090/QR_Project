@@ -1,134 +1,119 @@
 import React, { useState } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
+import { sendEvent } from "../gaEvents";
 
-const ContactForm = () => {
-    const [formData, setFormData] = useState({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
-    });
-
+export default function ContactPage() {
+    const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
     const [submitted, setSubmitted] = useState(false);
 
-    const handleChange = (e) => {
+    function handleChange(e) {
         const { name, value } = e.target;
-        setFormData({ ...formData, [name]: value });
-    };
+        setForm((s) => ({ ...s, [name]: value }));
+    }
 
-    const handleSubmit = (e) => {
+    function handleSubmit(e) {
         e.preventDefault();
-        // For now, just simulate a submission
-        console.log("Form Data Submitted:", formData);
+        console.log("send contact:", form);
         setSubmitted(true);
-        setFormData({ name: "", email: "", subject: "", message: "" });
-
-        // Here you could integrate EmailJS, Formspree, or a backend API call
-    };
+        setForm({ name: "", email: "", subject: "", message: "" });
+        setTimeout(() => setSubmitted(false), 3000);
+    }
 
     return (
-        <div className="container my-5">
-            <div className="text-center mb-4">
-                <h2>📩 Contact Us</h2>
-                <p className="text-muted">
-                    Have questions, feedback, or partnership ideas? We’d love to hear from you.
-                </p>
-            </div>
+        <div className="contact-wrapper">
+            <h1>Get In Touch</h1>
+            <p className="subtitle">We'll create high-quality linkable content...</p>
 
-            <div className="row justify-content-center">
-                <div className="col-md-8 col-lg-6">
-                    {submitted && (
-                        <div className="alert alert-success text-center">
-                            ✅ Thank you! Your message has been sent.
-                        </div>
-                    )}
-
-                    <form onSubmit={handleSubmit} className="p-4 border rounded-3 shadow-sm bg-light">
-                        <div className="mb-3">
-                            <label htmlFor="name" className="form-label">
-                                Full Name
-                            </label>
-                            <input
-                                type="text"
-                                className="form-control"
-                                id="name"
-                                name="name"
-                                placeholder="Enter your full name"
-                                value={formData.name}
-                                onChange={handleChange}
-                                required
-                            />
-                        </div>
-
-                        <div className="mb-3">
-                            <label htmlFor="email" className="form-label">
-                                Email Address
-                            </label>
-                            <input
-                                type="email"
-                                className="form-control"
-                                id="email"
-                                name="email"
-                                placeholder="you@example.com"
-                                value={formData.email}
-                                onChange={handleChange}
-                                required
-                            />
-                        </div>
-
-                        <div className="mb-3">
-                            <label htmlFor="subject" className="form-label">
-                                Subject
-                            </label>
-                            <input
-                                type="text"
-                                className="form-control"
-                                id="subject"
-                                name="subject"
-                                placeholder="What’s this about?"
-                                value={formData.subject}
-                                onChange={handleChange}
-                                required
-                            />
-                        </div>
-
-                        <div className="mb-3">
-                            <label htmlFor="message" className="form-label">
-                                Message
-                            </label>
-                            <textarea
-                                className="form-control"
-                                id="message"
-                                name="message"
-                                rows="5"
-                                placeholder="Write your message here..."
-                                value={formData.message}
-                                onChange={handleChange}
-                                required
-                            ></textarea>
-                        </div>
-
-                        <div className="text-center">
-                            <button type="submit" className="btn btn-primary px-4 py-2">
-                                Send Message
-                            </button>
-                        </div>
-                    </form>
-
-                    {/* <div className="text-center">
-                        <p className="text-muted mb-1">Or reach us directly:</p>
-                        <p>
-                            📧 <a href="mailto:support@theqrify.com">support@theqrify.com</a>
-                            <br />
-                            🌐 <a href="https://theqrify.com" target="_blank" rel="noopener noreferrer">
-                                https://theqrify.com
-                            </a>
+            <div className="contact-card">
+                <div className="contact-left">
+                    <div>
+                        <h2>Contact Information</h2>
+                        <p className="info-text">
+                            We'll create high-quality linkable content and build at least 40...
                         </p>
-                    </div> */}
+
+                        <div className="items">
+                            {/* <p className="item"><span>📞</span> +988678363866</p> */}
+                            {/* 📩 Email: <a href="mailto:support@theqrify.com" style={{ color: '#015f9e', textDecoration: 'none', fontWeight: '500' }}>support@theqrify.com</a> */}
+                            <p className="item"><span>📧</span> Support@theqrify.com</p>
+                            <p className="item"><span>📍</span> New York, USA</p>
+                        </div>
+                    </div>
                 </div>
+
+                <div className="contact-right">
+                    <form onSubmit={handleSubmit} className="space-y-6">
+
+                        <div className="form-row">
+                            <div className="text-start">
+                                <label>Your Name</label>
+                                <input
+                                    type="text"
+                                    name="name"
+                                    placeholder="Enter Your Name"
+                                    value={form.name}
+                                    onChange={handleChange}
+                                    required
+                                />
+                            </div>
+
+                            <div className="text-start">
+                                <label>Your Email</label>
+                                <input
+                                    type="email"
+                                    name="email"
+                                    placeholder="Support@theqrify.com"
+                                    value={form.email}
+                                    onChange={handleChange}
+                                    required
+                                />
+                            </div>
+                        </div>
+
+                        <div className="text-start">
+                            <label>Your Subject</label>
+                            <input
+                                type="text"
+                                name="subject"
+                                placeholder="I want to hire you quickly"
+                                value={form.subject}
+                                onChange={handleChange}
+                                required
+                            />
+                        </div>
+
+                        <div className="text-start">
+                            <label>Message</label>
+                            <textarea
+                                name="message"
+                                rows="4"
+                                placeholder="Write here your message"
+                                value={form.message}
+                                onChange={handleChange}
+                                required
+                            />
+                        </div>
+
+                        <button
+                            type="submit"
+                            className="contact-btn"
+                            onClick={() =>
+                                sendEvent("contact_click", {
+                                    event_category: "Engagement",
+                                    event_label: "Contact Button Clicked",
+                                    form_type: "contact_form",
+                                })
+                            }
+                        >
+                            Send Message
+                        </button>
+
+
+                        {submitted && <p className="success-msg">Message sent — thanks!</p>}
+                    </form>
+                </div>
+
             </div>
         </div>
-    );
-};
 
-export default ContactForm;
+    );
+}

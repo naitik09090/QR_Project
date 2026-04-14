@@ -1,362 +1,186 @@
-// import React, { useEffect, useRef, useState } from 'react';
-// import { Link } from 'react-bootstrap-icons';
+import React from "react";
 
-// const sections = [
-//   {
-//     id: 'intro',
-//     title: 'Introduction',
-//     body: `At TheQRify, we value your privacy and are committed to protecting your personal data. This Privacy Policy explains how we collect, use, and safeguard your information when you use our website or services.`,
-//   },
-//   {
-//     id: 'info-collect',
-//     title: '1. Information We Collect',
-//     body: `We may collect the following information:\n\n• Usage Data: Browser type, IP address, device information, and pages visited (via Google Analytics).\n• Generated Content: Text or URLs you enter to create QR codes (not stored on our servers).\n• Cookies: Used for analytics and Google AdSense personalization.`,
-//   },
-//   {
-//     id: 'use-info',
-//     title: '2. How We Use Your Information',
-//     body: `We use your data to:\n\n• Improve our website and user experience.\n• Monitor traffic and usage via Google Analytics.\n• Display personalized ads via Google AdSense.`,
-//   },
-//   {
-//     id: 'adsense',
-//     title: '3. Google AdSense',
-//     body: `We use Google AdSense to serve ads. Google may use cookies (DoubleClick cookie) to personalize ads based on your visits to this and other sites. You can opt out of personalized ads by visiting: https://adssettings.google.com`,
-//   },
-//   {
-//     id: 'storage',
-//     title: '4. Data Storage & Security',
-//     body: `We do not store QR code input data. All analytics data is anonymized and processed by Google Analytics. Our site uses HTTPS encryption for secure communication.`,
-//   },
-//   {
-//     id: 'rights',
-//     title: '5. Your Rights',
-//     body: `You may:\n\n• Request deletion of your analytics data (via Google tools).\n• Opt out of personalized advertising.\n• Contact us at support@theqrify.com for privacy-related concerns.`,
-//   },
-//   {
-//     id: 'thirdparty',
-//     title: '6. Third-Party Links',
-//     body: `Our website may contain links to other websites. We are not responsible for their content or privacy practices.`,
-//   },
-//   {
-//     id: 'updates',
-//     title: '7. Updates to This Policy',
-//     body: `We may update this policy from time to time. Changes will be reflected with a new "Effective Date."`,
-//   },
-//   {
-//     id: 'contact',
-//     title: '8. Contact Us',
-//     body: `For any privacy-related questions or requests: support@theqrify.com`,
-//   },
-// ];
-
-// export default function PrivacyPolicyTheQRify({ effectiveDate = '[Insert Date]' }) {
-//   const [currentStep, setCurrentStep] = useState(0);
-//   const stepsRef = useRef([]);
-
-//   useEffect(() => {
-//     function injectLink(href, id) {
-//       if (id && document.getElementById(id)) return;
-//       const link = document.createElement('link');
-//       link.rel = 'stylesheet';
-//       link.href = href;
-//       if (id) link.id = id;
-//       document.head.appendChild(link);
-//     }
-
-//     injectLink('https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css', 'bs5-css');
-//     injectLink('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap', 'space-grotesk');
-
-//     return () => { };
-//   }, []);
-
-//   useEffect(() => {
-//     const el = stepsRef.current[currentStep];
-//     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-//   }, [currentStep]);
-
-//   const goNext = () => setCurrentStep((s) => Math.min(s + 1, sections.length - 1));
-//   const goPrev = () => setCurrentStep((s) => Math.max(s - 1, 0));
-
-//   const fontFamily = `"Space Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial`;
-
-//   return (
-//     <div className="container-fluid py-5" style={{ fontFamily }}>
-//       <div className="row justify-content-center">
-//         <div className="col-12 col-md-10 col-lg-8">
-
-//           <div className="d-flex align-items-center mb-4">
-//             <div className="me-3">
-//               <div className="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center" style={{ width: 56, height: 56 }}>
-//                 <strong style={{ fontSize: 20 }}>🔐</strong>
-//               </div>
-//             </div>
-//             <div>
-//               <h1 className="h4 mb-0">Privacy Policy — TheQRify</h1>
-//               <small className="text-muted">Effective Date: {effectiveDate} <a href="https://theqrify.com" target="_blank" rel="noopener noreferrer">https://theqrify.com</a></small>
-//             </div>
-//           </div>
-
-//           <div className="mb-4">
-//             <div className="progress" style={{ height: 10, borderRadius: 8 }}>
-//               <div
-//                 className="progress-bar"
-//                 role="progressbar"
-//                 style={{ width: `${((currentStep + 1) / sections.length) * 100}%` }}
-//                 aria-valuenow={(currentStep + 1)}
-//                 aria-valuemin={1}
-//                 aria-valuemax={sections.length}
-//               />
-//             </div>
-//             <div className="d-flex justify-content-between mt-2 small text-muted">
-//               <div>Step {currentStep + 1} of {sections.length}</div>
-//               <div>{sections[currentStep].title}</div>
-//             </div>
-//           </div>
-
-//           <div className="mb-4">
-//             {sections.map((s, idx) => (
-//               <div
-//                 key={s.id}
-//                 className={`card mb-3 ${idx === currentStep ? 'border-primary shadow-sm' : ''}`}
-//                 ref={(el) => (stepsRef.current[idx] = el)}
-//                 aria-hidden={idx !== currentStep}
-//               >
-//                 <div className="card-body">
-//                   <div className="d-flex align-items-start">
-//                     <div className="me-3">
-//                       <div className={`badge rounded-pill ${idx === currentStep ? 'bg-primary' : 'bg-secondary'}`} style={{ minWidth: 42, height: 42, display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
-//                         <strong>{idx + 1}</strong>
-//                       </div>
-//                     </div>
-//                     <div className="flex-grow-1">
-//                       <h5 className="card-title mb-1">{s.title}</h5>
-//                       <pre style={{ whiteSpace: 'pre-wrap', fontFamily, border: 'none', padding: 0, margin: 0 }} className="card-text text-muted">{s.body}</pre>
-
-//                       {idx === currentStep && (
-//                         <div className="mt-3 d-flex gap-2">
-//                           <button className="btn btn-outline-primary btn-sm" onClick={() => navigator.clipboard?.writeText(s.body)}>
-//                             Copy text
-//                           </button>
-//                           <button className="btn btn-primary btn-sm" onClick={goNext} disabled={currentStep >= sections.length - 1}>
-//                             Next
-//                           </button>
-//                           <button className="btn btn-light btn-sm border" onClick={goPrev} disabled={currentStep === 0}>
-//                             Previous
-//                           </button>
-//                         </div>
-//                       )}
-//                     </div>
-//                   </div>
-//                 </div>
-//               </div>
-//             ))}
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
-// File: PrivacyPolicy.jsx
-
-import React, { useEffect } from "react";
-
-export default function PrivacyPolicy() {
-  // Inject Bootstrap 5 and Google Font
-  useEffect(() => {
-    const addLink = (href, id) => {
-      if (document.getElementById(id)) return;
-      const link = document.createElement("link");
-      link.rel = "stylesheet";
-      link.href = href;
-      link.id = id;
-      document.head.appendChild(link);
-    };
-
-    addLink("https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css", "bs5");
-    addLink("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap", "font-inter");
-  }, []);
-
-  const fontFamily = `"Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial`;
+export default function PrivacyPolicyTheQrify({ effectiveDate = new Date().toISOString().slice(0, 10) }) {
+  const style = {
+    color: "#0f172a",
+  };
 
   return (
-    <div className="Privacy1" style={{
-      fontFamily,
-      background: 'transparent',
-      minHeight: '100vh'
-    }}>
+    <div style={{ background: "#fff", minHeight: "100vh" }}>
+      <div className="py-5" style={style}>
+        <div className="container" style={{ maxWidth: 1000 }}>
+          {/* Header */}
+          <header className="mb-4 text-center">
+            <h1 className="fw-bold h2">🔐 Privacy Policy – <a href="https://theqrify.com" target="_blank" rel="noreferrer" style={{ color: '#015f9e', textDecoration: 'none', fontWeight: '500' }}>TheQrify</a></h1>
+            <p className="mb-1 text-muted">Last updated: <strong>{effectiveDate}</strong></p>
+          </header>
 
-      {/* Main Content */}
-      <main className="py-5">
-        <article className="container" style={{ maxWidth: '1300px' }}>
-          <div className="text-center mb-5">
-            <h1 className="fw-bold display-6">🔐 Privacy Policy for TheQRify</h1>
-            <p className="text-muted mb-0">
-              (AdSense + GDPR + Global compliant — ready to publish at /privacy-policy)
-            </p>
-            <small className="text-secondary">
-              Effective Date: [Insert Date] | Website:{" "}
-              <a href="https://theqrify.com"
-                target="_blank"
-                rel="noreferrer"
-                style={{ color: '#015f9e', textDecoration: 'none', fontWeight: '500' }}>
-                theqrify.com
-              </a>.
-            </small>
-          </div>
-
-          {/* Introduction */}
-          <section className="mb-3">
-            <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: '#334155' }}>
-              At TheQRify, we value your privacy and are committed to protecting your personal data.
-              This Privacy Policy explains how we collect, use, and safeguard your information when you use our website or services.
+          <section id="intro" className="mb-4">
+            <h2 className="h5 fw-bold">Introduction</h2>
+            <p>
+              Welcome to TheQrify.com (“TheQrify”, “we”, “our”, “us”). We value your privacy and are committed to protecting your personal data.
+              This Privacy Policy explains how we collect, use, store, and protect information when you access or use our website theqrify.com and any related features, tools, or services.
             </p>
           </section>
 
-          <hr style={{ margin: '2rem 0', border: 'none', height: '1px', background: '#e2e8f0' }} />
+          <section id="info-we-collect" className="mb-4">
+            <h2 className="h5 fw-bold">1. Information We Collect</h2>
 
-          {/* Information We Collect */}
-          <section className="mb-3">
-            <h2 className="fw-bold mb-3" style={{ color: '#1e293b', fontSize: '2rem' }}>
-              <span style={{ marginRight: '0.5rem' }}>⭐</span>
-              Information We Collect
-            </h2>
-            <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: '#334155', marginBottom: '1.25rem' }}>
-              We may collect usage data including browser type, IP address, device information, and pages visited.
-              We also collect generated content such as text or URLs you enter to create QR codes, though this data is not stored.
-              Additionally, cookies are used for analytics and Google AdSense personalization to improve your experience on our platform.
+            <h6 className="fw-semibold mt-3">A. Information You Provide</h6>
+            <p className="mb-2">When you use our platform, you may voluntarily provide:</p>
+            <ul>
+              <li>Content you enter to create the QR code (URLs, text, PDF links, contact details, menus, business profiles, etc.).</li>
+              <li>Email address (only when opting for communication or subscriptions).</li>
+              <li>Information filled while creating business cards or custom QR templates.</li>
+            </ul>
+            <p className="mb-2"><strong>Note:</strong> We do not sell or share your generated QR code data with third parties.</p>
+
+            <h6 className="fw-semibold mt-3">B. Automatically Collected Information</h6>
+            <p className="mb-2">We may automatically collect:</p>
+            <ul>
+              <li>Device information (browser type, OS, IP address).</li>
+              <li>Usage analytics (pages visited, time spent).</li>
+              <li>Click and interaction tracking.</li>
+              <li>Cookies & similar tracking technologies.</li>
+            </ul>
+            <p className="mb-0">This helps us improve website performance and user experience.</p>
+
+            <h6 className="fw-semibold mt-3">C. Information from Third Parties (Planned / Future)</h6>
+            <p>
+              When we introduce login, subscription, or business accounts, we may integrate trusted third parties such as:
             </p>
+            <ul>
+              <li>Payment processors (Stripe, Razorpay, PayPal, etc.).</li>
+              <li>Social login providers (Google, LinkedIn).</li>
+            </ul>
           </section>
 
-          <hr style={{ margin: '2rem 0', border: 'none', height: '1px', background: '#e2e8f0' }} />
-
-          {/* How We Use Your Information */}
-          <section className="mb-3">
-            <h2 className="fw-bold mb-3" style={{ color: '#1e293b', fontSize: '2rem' }}>
-              <span style={{ marginRight: '0.5rem' }}>⭐</span>
-              How We Use Your Information
-            </h2>
-            <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: '#334155' }}>
-              We use your data to improve our website, monitor usage, and display personalized ads via Google AdSense.
-              This helps us provide a better service while keeping TheQRify free for all users.
-            </p>
+          <section id="how-use" className="mb-4">
+            <h2 className="h5 fw-bold">2. How We Use Your Information</h2>
+            <p>We use your data to:</p>
+            <ul>
+              <li>Provide QR code generation and related features.</li>
+              <li>Improve website performance & design.</li>
+              <li>Customize user experience.</li>
+              <li>Communicate updates or notifications (only with consent).</li>
+              <li>Enable subscription-based features (future).</li>
+              <li>Display relevant advertisements.</li>
+              <li>Enhance security & prevent misuse.</li>
+            </ul>
+            <p className="mb-0"><strong>We never read, edit, or access the private data embedded inside your QR code</strong> for any purpose other than delivering the requested service, unless required legally.</p>
           </section>
 
-          <hr style={{ margin: '2rem 0', border: 'none', height: '1px', background: '#e2e8f0' }} />
-
-          {/* Google AdSense */}
-          <section className="mb-3">
-            <h2 className="fw-bold mb-3" style={{ color: '#1e293b', fontSize: '2rem' }}>
-              <span style={{ marginRight: '0.5rem' }}>⭐</span>
-              Google AdSense
-            </h2>
-            <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: '#334155' }}>
-              Google may use cookies (DoubleClick cookie) to personalize ads based on your browsing activity.
-              You can opt out of personalized advertising at{' '}
-              <a href="https://adssettings.google.com"
-                target="_blank"
-                rel="noreferrer"
-                style={{ color: '#015f9e', textDecoration: 'none', fontWeight: '500' }}>
-                adssettings.google.com
-              </a>.
-            </p>
+          <section id="cookies" className="mb-4">
+            <h2 className="h5 fw-bold">3. Cookies & Tracking Technologies</h2>
+            <p>We use cookies and similar technologies to:</p>
+            <ul>
+              <li>Analyse traffic and usage patterns.</li>
+              <li>Improve loading speed and user experience.</li>
+              <li>Enhance personalization.</li>
+              <li>Serve advertisements (non-personalized or personalized depending on consent).</li>
+              <li>Help third-party vendors, including Google, to serve ads based on your prior visits to our website or other websites.</li>
+            </ul>
+            <p>You can disable cookies from your browser; however, some features may not work as intended if cookies are disabled.</p>
           </section>
 
-          <hr style={{ margin: '2rem 0', border: 'none', height: '1px', background: '#e2e8f0' }} />
-
-          {/* Data Storage & Security */}
-          <section className="mb-3">
-            <h2 className="fw-bold mb-3" style={{ color: '#1e293b', fontSize: '2rem' }}>
-              <span style={{ marginRight: '0.5rem' }}>⭐</span>
-              Data Storage & Security
-            </h2>
-            <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: '#334155' }}>
-              We do not store QR code inputs that you create on our platform. Analytics data is anonymized via Google Analytics,
-              and all communication is encrypted using HTTPS to ensure your information remains secure.
-            </p>
+          <section id="storage-security" className="mb-4">
+            <h2 className="h5 fw-bold">4. Data Storage & Security</h2>
+            <p>We implement industry-standard security measures to protect your data, including:</p>
+            <ul>
+              <li>Encrypted connections (HTTPS / TLS).</li>
+              <li>Secure servers and infrastructure.</li>
+              <li>Access-control policies and role-based access.</li>
+              <li>Regular security audits and monitoring.</li>
+            </ul>
+            <p className="mb-0">Although we take precautions, no online service can be guaranteed 100% secure. Use the platform at your discretion.</p>
           </section>
 
-          <hr style={{ margin: '2rem 0', border: 'none', height: '1px', background: '#e2e8f0' }} />
-
-          {/* Your Rights */}
-          <section className="mb-3">
-            <h2 className="fw-bold mb-3" style={{ color: '#1e293b', fontSize: '2rem' }}>
-              <span style={{ marginRight: '0.5rem' }}>⭐</span>
-              Your Rights
-            </h2>
-            <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: '#334155' }}>
-              You may request deletion of analytics data, opt out of personalized advertising, or contact us at{' '}
-              <a href="mailto:support@theqrify.com"
-                style={{ color: '#015f9e', textDecoration: 'none', fontWeight: '500' }}>
-                support@theqrify.com
-              </a>{' '}
-              with any privacy concerns or questions about your data.
-            </p>
+          <section id="sharing" className="mb-4">
+            <h2 className="h5 fw-bold">5. Sharing of Information</h2>
+            <p>We do not sell your personal data. We may share limited information only with:</p>
+            <ul>
+              <li>Trusted service providers (hosting, analytics, email providers).</li>
+              <li>Analytics tools (Google Analytics, Meta Pixel, etc.).</li>
+              <li>Payment gateways (when subscriptions are available).</li>
+              <li>Legal authorities if required by law (only when compelled).</li>
+            </ul>
+            <p className="mb-0">We require service providers to follow appropriate confidentiality and security practices.</p>
           </section>
 
-          <hr style={{ margin: '2rem 0', border: 'none', height: '1px', background: '#e2e8f0' }} />
-
-          {/* Third-Party Links */}
-          <section className="mb-3">
-            <h2 className="fw-bold mb-3" style={{ color: '#1e293b', fontSize: '2rem' }}>
-              <span style={{ marginRight: '0.5rem' }}>⭐</span>
-              Third-Party Links
-            </h2>
-            <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: '#334155' }}>
-              Our site may contain links to external websites. We are not responsible for their content or privacy practices.
-              We encourage you to review the privacy policies of any third-party sites you visit.
-            </p>
+          <section id="qr-visibility" className="mb-4">
+            <h2 className="h5 fw-bold">6. QR Code Content Visibility</h2>
+            <p>Whatever content you generate using TheQrify (URL, text, PDF, profiles) remains your responsibility.</p>
+            <ul>
+              <li>We do not store or analyze personal content unless required for service optimization or with explicit consent.</li>
+              <li>If we introduce features that save templates or user profiles, storage practices will be disclosed and consent requested where required.</li>
+            </ul>
           </section>
 
-          <hr style={{ margin: '2rem 0', border: 'none', height: '1px', background: '#e2e8f0' }} />
-
-          {/* Updates to This Policy */}
-          <section className="mb-3">
-            <h2 className="fw-bold mb-3" style={{ color: '#1e293b', fontSize: '2rem' }}>
-              <span style={{ marginRight: '0.5rem' }}>⭐</span>
-              Updates to This Policy
-            </h2>
-            <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: '#334155' }}>
-              We may update this policy periodically to reflect changes in our practices or legal requirements.
-              Changes will be reflected with a new "Effective Date" at the top of this page.
-            </p>
+          <section id="ads" className="mb-4">
+            <h2 className="h5 fw-bold">7. Advertisements & Google AdSense</h2>
+            <p>This site uses Google AdSense which may use cookies to serve personalized ads. Google's use of advertising cookies enables it and its partners to serve ads to users based on their visit to our site and/or other sites on the Internet.</p>
+            <ul>
+              <li>Google, as a third-party vendor, uses cookies to serve ads on TheQrify.</li>
+              <li>Google's use of the DART cookie enables it to serve ads to users based on their visit to TheQrify and other sites on the Internet.</li>
+              <li>Users may opt out of personalized advertising.</li>
+            </ul>
+            <p>Third-party ad servers or ad networks use technologies like cookies, JavaScript, or Web Beacons that are used in their respective advertisements and links that appear on TheQrify, which are sent directly to users' browsers. They automatically receive your IP address when this occurs. Note that TheQrify has no access to or control over these cookies that are used by third-party advertisers.</p>
           </section>
 
-          <hr style={{ margin: '2rem 0', border: 'none', height: '1px', background: '#e2e8f0' }} />
-
-          {/* Contact Us */}
-          <section className="mb-3">
-            <h2 className="fw-bold mb-3" style={{ color: '#1e293b', fontSize: '2rem' }}>
-              <span style={{ marginRight: '0.5rem' }}>⭐</span>
-              Contact Us
-            </h2>
-            <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: '#334155', marginBottom: '1.25rem' }}>
-              For any privacy-related questions, please reach out at{' '}
-              <a href="mailto:support@theqrify.com"
-                style={{ color: '#015f9e', textDecoration: 'none', fontWeight: '500' }}>
-                support@theqrify.com
-              </a>.
-            </p>
-            <p style={{ fontSize: '0.95rem', lineHeight: '1.8', color: '#64748b' }}>
-              Owner: TheQRify (Infosync.ai)
-            </p>
+          <section id="subscriptions" className="mb-4">
+            <h2 className="h5 fw-bold">8. Subscription Plans (Future Feature)</h2>
+            <p>For paid features, we may collect:</p>
+            <ul>
+              <li>Billing information (name, email, billing address).</li>
+              <li>Transaction IDs and subscription history.</li>
+              <li>Business-related information for business accounts.</li>
+            </ul>
+            <p>Payments will be processed through secure third-party gateways; we do not store credit/debit card details on our servers.</p>
           </section>
 
-        </article>
-      </main>
+          <section id="thirdparty-links" className="mb-4">
+            <h2 className="h5 fw-bold">9. Third-Party Links</h2>
+            <p>Our platform may contain links to external websites. We are not responsible for their content, policies, or practices. We encourage you to read privacy policies on third-party sites you visit.</p>
+          </section>
 
-      {/* Footer */}
-      <footer className="text-center py-4" style={{
-        background: 'transparent',
-        borderTop: '1px solid #e2e8f0',
-        color: '#64748b'
-      }}>
-        <div className="container">
-          <p className="mb-0" style={{ fontSize: '0.95rem' }}>
-            © {new Date().getFullYear()} TheQRify (Infosync.ai) — All Rights Reserved.
-          </p>
+          <section id="your-rights" className="mb-4">
+            <h2 className="h5 fw-bold">10. Your Rights</h2>
+            <p>Depending on your location, you may have rights to:</p>
+            <ul>
+              <li>Request access to your information.</li>
+              <li>Ask for correction or deletion.</li>
+              <li>Opt-out of marketing communications.</li>
+              <li>Withdraw consent where applicable.</li>
+              <li>Disable cookies via browser settings.</li>
+            </ul>
+            <p>To make such requests, contact us at <a href="mailto:support@theqrify.com" style={{ color: '#015f9e', textDecoration: 'none', fontWeight: '500' }}>support@theqrify.com</a>. We will respond per applicable law and internal procedures.</p>
+          </section>
+
+          <section id="child-privacy" className="mb-4">
+            <h2 className="h5 fw-bold">11. Children’s Privacy</h2>
+            <p>TheQrify is not intended for children under 13. We do not knowingly collect data from children under 13. If we become aware we have collected data from a child under 13, we will take steps to remove that data.</p>
+          </section>
+
+          <section id="changes" className="mb-4">
+            <h2 className="h5 fw-bold">12. Changes to This Policy</h2>
+            <p>We may update this Privacy Policy as we introduce new features or to comply with law. Updates will be posted on this page with a new "Last updated" date. We will provide notices if an update materially affects how we handle personal data.</p>
+          </section>
+
+          <section id="contact" className="mb-4">
+            <h2 className="h5 fw-bold">13. Contact Us</h2>
+            <p>If you have questions, complaints, or concerns about this policy or our practices:</p>
+            <ul>
+              <li>Email: <a href="mailto:support@theqrify.com" style={{ color: '#015f9e', textDecoration: 'none', fontWeight: '500' }}>support@theqrify.com</a></li>
+              <li>Website: <a href="https://theqrify.com" target="_blank" rel="noreferrer" style={{ color: '#015f9e', textDecoration: 'none', fontWeight: '500' }}>https://theqrify.com</a></li>
+            </ul>
+            <p className="small text-muted mb-0">Owner: TheQrify</p>
+          </section>
+
+          <hr />
+
+          <p className="small text-muted">© {new Date().getFullYear()} TheQrify — All Rights Reserved.</p>
         </div>
-      </footer>
+      </div>
     </div>
   );
 }

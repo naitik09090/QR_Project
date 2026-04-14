@@ -1,0 +1,116 @@
+// 🎨 Button + Background Styles (SCSS version)
+
+$primary: #015f9e;
+$light-bg: #ebf7ff;
+$text-dark: #000;
+$text-light: #fff;
+
+// Base button styles
+.button2,
+button {
+    border: none !important;
+}
+
+button {
+    background-color: $primary !important;
+    color: $text-light !important;
+}
+
+// Background colors
+.Buton_2_BG {
+    background-color: $light-bg !important;
+}
+
+html, body {
+    background-color: #EBF7FF;
+    margin: 0;
+    padding: 0;
+}
+
+.button2 {
+    color: $primary !important;
+}
+
+// Reusable card-style button containers
+.Buton_5_BG {
+    padding: 50px !important;
+    border-radius: 25px;
+    box-shadow: 10px 24px 52px 10px rgba(0, 0, 0, 0.08);
+}
+
+// Individual variations
+.Buton_2_BG {
+    color: $text-dark !important;
+    padding-top: 100px;
+}
+
+.Buton_1_BG,
+.Buton_3_BG,
+.Buton_5_BG {
+    background-color: #fff !important;
+    color: $text-dark !important;
+}
+.Buton_1_BG{
+    padding: 30px !important;
+    border-radius: 25px;
+}
+.Buton_1_BG .Top_BTn{
+    border-radius: 25px;
+    width: auto;
+}
+
+.Buton_5_BG {
+    width: auto;
+    height: 100vh;
+}
+
+// Global Custom FAQ Styles
+.faq-item-custom {
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #ffffff;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+
+    &:hover {
+        border-color: #0160A0;
+    }
+
+    .faq-question-btn {
+        width: 100%;
+        padding: 18px 25px;
+        border: none !important;
+        background: transparent !important;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: 700;
+        color: #1a202c !important;
+        text-align: left;
+        transition: all 0.2s;
+        cursor: pointer;
+
+        &.active {
+            background: #0160A0 !important;
+            color: #ffffff !important;
+        }
+
+        .icon {
+            font-size: 1.25rem;
+            transition: transform 0.3s;
+        }
+    }
+
+    .faq-answer-content {
+        padding: 20px 25px;
+        border-top: 1px solid #e2e8f0;
+        background: #fbfdff;
+
+        p {
+            margin-bottom: 0;
+            color: #4a5568;
+            line-height: 1.6;
+        }
+    }
+}
